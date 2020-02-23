@@ -22,9 +22,11 @@ for x in range(1, 18, 1):
 print("爬取完成")
 
 # 生成去重课表list:course_true
+print("去重")
 for x in course:
     if x not in course_true:
         course_true.append(x)
+print("去重完成")
 
 getcalender(course_true)
 
