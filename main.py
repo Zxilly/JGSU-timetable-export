@@ -3,6 +3,7 @@ import json
 import qzsdk
 from function import *
 from info import *
+from priinfo import *
 
 course = []
 course_true = []
@@ -26,6 +27,10 @@ for x in course:
     if x not in course_true:
         course_true.append(x)
 
+getcalender(course_true)
+
 # print(one_course)
-for x in course_true:
-    getcalender(x)
+#for x in course_true:
+#    print(x)
+    #getcalender(x)
+

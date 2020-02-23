@@ -1,19 +1,15 @@
 import icalendar
+import datetime
+from info import *
 
-def getcalender(x):
-    genSubjectName(x['kcmc'])
-    genClassTime(x['kkzc'],x['kcsj'],x['sjbz'])
-    genClassLocation(x['jsmc'])
-    genTeacherName(x['jsxm'])
 
-def genSubjectName(str):
-    pass
+def rmzero(input):
+    return int(str(input))
 
-def genClassTime():
-    pass
 
-def genClassLocation():
-    pass
+def getcalender(course):
+    calt = icalendar.Calendar()
+    calt['version'] = '2.0'
+    calt['prodid'] = '-//Zxilly//JGSUCalender//CN'
 
-def genTeacherName():
-    pass
+
