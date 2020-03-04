@@ -3,10 +3,10 @@ from datetime import datetime, time
 from uuid import uuid1
 
 import icalendar
+import pytz
 from dateutil.relativedelta import relativedelta
 
 import info
-from tool import *
 
 
 def rmzero(input):
@@ -70,20 +70,20 @@ def getcalender(course):
         # print(one_course)
 
         dt_date = info.semester_start + relativedelta(weeks=(week_start - 1)) + relativedelta(
-            days=(course_weekday - 1)) # 课程日期
+            days=(course_weekday - 1))  # 课程日期
         # dtstart_day = dtstart_day+
 
         dtstart_time = dirt_week[course_period_start]  # 上课时间
-        dtend_time = dirt_week[course_period_end] # 最后一节小课下课时间
+        dtend_time = dirt_week[course_period_end]  # 最后一节小课下课时间
 
-        dtstart_datetime = datetime.combine(dt_date, dtstart_time) # 上课日期时间
+        dtstart_datetime = datetime.combine(dt_date, dtstart_time)  # 上课日期时间
 
-        dtend_datetime = datetime.combine(dt_date,dtend_time) # 下课日期时间
+        dtend_datetime = datetime.combine(dt_date, dtend_time)  # 下课日期时间
         dtend_datetime += lesson_time
 
-        #dtend_datetime = dtstart_datetime + lesson_time
+        # dtend_datetime = dtstart_datetime + lesson_time
 
-        interval = 1 if one_course['sjbz'] == '0' else 2 # 单双周判定
+        interval = 1 if one_course['sjbz'] == '0' else 2  # 单双周判定
 
         count = (week_end - week_start + 1) if one_course['sjbz'] == '0' else (((week_end - week_start) / 2) + 1)
 
@@ -92,16 +92,17 @@ def getcalender(course):
         event.add('uid', str(uuid1()) + '@JGSU')  # UUID
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', one_course['jsxm'] + '@' + one_course['jsmc'])  # 地点
-        event.add('description', '第{}-{}节\r\n教师： {}\r\n教室: {}'.format(course_period_start,course_period_end,one_course['jsxm'],one_course['jsmc'])) # 教师名称
-        event.add('dtstart', dtstart_datetime)
-        event.add('dtend', dtend_datetime)
+        event.add('description',
+                  '第{}-{}节\r\n教师： {}\r\n教室: {}'.format(course_period_start, course_period_end, one_course['jsxm'],
+                                                       one_course['jsmc']))  # 教师名称
+        event.add('dtstart', dtstart_datetime, tzinfo=pytz.timezone("Asia/Shanghai"))
+        event.add('dtend', dtend_datetime, tzinfo=pytz.timezone("Asia/Shanghai"))
         event.add('rrule', {'freq': 'weekly', 'interval': interval, 'count': count})
 
         calt.add_component(event)
 
-        #print_cal(calt)
+        # print_cal(calt)
 
-
-    with open('output.ics','w+',encoding='utf-8') as file:
-        #file.write(calt.to_ical().decode('utf-8'))
-        file.write(calt.to_ical().decode('utf-8'.replace('\r\n','\n').strip()))
+    with open('output.ics', 'w+', encoding='utf-8') as file:
+        # file.write(calt.to_ical().decode('utf-8'))
+        file.write(calt.to_ical().decode('utf-8'.replace('\r\n', '\n').strip()))
