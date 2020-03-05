@@ -76,9 +76,9 @@ def getcalender(course):
         dtstart_time = dirt_week[course_period_start]  # 上课时间
         dtend_time = dirt_week[course_period_end]  # 最后一节小课下课时间
 
-        dtstart_datetime = datetime.combine(dt_date, dtstart_time)  # 上课日期时间
+        dtstart_datetime = datetime.combine(dt_date, dtstart_time,tzinfo=pytz.timezone("Asia/Shanghai"))  # 上课日期时间
 
-        dtend_datetime = datetime.combine(dt_date, dtend_time)  # 下课日期时间
+        dtend_datetime = datetime.combine(dt_date, dtend_time, tzinfo=pytz.timezone("Asia/Shanghai"))  # 下课日期时间
         dtend_datetime += lesson_time
 
         # dtend_datetime = dtstart_datetime + lesson_time
@@ -95,8 +95,8 @@ def getcalender(course):
         event.add('description',
                   '第{}-{}节\r\n教师： {}\r\n教室: {}'.format(course_period_start, course_period_end, one_course['jsxm'],
                                                        one_course['jsmc']))  # 教师名称
-        event.add('dtstart', dtstart_datetime, tzinfo=pytz.timezone("Asia/Shanghai"))
-        event.add('dtend', dtend_datetime, tzinfo=pytz.timezone("Asia/Shanghai"))
+        event.add('dtstart', dtstart_datetime)
+        event.add('dtend', dtend_datetime)
         event.add('rrule', {'freq': 'weekly', 'interval': interval, 'count': count})
 
         calt.add_component(event)

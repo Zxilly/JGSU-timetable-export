@@ -129,6 +129,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-priinfo.py
+
+info.py
 .idea/
 output.ics

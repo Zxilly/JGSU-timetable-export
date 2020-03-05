@@ -2,7 +2,7 @@ import json
 
 import qzsdk
 from function import *
-from priinfo import *
+from info import *
 
 course = []
 course_true = []
