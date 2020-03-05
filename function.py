@@ -76,7 +76,7 @@ def getcalender(course):
         dtstart_time = dirt_week[course_period_start]  # 上课时间
         dtend_time = dirt_week[course_period_end]  # 最后一节小课下课时间
 
-        dtstart_datetime = datetime.combine(dt_date, dtstart_time,tzinfo=pytz.timezone("Asia/Shanghai"))  # 上课日期时间
+        dtstart_datetime = datetime.combine(dt_date, dtstart_time, tzinfo=pytz.timezone("Asia/Shanghai"))  # 上课日期时间
 
         dtend_datetime = datetime.combine(dt_date, dtend_time, tzinfo=pytz.timezone("Asia/Shanghai"))  # 下课日期时间
         dtend_datetime += lesson_time
@@ -103,6 +103,6 @@ def getcalender(course):
 
         # print_cal(calt)
 
-    with open('output.ics', 'w+', encoding='utf-8') as file:
+    with open('output.ics', 'w+', encoding='utf-8', newline='') as file:
         # file.write(calt.to_ical().decode('utf-8'))
-        file.write(calt.to_ical().decode('utf-8'.replace('\r\n', '\n').strip()))
+        file.write(calt.to_ical().decode('utf-8'.replace('\r\n', '\n')).strip())
