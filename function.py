@@ -13,7 +13,7 @@ def rmzero(input):
     return int(str(input))
 
 
-def getcalender(course):
+def getcalender(course,server_status=0):
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
     calt['prodid'] = '-//Zxilly//JGSUCalender//CN'
@@ -103,6 +103,9 @@ def getcalender(course):
 
         # print_cal(calt)
 
-    with open('output.ics', 'w+', encoding='utf-8', newline='') as file:
-        # file.write(calt.to_ical().decode('utf-8'))
-        file.write(calt.to_ical().decode('utf-8'.replace('\r\n', '\n')).strip())
+    if server_status==0:
+        with open('output.ics', 'w+', encoding='utf-8', newline='') as file:
+            # file.write(calt.to_ical().decode('utf-8'))
+            file.write(calt.to_ical().decode('utf-8'.replace('\r\n', '\n')).strip())
+    else:
+        return calt.to_ical().decode('utf-8'.replace('\r\n','\n').strip())
