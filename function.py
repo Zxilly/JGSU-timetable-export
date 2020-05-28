@@ -50,7 +50,10 @@ def getcalender(course,server_status=0):
         print(one_course)
 
         week_start = int(one_course['kkzc'].split('-')[0])  # 周次开始
-        week_end = int(one_course['kkzc'].split('-')[1])  # 周次结束
+        try:
+            week_end = int(one_course['kkzc'].split('-')[1])  # 周次结束
+        except IndexError:
+            week_end=week_start #catch单周课程
         course_weekday = int(re.match(r'\d', one_course['kcsj'])[0])
 
         course_period_regrx = re.compile(r'(\d\d)')  # 编译正则
