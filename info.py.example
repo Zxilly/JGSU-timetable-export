@@ -1,5 +1,0 @@
-from datetime import date
-
-semester_start = date(,,)
-account = ""
-password = ""
