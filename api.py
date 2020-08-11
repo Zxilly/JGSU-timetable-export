@@ -1,8 +1,8 @@
 #login url
-login = 'http://jw.jgsu.edu.cn:18888/mobile/login'
+session = 'https://jw.jgsu.edu.cn:19995/api/api/verificationCode'
 
-current = 'http://jw.jgsu.edu.cn:18888/baseInfo/mobile/common/selectCurrentInfo'
+login = 'https://jw.jgsu.edu.cn:19995/api/api/login'
 
-weeklist = 'http://jw.jgsu.edu.cn:18888/baseInfo/mobile/common/queryCurrentSemesterWeekList'
+course = 'https://jw.jgsu.edu.cn:19995/api/arrange/CourseScheduleAllQuery/studentCourseSchedule'
 
-course = 'http://jw.jgsu.edu.cn:18888/arrange/mobile/courseSchedule/courseSchedule'
+semester = 'https://jw.jgsu.edu.cn:19995/api/baseInfo/semester/selectCurrentXnXq'
