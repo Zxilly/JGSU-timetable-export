@@ -15,6 +15,8 @@ header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
     # 'csrfToken':'610453b7b20b8a4402042a201b3665b1',
 }
+
+
 if __name__ == '__main__':
     mainSession = requests.session()
     mainSession.params = {"_t": int(datetime.now().timestamp())}
@@ -52,8 +54,17 @@ if __name__ == '__main__':
         "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     }).json()
 
-    courseData = req['data']
+    tmpData = req['data']
 
-    for course in courseData:
+    courseData = {}
+
+    for course in tmpData:
+        time = course['time']['timeCode']
+        week = course['week']['weekCode']
+        key = int(week)*100+int(time)
+        courseData[key]=course['courseList']
+
+    print(json.dumps(courseData,ensure_ascii=False))
+
 
 
