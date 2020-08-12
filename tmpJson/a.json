@@ -1,0 +1,1850 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "1",
+          "courseName": "JAVA程序设计",
+          "courseCode": "*08090211",
+          "weeks": "3-17 单",
+          "teacherName": "肖晓朋",
+          "teacherCode": "9920070067",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B504",
+          "classroomCode": "10B504",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727522019065",
+          "timeName": "第1节",
+          "isLock": "0",
+          "sectionName": "1",
+          "groupId": "727522019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "2",
+          "courseName": "JAVA程序设计",
+          "courseCode": "*08090211",
+          "weeks": "3-17 单",
+          "teacherName": "肖晓朋",
+          "teacherCode": "9920070067",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B504",
+          "classroomCode": "10B504",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727522019065",
+          "timeName": "第2节",
+          "isLock": "0",
+          "sectionName": "2",
+          "groupId": "727522019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "3",
+          "courseName": "大学体育B2",
+          "courseCode": "*0402010B2",
+          "weeks": "1-16",
+          "teacherName": "龙晓东",
+          "teacherCode": "9919930043",
+          "numberOfStudent": "34",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "电信定向运动1",
+          "teachingClassCode": "2020-2021-1*0402010B210001",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "2020-2021-1*0402010B210001",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "4",
+          "courseName": "大学体育B2",
+          "courseCode": "*0402010B2",
+          "weeks": "1-16",
+          "teacherName": "龙晓东",
+          "teacherCode": "9919930043",
+          "numberOfStudent": "34",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "电信定向运动1",
+          "teachingClassCode": "2020-2021-1*0402010B210001",
+          "timeName": "第4节",
+          "isLock": "0",
+          "sectionName": "4",
+          "groupId": "2020-2021-1*0402010B210001",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "5",
+          "courseName": "概率与统计",
+          "courseCode": "*07010108",
+          "weeks": "1-17",
+          "teacherName": "陶黄林",
+          "teacherCode": "9920040041",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "11A-204",
+          "classroomCode": "11A-204",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727472019065",
+          "timeName": "第5节",
+          "isLock": "0",
+          "sectionName": "5",
+          "groupId": "727472019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "6",
+          "courseName": "概率与统计",
+          "courseCode": "*07010108",
+          "weeks": "1-17",
+          "teacherName": "陶黄林",
+          "teacherCode": "9920040041",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "11A-204",
+          "classroomCode": "11A-204",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727472019065",
+          "timeName": "第6节",
+          "isLock": "0",
+          "sectionName": "6",
+          "groupId": "727472019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "7",
+          "courseName": "数字逻辑",
+          "courseCode": "*08090205",
+          "weeks": "9-16",
+          "teacherName": "罗文浪",
+          "teacherCode": "9919850006",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A201",
+          "classroomCode": "10A201",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727482019065",
+          "timeName": "第7节",
+          "isLock": "0",
+          "sectionName": "7",
+          "groupId": "727482019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "8",
+          "courseName": "数字逻辑",
+          "courseCode": "*08090205",
+          "weeks": "9-16",
+          "teacherName": "罗文浪",
+          "teacherCode": "9919850006",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A201",
+          "classroomCode": "10A201",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727482019065",
+          "timeName": "第8节",
+          "isLock": "0",
+          "sectionName": "8",
+          "groupId": "727482019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "9",
+          "courseName": "JAVA程序设计",
+          "courseCode": "*08090211",
+          "weeks": "1-17",
+          "teacherName": "肖晓朋",
+          "teacherCode": "9920070067",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727522019065",
+          "timeName": "第9节",
+          "isLock": "0",
+          "sectionName": "9",
+          "groupId": "727522019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "10",
+          "courseName": "JAVA程序设计",
+          "courseCode": "*08090211",
+          "weeks": "1-17",
+          "teacherName": "肖晓朋",
+          "teacherCode": "9920070067",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727522019065",
+          "timeName": "第10节",
+          "isLock": "0",
+          "sectionName": "10",
+          "groupId": "727522019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "2",
+        "weekName": "星期一",
+        "sort": "1"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "2",
+          "dayOfWeekName": "星期一",
+          "time": "11",
+          "courseName": "JAVA程序设计",
+          "courseCode": "*08090211",
+          "weeks": "1-17",
+          "teacherName": "肖晓朋",
+          "teacherCode": "9920070067",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727522019065",
+          "timeName": "第11节",
+          "isLock": "0",
+          "sectionName": "11",
+          "groupId": "727522019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "3",
+          "dayOfWeekName": "星期二",
+          "time": "3",
+          "courseName": "英语拓展课程1",
+          "courseCode": "05020136",
+          "weeks": "1-16",
+          "teacherName": "蔡晓蕙",
+          "teacherCode": "9919950035",
+          "classroomName": "10A104",
+          "classroomCode": "10A104",
+          "numberOfStudent": "43",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "跨文化交际004班",
+          "teachingClassCode": "2020-2021-10502013601003",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "2020-2021-10502013601003",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "3",
+          "dayOfWeekName": "星期二",
+          "time": "4",
+          "courseName": "英语拓展课程1",
+          "courseCode": "05020136",
+          "weeks": "1-16",
+          "teacherName": "蔡晓蕙",
+          "teacherCode": "9919950035",
+          "classroomName": "10A104",
+          "classroomCode": "10A104",
+          "numberOfStudent": "43",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "跨文化交际004班",
+          "teachingClassCode": "2020-2021-10502013601003",
+          "timeName": "第4节",
+          "isLock": "0",
+          "sectionName": "4",
+          "groupId": "2020-2021-10502013601003",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "3",
+          "dayOfWeekName": "星期二",
+          "time": "5",
+          "courseName": "数字逻辑",
+          "courseCode": "*08090205",
+          "weeks": "1-17",
+          "teacherName": "罗文浪",
+          "teacherCode": "9919850006",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727482019065",
+          "timeName": "第5节",
+          "isLock": "0",
+          "sectionName": "5",
+          "groupId": "727482019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "3",
+          "dayOfWeekName": "星期二",
+          "time": "6",
+          "courseName": "数字逻辑",
+          "courseCode": "*08090205",
+          "weeks": "1-17",
+          "teacherName": "罗文浪",
+          "teacherCode": "9919850006",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727482019065",
+          "timeName": "第6节",
+          "isLock": "0",
+          "sectionName": "6",
+          "groupId": "727482019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "3",
+          "dayOfWeekName": "星期二",
+          "time": "7",
+          "courseName": "数字逻辑",
+          "courseCode": "*08090205",
+          "weeks": "1-17",
+          "teacherName": "罗文浪",
+          "teacherCode": "9919850006",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727482019065",
+          "timeName": "第7节",
+          "isLock": "0",
+          "sectionName": "7",
+          "groupId": "727482019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "3",
+        "weekName": "星期二",
+        "sort": "2"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "1",
+          "courseName": "数据库系统原理",
+          "courseCode": "*08090210",
+          "weeks": "3-17 单",
+          "teacherName": "郭晨",
+          "teacherCode": "9920050070",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B403",
+          "classroomCode": "10B403",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727502019065",
+          "timeName": "第1节",
+          "isLock": "0",
+          "sectionName": "1",
+          "groupId": "727502019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "2",
+          "courseName": "数据库系统原理",
+          "courseCode": "*08090210",
+          "weeks": "3-17 单",
+          "teacherName": "郭晨",
+          "teacherCode": "9920050070",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B403",
+          "classroomCode": "10B403",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727502019065",
+          "timeName": "第2节",
+          "isLock": "0",
+          "sectionName": "2",
+          "groupId": "727502019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "3",
+          "courseName": "数据结构与算法",
+          "courseCode": "*08090207",
+          "weeks": "3-17 单",
+          "teacherName": "曾劲涛",
+          "teacherCode": "9920010030",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B504",
+          "classroomCode": "10B504",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727492019065",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "727492019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "4",
+          "courseName": "数据结构与算法",
+          "courseCode": "*08090207",
+          "weeks": "3-17 单",
+          "teacherName": "曾劲涛",
+          "teacherCode": "9920010030",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B504",
+          "classroomCode": "10B504",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727492019065",
+          "timeName": "第4节",
+          "isLock": "0",
+          "sectionName": "4",
+          "groupId": "727492019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "5",
+          "courseName": "数据结构与算法",
+          "courseCode": "*08090207",
+          "weeks": "1-17",
+          "teacherName": "曾劲涛",
+          "teacherCode": "9920010030",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727492019065",
+          "timeName": "第5节",
+          "isLock": "0",
+          "sectionName": "5",
+          "groupId": "727492019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "6",
+          "courseName": "数据结构与算法",
+          "courseCode": "*08090207",
+          "weeks": "1-17",
+          "teacherName": "曾劲涛",
+          "teacherCode": "9920010030",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727492019065",
+          "timeName": "第6节",
+          "isLock": "0",
+          "sectionName": "6",
+          "groupId": "727492019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "4",
+          "dayOfWeekName": "星期三",
+          "time": "7",
+          "courseName": "数据结构与算法",
+          "courseCode": "*08090207",
+          "weeks": "1-17",
+          "teacherName": "曾劲涛",
+          "teacherCode": "9920010030",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10A003",
+          "classroomCode": "10A003",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727492019065",
+          "timeName": "第7节",
+          "isLock": "0",
+          "sectionName": "7",
+          "groupId": "727492019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "4",
+        "weekName": "星期三",
+        "sort": "3"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "1",
+          "courseName": "数据库系统原理",
+          "courseCode": "*08090210",
+          "weeks": "1-17",
+          "teacherName": "郭晨",
+          "teacherCode": "9920050070",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B104",
+          "classroomCode": "10B104",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727502019065",
+          "timeName": "第1节",
+          "isLock": "0",
+          "sectionName": "1",
+          "groupId": "727502019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "2",
+          "courseName": "数据库系统原理",
+          "courseCode": "*08090210",
+          "weeks": "1-17",
+          "teacherName": "郭晨",
+          "teacherCode": "9920050070",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B104",
+          "classroomCode": "10B104",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727502019065",
+          "timeName": "第2节",
+          "isLock": "0",
+          "sectionName": "2",
+          "groupId": "727502019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "3",
+          "courseName": "数据库系统原理",
+          "courseCode": "*08090210",
+          "weeks": "1-17",
+          "teacherName": "郭晨",
+          "teacherCode": "9920050070",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B104",
+          "classroomCode": "10B104",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727502019065",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "727502019065",
+          "groupName": "19软件1",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "5",
+          "courseName": "大学物理实验A2",
+          "courseCode": "*07020106",
+          "weeks": "8-14",
+          "teacherName": "胡强林",
+          "teacherCode": "9920070002",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "numberOfStudent": "28",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727462019065",
+          "timeName": "第5节",
+          "isLock": "0",
+          "sectionName": "5",
+          "groupId": "72746201906502",
+          "groupName": "教学班02小组",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "6",
+          "courseName": "大学物理实验A2",
+          "courseCode": "*07020106",
+          "weeks": "8-14",
+          "teacherName": "胡强林",
+          "teacherCode": "9920070002",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "numberOfStudent": "28",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727462019065",
+          "timeName": "第6节",
+          "isLock": "0",
+          "sectionName": "6",
+          "groupId": "72746201906502",
+          "groupName": "教学班02小组",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "7",
+          "courseName": "大学物理实验A2",
+          "courseCode": "*07020106",
+          "weeks": "8-14",
+          "teacherName": "胡强林",
+          "teacherCode": "9920070002",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "numberOfStudent": "28",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727462019065",
+          "timeName": "第7节",
+          "isLock": "0",
+          "sectionName": "7",
+          "groupId": "72746201906502",
+          "groupName": "教学班02小组",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "5",
+          "dayOfWeekName": "星期四",
+          "time": "8",
+          "courseName": "大学物理实验A2",
+          "courseCode": "*07020106",
+          "weeks": "8-14",
+          "teacherName": "胡强林",
+          "teacherCode": "9920070002",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "numberOfStudent": "28",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727462019065",
+          "timeName": "第8节",
+          "isLock": "0",
+          "sectionName": "8",
+          "groupId": "72746201906502",
+          "groupName": "教学班02小组",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "5",
+        "weekName": "星期四",
+        "sort": "4"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "6",
+          "dayOfWeekName": "星期五",
+          "time": "1",
+          "courseName": "大学物理A2",
+          "courseCode": "*07020102",
+          "weeks": "1-17",
+          "teacherName": "黄强",
+          "teacherCode": "9919930018",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B105",
+          "classroomCode": "10B105",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727452019065",
+          "timeName": "第1节",
+          "isLock": "0",
+          "sectionName": "1",
+          "groupId": "727452019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "6",
+          "dayOfWeekName": "星期五",
+          "time": "2",
+          "courseName": "大学物理A2",
+          "courseCode": "*07020102",
+          "weeks": "1-17",
+          "teacherName": "黄强",
+          "teacherCode": "9919930018",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B105",
+          "classroomCode": "10B105",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727452019065",
+          "timeName": "第2节",
+          "isLock": "0",
+          "sectionName": "2",
+          "groupId": "727452019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "6",
+          "dayOfWeekName": "星期五",
+          "time": "3",
+          "courseName": "大学物理A2",
+          "courseCode": "*07020102",
+          "weeks": "1-17",
+          "teacherName": "黄强",
+          "teacherCode": "9919930018",
+          "className": "19软件1",
+          "calssCode": "2019065",
+          "classroomName": "10B105",
+          "classroomCode": "10B105",
+          "numberOfStudent": "57",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727452019065",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "727452019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "6",
+        "weekName": "星期五",
+        "sort": "5"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "7",
+          "dayOfWeekName": "星期六",
+          "time": "3",
+          "courseName": "形势与政策",
+          "courseCode": "*03040401-3",
+          "weeks": "6-9",
+          "teacherName": "蒋媛萍",
+          "teacherCode": "9920030015",
+          "className": "19软件1,19软件2",
+          "calssCode": "2019065,2019066",
+          "classroomName": "11B-106",
+          "classroomCode": "11B-106",
+          "numberOfStudent": "112",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727402019065",
+          "timeName": "第3节",
+          "isLock": "0",
+          "sectionName": "3",
+          "groupId": "727402019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": [
+        {
+          "dayOfWeek": "7",
+          "dayOfWeekName": "星期六",
+          "time": "4",
+          "courseName": "形势与政策",
+          "courseCode": "*03040401-3",
+          "weeks": "6-9",
+          "teacherName": "蒋媛萍",
+          "teacherCode": "9920030015",
+          "className": "19软件1,19软件2",
+          "calssCode": "2019065,2019066",
+          "classroomName": "11B-106",
+          "classroomCode": "11B-106",
+          "numberOfStudent": "112",
+          "semesters": "2020-2021-1",
+          "teachingClassName": "19软件1",
+          "teachingClassCode": "727402019065",
+          "timeName": "第4节",
+          "isLock": "0",
+          "sectionName": "4",
+          "groupId": "727402019065",
+          "studentName": "周昕雨"
+        }
+      ]
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "7",
+        "weekName": "星期六",
+        "sort": "6"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "1",
+        "timeName": "第1节",
+        "sort": "1"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "2",
+        "timeName": "第2节",
+        "sort": "2"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "3",
+        "timeName": "第3节",
+        "sort": "3"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "4",
+        "timeName": "第4节",
+        "sort": "4"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "5",
+        "timeName": "第5节",
+        "sort": "5"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "6",
+        "timeName": "第6节",
+        "sort": "6"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "7",
+        "timeName": "第7节",
+        "sort": "7"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "8",
+        "timeName": "第8节",
+        "sort": "8"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "9",
+        "timeName": "第9节",
+        "sort": "9"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "10",
+        "timeName": "第10节",
+        "sort": "10"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    },
+    {
+      "time": {
+        "timeCode": "11",
+        "timeName": "第11节",
+        "sort": "11"
+      },
+      "week": {
+        "weekCode": "1",
+        "weekName": "星期日",
+        "sort": "7"
+      },
+      "courseList": []
+    }
+  ]
+}

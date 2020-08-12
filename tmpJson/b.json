@@ -1,0 +1,195 @@
+{
+  "*08090211": {
+    "data": {
+      "courseName": "JAVA程序设计",
+      "teacherName": "肖晓朋",
+      "classroomName": "10B504",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      [
+        201,
+        202
+      ],
+      [
+        209,
+        210,
+        211
+      ]
+    ]
+  },
+  "*0402010B2": {
+    "data": {
+      "courseName": "大学体育B2",
+      "teacherName": "龙晓东",
+      "classroomName": "",
+      "studentNumber": "34",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      [
+        203,
+        204
+      ]
+    ]
+  },
+  "*07010108": {
+    "data": {
+      "courseName": "概率与统计",
+      "teacherName": "陶黄林",
+      "classroomName": "11A-204",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      [
+        205,
+        206
+      ]
+    ]
+  },
+  "*08090205": {
+    "data": {
+      "courseName": "数字逻辑",
+      "teacherName": "罗文浪",
+      "classroomName": "10A201",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "9",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      [
+        207,
+        208
+      ],
+      [
+        305,
+        306,
+        307
+      ]
+    ]
+  },
+  "05020136": {
+    "data": {
+      "courseName": "英语拓展课程1",
+      "teacherName": "蔡晓蕙",
+      "classroomName": "10A104",
+      "studentNumber": "43",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      [
+        303,
+        304
+      ]
+    ]
+  },
+  "*08090210": {
+    "data": {
+      "courseName": "数据库系统原理",
+      "teacherName": "郭晨",
+      "classroomName": "10B403",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      [
+        401,
+        402
+      ],
+      [
+        501,
+        502,
+        503
+      ]
+    ]
+  },
+  "*08090207": {
+    "data": {
+      "courseName": "数据结构与算法",
+      "teacherName": "曾劲涛",
+      "classroomName": "10B504",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      [
+        403,
+        404
+      ],
+      [
+        405,
+        406,
+        407
+      ]
+    ]
+  },
+  "*07020106": {
+    "data": {
+      "courseName": "大学物理实验A2",
+      "teacherName": "胡强林",
+      "classroomName": "",
+      "studentNumber": "28",
+      "interval": 1,
+      "startWeek": "8",
+      "endWeek": "14"
+    },
+    "timeSign": [
+      [
+        505,
+        506,
+        507,
+        508
+      ]
+    ]
+  },
+  "*07020102": {
+    "data": {
+      "courseName": "大学物理A2",
+      "teacherName": "黄强",
+      "classroomName": "10B105",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      [
+        601,
+        602,
+        603
+      ]
+    ]
+  },
+  "*03040401-3": {
+    "data": {
+      "courseName": "形势与政策",
+      "teacherName": "蒋媛萍",
+      "classroomName": "11B-106",
+      "studentNumber": "112",
+      "interval": 1,
+      "startWeek": "6",
+      "endWeek": "9"
+    },
+    "timeSign": [
+      [
+        703,
+        704
+      ]
+    ]
+  }
+}
