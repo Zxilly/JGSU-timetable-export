@@ -161,8 +161,16 @@ if __name__ == '__main__':
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
     calt['prodid'] = '-//Zxilly//JGSUCalender//CN'
+    calt['X-WR-TIMEZONE'] = 'Asia/Shanghai'
+    calt['X-WR-CALNAME'] = '课表'
     tz = icalendar.Timezone()
     tz['tzid'] = 'Asia/Shanghai'
+    tzStandard = icalendar.TimezoneStandard()
+    tzStandard.add('X-LIC-LOCATION','Asia/Shanghai')
+    tzStandard.add('TZOFFSETFROM',timedelta(hours=8))
+    tzStandard.add('TZOFFSETTO',timedelta(hours=8))
+    tzStandard.add('TZNAME','CST')
+    tz.add_component(tzStandard)
     calt.add_component(tz)
 
     for oneEvent in parsedCourseData:
