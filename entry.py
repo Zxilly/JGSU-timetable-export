@@ -116,7 +116,6 @@ if __name__ == '__main__':
             else:
                 courseData[course['courseCode']]['timeSign'].append(timeSign)
 
-    # print(json.dumps(courseData,ensure_ascii=False))
     for course in courseData.keys():
         data = courseData[course]
         data['timeSign'].sort()
@@ -143,13 +142,9 @@ if __name__ == '__main__':
         for oneTime in courseData[course]['timeSign']:
             day = int(int(oneTime[0]) / 100)
             startTimeID = int(oneTime[0] % 100)
-            #print(startTimeID)
             endTimeID = int(oneTime[-1] % 100)
-            #print(endTimeID)
             startTime = courseTimeDict[startTimeID]
-            #print(startTime)
             endTime = courseTimeDict[endTimeID] + COURSE_TIME
-            #print(endTime)
             parsedOneCourse = courseData[course]['data']
             parsedOneCourse['startTimeID'] = startTimeID
             parsedOneCourse['endTimeID'] = endTimeID
