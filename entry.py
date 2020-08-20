@@ -181,7 +181,7 @@ if __name__ == '__main__':
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('description',
-                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间: {} - {} \r\n周期: {} - {}\r\n学生数: {}'.format(oneEvent['startTimeID'],oneEvent['endTimeID'],oneEvent['teacherName'],oneEvent['classroomName'],str(oneEvent['startTime']),str(oneEvent['endTime']),oneEvent['startWeek'],oneEvent['endWeek'],oneEvent['studentNumber']))
+                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n学生数： {}'.format(oneEvent['startTimeID'],oneEvent['endTimeID'],oneEvent['teacherName'],oneEvent['classroomName'],str(oneEvent['startTime']),str(oneEvent['endTime']),oneEvent['startWeek'],oneEvent['endWeek'],oneEvent['studentNumber']))
         event.add('dtstart', dtstart_datetime)
         event.add('dtend', dtend_datetime)
         event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
