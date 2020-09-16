@@ -29,17 +29,17 @@ ONE_WEEK = timedelta(weeks=1)
 TIMEZONE = pytz.timezone("Asia/Shanghai")
 
 courseTimeDict = {
-    1: timedelta(hours=8, minutes=0),
-    2: timedelta(hours=8, minutes=55),
-    3: timedelta(hours=10, minutes=0),
-    4: timedelta(hours=10, minutes=55),
-    5: timedelta(hours=14, minutes=30),
-    6: timedelta(hours=15, minutes=25),
-    7: timedelta(hours=16, minutes=20),
-    8: timedelta(hours=18, minutes=30),
-    9: timedelta(hours=19, minutes=25),
-    10: timedelta(hours=20, minutes=20),
-    11: timedelta(hours=21, minutes=15)
+    1: timedelta(hours=8, minutes=20),
+    2: timedelta(hours=9, minutes=10),
+    3: timedelta(hours=10, minutes=15),
+    4: timedelta(hours=11, minutes=5),
+    5: timedelta(hours=14, minutes=00),
+    6: timedelta(hours=14, minutes=50),
+    7: timedelta(hours=15, minutes=55),
+    8: timedelta(hours=16, minutes=45),
+    9: timedelta(hours=18, minutes=30),
+    10: timedelta(hours=19, minutes=20),
+    11: timedelta(hours=20, minutes=10)
 }
 
 if __name__ == '__main__':
@@ -82,7 +82,6 @@ if __name__ == '__main__':
     }).json()
 
     tmpData = req['data']
-
     courseData = {}
     parsedCourseData = []
 
@@ -146,6 +145,8 @@ if __name__ == '__main__':
             startTime = courseTimeDict[startTimeID]
             endTime = courseTimeDict[endTimeID] + COURSE_TIME
             parsedOneCourse = courseData[course]['data']
+            print(parsedOneCourse)
+            exit(0)
             parsedOneCourse['startTimeID'] = startTimeID
             parsedOneCourse['endTimeID'] = endTimeID
             parsedOneCourse['startTime'] = startTime
@@ -161,19 +162,21 @@ if __name__ == '__main__':
     tz = icalendar.Timezone()
     tz['tzid'] = 'Asia/Shanghai'
     tzStandard = icalendar.TimezoneStandard()
-    tzStandard.add('X-LIC-LOCATION','Asia/Shanghai')
-    tzStandard.add('TZOFFSETFROM',timedelta(hours=8))
-    tzStandard.add('TZOFFSETTO',timedelta(hours=8))
-    tzStandard.add('TZNAME','CST')
+    tzStandard.add('X-LIC-LOCATION', 'Asia/Shanghai')
+    tzStandard.add('TZOFFSETFROM', timedelta(hours=8))
+    tzStandard.add('TZOFFSETTO', timedelta(hours=8))
+    tzStandard.add('TZNAME', 'CST')
     tz.add_component(tzStandard)
     calt.add_component(tz)
 
     for oneEvent in parsedCourseData:
-        count = (int(oneEvent['endWeek'])-int(oneEvent['startWeek']))/int(oneEvent['interval'])+1
-        dtstart_datetime = semesterStartTime+ (int(oneEvent['startWeek'])-1)*ONE_WEEK+(int(oneEvent['day'])-2)*ONE_DAY+oneEvent['startTime']
-        dtend_datetime = semesterStartTime+ (int(oneEvent['startWeek'])-1)*ONE_WEEK+(int(oneEvent['day'])-2)*ONE_DAY+oneEvent['endTime']
-        #dtstart_datetime.tzinfo = TIMEZONE
-        #dtend_datetime.tzinfo = TIMEZONE
+        count = (int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1
+        dtstart_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
+                    int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
+        dtend_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
+                    int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
+        # dtstart_datetime.tzinfo = TIMEZONE
+        # dtend_datetime.tzinfo = TIMEZONE
 
         event = icalendar.Event()
         event.add('summary', oneEvent['courseName'])  # 标题
@@ -181,13 +184,14 @@ if __name__ == '__main__':
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('description',
-                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n学生数： {}'.format(oneEvent['startTimeID'],oneEvent['endTimeID'],oneEvent['teacherName'],oneEvent['classroomName'],str(oneEvent['startTime']),str(oneEvent['endTime']),oneEvent['startWeek'],oneEvent['endWeek'],oneEvent['studentNumber']))
+                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n学生数： {}'.format(
+                      oneEvent['startTimeID'], oneEvent['endTimeID'], oneEvent['teacherName'],
+                      oneEvent['classroomName'], str(oneEvent['startTime']), str(oneEvent['endTime']),
+                      oneEvent['startWeek'], oneEvent['endWeek'], oneEvent['studentNumber']))
         event.add('dtstart', dtstart_datetime)
         event.add('dtend', dtend_datetime)
         event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
-    with open('output.ics','wb') as f:
+    with open('output.ics', 'wb') as f:
         f.write(calt.to_ical())
-
-
