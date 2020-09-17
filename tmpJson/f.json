@@ -1,0 +1,252 @@
+{
+  "611eb230ba4f595a4baef19482b3c945": {
+    "data": {
+      "courseName": "JAVA程序设计",
+      "teacherName": "肖晓朋",
+      "classroomName": "10B504",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      3170201,
+      3170202
+    ]
+  },
+  "b10ec4367bbaac9846831c49e23a5d1e": {
+    "data": {
+      "courseName": "大学体育B2",
+      "teacherName": "龙晓东",
+      "classroomName": "",
+      "studentNumber": "34",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      1160203,
+      1160204
+    ]
+  },
+  "b4264c1654dd73d155b3fc31f2ef3959": {
+    "data": {
+      "courseName": "概率与统计",
+      "teacherName": "陶黄林",
+      "classroomName": "11A-204",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      1170205,
+      1170206
+    ]
+  },
+  "4874a934f4ef8dc7c469ae7437353f66": {
+    "data": {
+      "courseName": "数字逻辑",
+      "teacherName": "罗文浪",
+      "classroomName": "10A201",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "13",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      13160207,
+      13160208,
+      13160307,
+      13160308
+    ]
+  },
+  "0a9d1f258eb53b25dbc2ea1d9f90ca60": {
+    "data": {
+      "courseName": "JAVA程序设计",
+      "teacherName": "肖晓朋",
+      "classroomName": "10A003",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      1170209,
+      1170210,
+      1170211
+    ]
+  },
+  "ae3a15efe12e94d1afc2940ec00edb66": {
+    "data": {
+      "courseName": "英语拓展课程1",
+      "teacherName": "蔡晓蕙",
+      "classroomName": "10A104",
+      "studentNumber": "43",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      1160303,
+      1160304
+    ]
+  },
+  "67599692357fdd6965dba27250fd6abc": {
+    "data": {
+      "courseName": "数字逻辑",
+      "teacherName": "罗文浪",
+      "classroomName": "10A003",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "12"
+    },
+    "timeSign": [
+      1120307,
+      1120308,
+      1120501,
+      1120502
+    ]
+  },
+  "42f47555b777c98d7ab1ca29b1b0a7d9": {
+    "data": {
+      "courseName": "数据库系统原理",
+      "teacherName": "魏韡",
+      "classroomName": "10B403",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      3170401,
+      3170402
+    ]
+  },
+  "eea2551a4407ce4bb5cd7caa08b8550e": {
+    "data": {
+      "courseName": "数据结构与算法",
+      "teacherName": "曾劲涛",
+      "classroomName": "10B504",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "3",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      3170403,
+      3170404
+    ]
+  },
+  "b179b37d4db14ab2f48e560a0cf8acb1": {
+    "data": {
+      "courseName": "数据结构与算法",
+      "teacherName": "曾劲涛",
+      "classroomName": "10A003",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      1170405,
+      1170406,
+      1170407
+    ]
+  },
+  "a21c036f0b26af1899a2ea69b75f9865": {
+    "data": {
+      "courseName": "国际政治学（gx）",
+      "teacherName": "杜德荣",
+      "classroomName": "10B201",
+      "studentNumber": "120",
+      "interval": 1,
+      "startWeek": "2",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      2170409,
+      2170410
+    ]
+  },
+  "74989c5badd84b87f94b1a682095b2aa": {
+    "data": {
+      "courseName": "大学物理实验A2",
+      "teacherName": "胡强林",
+      "classroomName": "",
+      "studentNumber": "28",
+      "interval": 1,
+      "startWeek": "8",
+      "endWeek": "14"
+    },
+    "timeSign": [
+      8140505,
+      8140506,
+      8140507,
+      8140508
+    ]
+  },
+  "c188cc243209199ac35485ef786322be": {
+    "data": {
+      "courseName": "解读大众传播（gx）",
+      "teacherName": "徐桂林",
+      "classroomName": "第5教学楼206",
+      "studentNumber": "46",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "16"
+    },
+    "timeSign": [
+      1160509,
+      1160510
+    ]
+  },
+  "3a6dab66cbd699ca563e23f90e5a6c52": {
+    "data": {
+      "courseName": "大学物理A2",
+      "teacherName": "黄强",
+      "classroomName": "10B105",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      1170601,
+      1170602,
+      1170603
+    ]
+  },
+  "927f09c339b469c1b5f0f121f6dd56df": {
+    "data": {
+      "courseName": "数据库系统原理",
+      "teacherName": "魏韡",
+      "classroomName": "10B208",
+      "studentNumber": "57",
+      "interval": 1,
+      "startWeek": "1",
+      "endWeek": "17"
+    },
+    "timeSign": [
+      1170605,
+      1170606,
+      1170607
+    ]
+  },
+  "458b6aef6a3948e3408500f1df8df541": {
+    "data": {
+      "courseName": "形势与政策",
+      "teacherName": "蒋媛萍",
+      "classroomName": "11B-106",
+      "studentNumber": "111",
+      "interval": 1,
+      "startWeek": "6",
+      "endWeek": "9"
+    },
+    "timeSign": [
+      6090703,
+      6090704
+    ]
+  }
+}

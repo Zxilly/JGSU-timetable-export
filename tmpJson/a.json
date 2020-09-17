@@ -1,1850 +1,254 @@
-{
-  "code": 200,
-  "data": [
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "1",
-          "courseName": "JAVA³ÌĞòÉè¼Æ",
-          "courseCode": "*08090211",
-          "weeks": "3-17 µ¥",
-          "teacherName": "Ğ¤ÏşÅó",
-          "teacherCode": "9920070067",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B504",
-          "classroomCode": "10B504",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727522019065",
-          "timeName": "µÚ1½Ú",
-          "isLock": "0",
-          "sectionName": "1",
-          "groupId": "727522019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "2",
-          "courseName": "JAVA³ÌĞòÉè¼Æ",
-          "courseCode": "*08090211",
-          "weeks": "3-17 µ¥",
-          "teacherName": "Ğ¤ÏşÅó",
-          "teacherCode": "9920070067",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B504",
-          "classroomCode": "10B504",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727522019065",
-          "timeName": "µÚ2½Ú",
-          "isLock": "0",
-          "sectionName": "2",
-          "groupId": "727522019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "3",
-          "courseName": "´óÑ§ÌåÓıB2",
-          "courseCode": "*0402010B2",
-          "weeks": "1-16",
-          "teacherName": "ÁúÏş¶«",
-          "teacherCode": "9919930043",
-          "numberOfStudent": "34",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "µçĞÅ¶¨ÏòÔË¶¯1",
-          "teachingClassCode": "2020-2021-1*0402010B210001",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "2020-2021-1*0402010B210001",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "4",
-          "courseName": "´óÑ§ÌåÓıB2",
-          "courseCode": "*0402010B2",
-          "weeks": "1-16",
-          "teacherName": "ÁúÏş¶«",
-          "teacherCode": "9919930043",
-          "numberOfStudent": "34",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "µçĞÅ¶¨ÏòÔË¶¯1",
-          "teachingClassCode": "2020-2021-1*0402010B210001",
-          "timeName": "µÚ4½Ú",
-          "isLock": "0",
-          "sectionName": "4",
-          "groupId": "2020-2021-1*0402010B210001",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "5",
-          "courseName": "¸ÅÂÊÓëÍ³¼Æ",
-          "courseCode": "*07010108",
-          "weeks": "1-17",
-          "teacherName": "ÌÕ»ÆÁÖ",
-          "teacherCode": "9920040041",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "11A-204",
-          "classroomCode": "11A-204",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727472019065",
-          "timeName": "µÚ5½Ú",
-          "isLock": "0",
-          "sectionName": "5",
-          "groupId": "727472019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "6",
-          "courseName": "¸ÅÂÊÓëÍ³¼Æ",
-          "courseCode": "*07010108",
-          "weeks": "1-17",
-          "teacherName": "ÌÕ»ÆÁÖ",
-          "teacherCode": "9920040041",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "11A-204",
-          "classroomCode": "11A-204",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727472019065",
-          "timeName": "µÚ6½Ú",
-          "isLock": "0",
-          "sectionName": "6",
-          "groupId": "727472019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "7",
-          "courseName": "Êı×ÖÂß¼­",
-          "courseCode": "*08090205",
-          "weeks": "9-16",
-          "teacherName": "ÂŞÎÄÀË",
-          "teacherCode": "9919850006",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A201",
-          "classroomCode": "10A201",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727482019065",
-          "timeName": "µÚ7½Ú",
-          "isLock": "0",
-          "sectionName": "7",
-          "groupId": "727482019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "8",
-          "courseName": "Êı×ÖÂß¼­",
-          "courseCode": "*08090205",
-          "weeks": "9-16",
-          "teacherName": "ÂŞÎÄÀË",
-          "teacherCode": "9919850006",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A201",
-          "classroomCode": "10A201",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727482019065",
-          "timeName": "µÚ8½Ú",
-          "isLock": "0",
-          "sectionName": "8",
-          "groupId": "727482019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "9",
-          "courseName": "JAVA³ÌĞòÉè¼Æ",
-          "courseCode": "*08090211",
-          "weeks": "1-17",
-          "teacherName": "Ğ¤ÏşÅó",
-          "teacherCode": "9920070067",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727522019065",
-          "timeName": "µÚ9½Ú",
-          "isLock": "0",
-          "sectionName": "9",
-          "groupId": "727522019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "10",
-          "courseName": "JAVA³ÌĞòÉè¼Æ",
-          "courseCode": "*08090211",
-          "weeks": "1-17",
-          "teacherName": "Ğ¤ÏşÅó",
-          "teacherCode": "9920070067",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727522019065",
-          "timeName": "µÚ10½Ú",
-          "isLock": "0",
-          "sectionName": "10",
-          "groupId": "727522019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "2",
-        "weekName": "ĞÇÆÚÒ»",
-        "sort": "1"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "2",
-          "dayOfWeekName": "ĞÇÆÚÒ»",
-          "time": "11",
-          "courseName": "JAVA³ÌĞòÉè¼Æ",
-          "courseCode": "*08090211",
-          "weeks": "1-17",
-          "teacherName": "Ğ¤ÏşÅó",
-          "teacherCode": "9920070067",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727522019065",
-          "timeName": "µÚ11½Ú",
-          "isLock": "0",
-          "sectionName": "11",
-          "groupId": "727522019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "3",
-          "dayOfWeekName": "ĞÇÆÚ¶ş",
-          "time": "3",
-          "courseName": "Ó¢ÓïÍØÕ¹¿Î³Ì1",
-          "courseCode": "05020136",
-          "weeks": "1-16",
-          "teacherName": "²ÌÏşŞ¥",
-          "teacherCode": "9919950035",
-          "classroomName": "10A104",
-          "classroomCode": "10A104",
-          "numberOfStudent": "43",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "¿çÎÄ»¯½»¼Ê004°à",
-          "teachingClassCode": "2020-2021-10502013601003",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "2020-2021-10502013601003",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "3",
-          "dayOfWeekName": "ĞÇÆÚ¶ş",
-          "time": "4",
-          "courseName": "Ó¢ÓïÍØÕ¹¿Î³Ì1",
-          "courseCode": "05020136",
-          "weeks": "1-16",
-          "teacherName": "²ÌÏşŞ¥",
-          "teacherCode": "9919950035",
-          "classroomName": "10A104",
-          "classroomCode": "10A104",
-          "numberOfStudent": "43",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "¿çÎÄ»¯½»¼Ê004°à",
-          "teachingClassCode": "2020-2021-10502013601003",
-          "timeName": "µÚ4½Ú",
-          "isLock": "0",
-          "sectionName": "4",
-          "groupId": "2020-2021-10502013601003",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "3",
-          "dayOfWeekName": "ĞÇÆÚ¶ş",
-          "time": "5",
-          "courseName": "Êı×ÖÂß¼­",
-          "courseCode": "*08090205",
-          "weeks": "1-17",
-          "teacherName": "ÂŞÎÄÀË",
-          "teacherCode": "9919850006",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727482019065",
-          "timeName": "µÚ5½Ú",
-          "isLock": "0",
-          "sectionName": "5",
-          "groupId": "727482019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "3",
-          "dayOfWeekName": "ĞÇÆÚ¶ş",
-          "time": "6",
-          "courseName": "Êı×ÖÂß¼­",
-          "courseCode": "*08090205",
-          "weeks": "1-17",
-          "teacherName": "ÂŞÎÄÀË",
-          "teacherCode": "9919850006",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727482019065",
-          "timeName": "µÚ6½Ú",
-          "isLock": "0",
-          "sectionName": "6",
-          "groupId": "727482019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "3",
-          "dayOfWeekName": "ĞÇÆÚ¶ş",
-          "time": "7",
-          "courseName": "Êı×ÖÂß¼­",
-          "courseCode": "*08090205",
-          "weeks": "1-17",
-          "teacherName": "ÂŞÎÄÀË",
-          "teacherCode": "9919850006",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727482019065",
-          "timeName": "µÚ7½Ú",
-          "isLock": "0",
-          "sectionName": "7",
-          "groupId": "727482019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "3",
-        "weekName": "ĞÇÆÚ¶ş",
-        "sort": "2"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "1",
-          "courseName": "Êı¾İ¿âÏµÍ³Ô­Àí",
-          "courseCode": "*08090210",
-          "weeks": "3-17 µ¥",
-          "teacherName": "¹ù³¿",
-          "teacherCode": "9920050070",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B403",
-          "classroomCode": "10B403",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727502019065",
-          "timeName": "µÚ1½Ú",
-          "isLock": "0",
-          "sectionName": "1",
-          "groupId": "727502019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "2",
-          "courseName": "Êı¾İ¿âÏµÍ³Ô­Àí",
-          "courseCode": "*08090210",
-          "weeks": "3-17 µ¥",
-          "teacherName": "¹ù³¿",
-          "teacherCode": "9920050070",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B403",
-          "classroomCode": "10B403",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727502019065",
-          "timeName": "µÚ2½Ú",
-          "isLock": "0",
-          "sectionName": "2",
-          "groupId": "727502019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "3",
-          "courseName": "Êı¾İ½á¹¹ÓëËã·¨",
-          "courseCode": "*08090207",
-          "weeks": "3-17 µ¥",
-          "teacherName": "Ôø¾¢ÌÎ",
-          "teacherCode": "9920010030",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B504",
-          "classroomCode": "10B504",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727492019065",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "727492019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "4",
-          "courseName": "Êı¾İ½á¹¹ÓëËã·¨",
-          "courseCode": "*08090207",
-          "weeks": "3-17 µ¥",
-          "teacherName": "Ôø¾¢ÌÎ",
-          "teacherCode": "9920010030",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B504",
-          "classroomCode": "10B504",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727492019065",
-          "timeName": "µÚ4½Ú",
-          "isLock": "0",
-          "sectionName": "4",
-          "groupId": "727492019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "5",
-          "courseName": "Êı¾İ½á¹¹ÓëËã·¨",
-          "courseCode": "*08090207",
-          "weeks": "1-17",
-          "teacherName": "Ôø¾¢ÌÎ",
-          "teacherCode": "9920010030",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727492019065",
-          "timeName": "µÚ5½Ú",
-          "isLock": "0",
-          "sectionName": "5",
-          "groupId": "727492019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "6",
-          "courseName": "Êı¾İ½á¹¹ÓëËã·¨",
-          "courseCode": "*08090207",
-          "weeks": "1-17",
-          "teacherName": "Ôø¾¢ÌÎ",
-          "teacherCode": "9920010030",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727492019065",
-          "timeName": "µÚ6½Ú",
-          "isLock": "0",
-          "sectionName": "6",
-          "groupId": "727492019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "4",
-          "dayOfWeekName": "ĞÇÆÚÈı",
-          "time": "7",
-          "courseName": "Êı¾İ½á¹¹ÓëËã·¨",
-          "courseCode": "*08090207",
-          "weeks": "1-17",
-          "teacherName": "Ôø¾¢ÌÎ",
-          "teacherCode": "9920010030",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10A003",
-          "classroomCode": "10A003",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727492019065",
-          "timeName": "µÚ7½Ú",
-          "isLock": "0",
-          "sectionName": "7",
-          "groupId": "727492019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "4",
-        "weekName": "ĞÇÆÚÈı",
-        "sort": "3"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "1",
-          "courseName": "Êı¾İ¿âÏµÍ³Ô­Àí",
-          "courseCode": "*08090210",
-          "weeks": "1-17",
-          "teacherName": "¹ù³¿",
-          "teacherCode": "9920050070",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B104",
-          "classroomCode": "10B104",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727502019065",
-          "timeName": "µÚ1½Ú",
-          "isLock": "0",
-          "sectionName": "1",
-          "groupId": "727502019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "2",
-          "courseName": "Êı¾İ¿âÏµÍ³Ô­Àí",
-          "courseCode": "*08090210",
-          "weeks": "1-17",
-          "teacherName": "¹ù³¿",
-          "teacherCode": "9920050070",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B104",
-          "classroomCode": "10B104",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727502019065",
-          "timeName": "µÚ2½Ú",
-          "isLock": "0",
-          "sectionName": "2",
-          "groupId": "727502019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "3",
-          "courseName": "Êı¾İ¿âÏµÍ³Ô­Àí",
-          "courseCode": "*08090210",
-          "weeks": "1-17",
-          "teacherName": "¹ù³¿",
-          "teacherCode": "9920050070",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B104",
-          "classroomCode": "10B104",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727502019065",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "727502019065",
-          "groupName": "19Èí¼ş1",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "5",
-          "courseName": "´óÑ§ÎïÀíÊµÑéA2",
-          "courseCode": "*07020106",
-          "weeks": "8-14",
-          "teacherName": "ºúÇ¿ÁÖ",
-          "teacherCode": "9920070002",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "numberOfStudent": "28",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727462019065",
-          "timeName": "µÚ5½Ú",
-          "isLock": "0",
-          "sectionName": "5",
-          "groupId": "72746201906502",
-          "groupName": "½ÌÑ§°à02Ğ¡×é",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "6",
-          "courseName": "´óÑ§ÎïÀíÊµÑéA2",
-          "courseCode": "*07020106",
-          "weeks": "8-14",
-          "teacherName": "ºúÇ¿ÁÖ",
-          "teacherCode": "9920070002",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "numberOfStudent": "28",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727462019065",
-          "timeName": "µÚ6½Ú",
-          "isLock": "0",
-          "sectionName": "6",
-          "groupId": "72746201906502",
-          "groupName": "½ÌÑ§°à02Ğ¡×é",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "7",
-          "courseName": "´óÑ§ÎïÀíÊµÑéA2",
-          "courseCode": "*07020106",
-          "weeks": "8-14",
-          "teacherName": "ºúÇ¿ÁÖ",
-          "teacherCode": "9920070002",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "numberOfStudent": "28",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727462019065",
-          "timeName": "µÚ7½Ú",
-          "isLock": "0",
-          "sectionName": "7",
-          "groupId": "72746201906502",
-          "groupName": "½ÌÑ§°à02Ğ¡×é",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "5",
-          "dayOfWeekName": "ĞÇÆÚËÄ",
-          "time": "8",
-          "courseName": "´óÑ§ÎïÀíÊµÑéA2",
-          "courseCode": "*07020106",
-          "weeks": "8-14",
-          "teacherName": "ºúÇ¿ÁÖ",
-          "teacherCode": "9920070002",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "numberOfStudent": "28",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727462019065",
-          "timeName": "µÚ8½Ú",
-          "isLock": "0",
-          "sectionName": "8",
-          "groupId": "72746201906502",
-          "groupName": "½ÌÑ§°à02Ğ¡×é",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "5",
-        "weekName": "ĞÇÆÚËÄ",
-        "sort": "4"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "6",
-          "dayOfWeekName": "ĞÇÆÚÎå",
-          "time": "1",
-          "courseName": "´óÑ§ÎïÀíA2",
-          "courseCode": "*07020102",
-          "weeks": "1-17",
-          "teacherName": "»ÆÇ¿",
-          "teacherCode": "9919930018",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B105",
-          "classroomCode": "10B105",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727452019065",
-          "timeName": "µÚ1½Ú",
-          "isLock": "0",
-          "sectionName": "1",
-          "groupId": "727452019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "6",
-          "dayOfWeekName": "ĞÇÆÚÎå",
-          "time": "2",
-          "courseName": "´óÑ§ÎïÀíA2",
-          "courseCode": "*07020102",
-          "weeks": "1-17",
-          "teacherName": "»ÆÇ¿",
-          "teacherCode": "9919930018",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B105",
-          "classroomCode": "10B105",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727452019065",
-          "timeName": "µÚ2½Ú",
-          "isLock": "0",
-          "sectionName": "2",
-          "groupId": "727452019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "6",
-          "dayOfWeekName": "ĞÇÆÚÎå",
-          "time": "3",
-          "courseName": "´óÑ§ÎïÀíA2",
-          "courseCode": "*07020102",
-          "weeks": "1-17",
-          "teacherName": "»ÆÇ¿",
-          "teacherCode": "9919930018",
-          "className": "19Èí¼ş1",
-          "calssCode": "2019065",
-          "classroomName": "10B105",
-          "classroomCode": "10B105",
-          "numberOfStudent": "57",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727452019065",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "727452019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "6",
-        "weekName": "ĞÇÆÚÎå",
-        "sort": "5"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "7",
-          "dayOfWeekName": "ĞÇÆÚÁù",
-          "time": "3",
-          "courseName": "ĞÎÊÆÓëÕş²ß",
-          "courseCode": "*03040401-3",
-          "weeks": "6-9",
-          "teacherName": "½¯æÂÆ¼",
-          "teacherCode": "9920030015",
-          "className": "19Èí¼ş1,19Èí¼ş2",
-          "calssCode": "2019065,2019066",
-          "classroomName": "11B-106",
-          "classroomCode": "11B-106",
-          "numberOfStudent": "112",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727402019065",
-          "timeName": "µÚ3½Ú",
-          "isLock": "0",
-          "sectionName": "3",
-          "groupId": "727402019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": [
-        {
-          "dayOfWeek": "7",
-          "dayOfWeekName": "ĞÇÆÚÁù",
-          "time": "4",
-          "courseName": "ĞÎÊÆÓëÕş²ß",
-          "courseCode": "*03040401-3",
-          "weeks": "6-9",
-          "teacherName": "½¯æÂÆ¼",
-          "teacherCode": "9920030015",
-          "className": "19Èí¼ş1,19Èí¼ş2",
-          "calssCode": "2019065,2019066",
-          "classroomName": "11B-106",
-          "classroomCode": "11B-106",
-          "numberOfStudent": "112",
-          "semesters": "2020-2021-1",
-          "teachingClassName": "19Èí¼ş1",
-          "teachingClassCode": "727402019065",
-          "timeName": "µÚ4½Ú",
-          "isLock": "0",
-          "sectionName": "4",
-          "groupId": "727402019065",
-          "studentName": "ÖÜê¿Óê"
-        }
-      ]
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "7",
-        "weekName": "ĞÇÆÚÁù",
-        "sort": "6"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "1",
-        "timeName": "µÚ1½Ú",
-        "sort": "1"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "2",
-        "timeName": "µÚ2½Ú",
-        "sort": "2"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "3",
-        "timeName": "µÚ3½Ú",
-        "sort": "3"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "4",
-        "timeName": "µÚ4½Ú",
-        "sort": "4"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "5",
-        "timeName": "µÚ5½Ú",
-        "sort": "5"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "6",
-        "timeName": "µÚ6½Ú",
-        "sort": "6"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "7",
-        "timeName": "µÚ7½Ú",
-        "sort": "7"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "8",
-        "timeName": "µÚ8½Ú",
-        "sort": "8"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "9",
-        "timeName": "µÚ9½Ú",
-        "sort": "9"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "10",
-        "timeName": "µÚ10½Ú",
-        "sort": "10"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    },
-    {
-      "time": {
-        "timeCode": "11",
-        "timeName": "µÚ11½Ú",
-        "sort": "11"
-      },
-      "week": {
-        "weekCode": "1",
-        "weekName": "ĞÇÆÚÈÕ",
-        "sort": "7"
-      },
-      "courseList": []
-    }
-  ]
-}
+[
+  {
+    "courseName": "JAVAç¨‹åºè®¾è®¡",
+    "teacherName": "è‚–æ™“æœ‹",
+    "classroomName": "10B504",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "3",
+    "endWeek": "17",
+    "startTimeID": 1,
+    "endTimeID": 2,
+    "startTime": "8:20:00",
+    "endTime": "9:55:00",
+    "day": 31702
+  },
+  {
+    "courseName": "å¤§å­¦ä½“è‚²B2",
+    "teacherName": "é¾™æ™“ä¸œ",
+    "classroomName": "",
+    "studentNumber": "34",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "16",
+    "startTimeID": 3,
+    "endTimeID": 4,
+    "startTime": "10:15:00",
+    "endTime": "11:50:00",
+    "day": 11602
+  },
+  {
+    "courseName": "æ¦‚ç‡ä¸ç»Ÿè®¡",
+    "teacherName": "é™¶é»„æ—",
+    "classroomName": "11A-204",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "17",
+    "startTimeID": 5,
+    "endTimeID": 6,
+    "startTime": "14:00:00",
+    "endTime": "15:35:00",
+    "day": 11702
+  },
+  {
+    "courseName": "æ•°å­—é€»è¾‘",
+    "teacherName": "ç½—æ–‡æµª",
+    "classroomName": "10A201",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "13",
+    "endWeek": "16",
+    "startTimeID": 7,
+    "endTimeID": 8,
+    "startTime": "15:55:00",
+    "endTime": "17:30:00",
+    "day": 131602
+  },
+  {
+    "courseName": "æ•°å­—é€»è¾‘",
+    "teacherName": "ç½—æ–‡æµª",
+    "classroomName": "10A201",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "13",
+    "endWeek": "16",
+    "startTimeID": 7,
+    "endTimeID": 8,
+    "startTime": "15:55:00",
+    "endTime": "17:30:00",
+    "day": 131603
+  },
+  {
+    "courseName": "JAVAç¨‹åºè®¾è®¡",
+    "teacherName": "è‚–æ™“æœ‹",
+    "classroomName": "10A003",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "17",
+    "startTimeID": 9,
+    "endTimeID": 11,
+    "startTime": "18:30:00",
+    "endTime": "20:55:00",
+    "day": 11702
+  },
+  {
+    "courseName": "è‹±è¯­æ‹“å±•è¯¾ç¨‹1",
+    "teacherName": "è”¡æ™“è•™",
+    "classroomName": "10A104",
+    "studentNumber": "43",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "16",
+    "startTimeID": 3,
+    "endTimeID": 4,
+    "startTime": "10:15:00",
+    "endTime": "11:50:00",
+    "day": 11603
+  },
+  {
+    "courseName": "æ•°å­—é€»è¾‘",
+    "teacherName": "ç½—æ–‡æµª",
+    "classroomName": "10A003",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "12",
+    "startTimeID": 7,
+    "endTimeID": 8,
+    "startTime": "15:55:00",
+    "endTime": "17:30:00",
+    "day": 11203
+  },
+  {
+    "courseName": "æ•°å­—é€»è¾‘",
+    "teacherName": "ç½—æ–‡æµª",
+    "classroomName": "10A003",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "12",
+    "startTimeID": 1,
+    "endTimeID": 2,
+    "startTime": "8:20:00",
+    "endTime": "9:55:00",
+    "day": 11205
+  },
+  {
+    "courseName": "æ•°æ®åº“ç³»ç»ŸåŸç†",
+    "teacherName": "é­éŸ¡",
+    "classroomName": "10B403",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "3",
+    "endWeek": "17",
+    "startTimeID": 1,
+    "endTimeID": 2,
+    "startTime": "8:20:00",
+    "endTime": "9:55:00",
+    "day": 31704
+  },
+  {
+    "courseName": "æ•°æ®ç»“æ„ä¸ç®—æ³•",
+    "teacherName": "æ›¾åŠ²æ¶›",
+    "classroomName": "10B504",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "3",
+    "endWeek": "17",
+    "startTimeID": 3,
+    "endTimeID": 4,
+    "startTime": "10:15:00",
+    "endTime": "11:50:00",
+    "day": 31704
+  },
+  {
+    "courseName": "æ•°æ®ç»“æ„ä¸ç®—æ³•",
+    "teacherName": "æ›¾åŠ²æ¶›",
+    "classroomName": "10A003",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "17",
+    "startTimeID": 5,
+    "endTimeID": 7,
+    "startTime": "14:00:00",
+    "endTime": "16:40:00",
+    "day": 11704
+  },
+  {
+    "courseName": "å›½é™…æ”¿æ²»å­¦ï¼ˆgxï¼‰",
+    "teacherName": "æœå¾·è£",
+    "classroomName": "10B201",
+    "studentNumber": "120",
+    "interval": 1,
+    "startWeek": "2",
+    "endWeek": "17",
+    "startTimeID": 9,
+    "endTimeID": 10,
+    "startTime": "18:30:00",
+    "endTime": "20:05:00",
+    "day": 21704
+  },
+  {
+    "courseName": "å¤§å­¦ç‰©ç†å®éªŒA2",
+    "teacherName": "èƒ¡å¼ºæ—",
+    "classroomName": "",
+    "studentNumber": "28",
+    "interval": 1,
+    "startWeek": "8",
+    "endWeek": "14",
+    "startTimeID": 5,
+    "endTimeID": 8,
+    "startTime": "14:00:00",
+    "endTime": "17:30:00",
+    "day": 81405
+  },
+  {
+    "courseName": "è§£è¯»å¤§ä¼—ä¼ æ’­ï¼ˆgxï¼‰",
+    "teacherName": "å¾æ¡‚æ—",
+    "classroomName": "ç¬¬5æ•™å­¦æ¥¼206",
+    "studentNumber": "46",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "16",
+    "startTimeID": 9,
+    "endTimeID": 10,
+    "startTime": "18:30:00",
+    "endTime": "20:05:00",
+    "day": 11605
+  },
+  {
+    "courseName": "å¤§å­¦ç‰©ç†A2",
+    "teacherName": "é»„å¼º",
+    "classroomName": "10B105",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "17",
+    "startTimeID": 1,
+    "endTimeID": 3,
+    "startTime": "8:20:00",
+    "endTime": "11:00:00",
+    "day": 11706
+  },
+  {
+    "courseName": "æ•°æ®åº“ç³»ç»ŸåŸç†",
+    "teacherName": "é­éŸ¡",
+    "classroomName": "10B208",
+    "studentNumber": "57",
+    "interval": 1,
+    "startWeek": "1",
+    "endWeek": "17",
+    "startTimeID": 5,
+    "endTimeID": 7,
+    "startTime": "14:00:00",
+    "endTime": "16:40:00",
+    "day": 11706
+  },
+  {
+    "courseName": "å½¢åŠ¿ä¸æ”¿ç­–",
+    "teacherName": "è’‹åª›è",
+    "classroomName": "11B-106",
+    "studentNumber": "111",
+    "interval": 1,
+    "startWeek": "6",
+    "endWeek": "9",
+    "startTimeID": 3,
+    "endTimeID": 4,
+    "startTime": "10:15:00",
+    "endTime": "11:50:00",
+    "day": 60907
+  }
+]

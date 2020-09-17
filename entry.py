@@ -3,6 +3,7 @@ import hashlib
 import json
 import re
 import copy
+
 import icalendar
 import pytz
 
@@ -16,6 +17,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 import api
 import info
+from func import hash_func, DateEncoder
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -69,8 +71,8 @@ if __name__ == '__main__':
 
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -84,14 +86,14 @@ if __name__ == '__main__':
     tmpData = req['data']
     courseData = {}
     parsedCourseData = []
+    reObject = re.compile(r'(\d*)-(\d*)( 单双)?')
 
     for courseOnedayList in tmpData:
         time = courseOnedayList['time']['timeCode']
         week = courseOnedayList['week']['weekCode']
-        timeSign = int(week) * 100 + int(time)
+        timeSignWeekTime = int(week) * 100 + int(time) * 1
         for course in courseOnedayList['courseList']:
-            if course['courseCode'] not in courseData.keys():
-                reObject = re.compile(r'(\d*)-(\d*)( 单双)?')
+            if hash_func(str(str(course['courseCode']) + str(course['weeks']))) not in courseData.keys():
                 parsedWeek = re.match(reObject, course['weeks']).groups()
                 interval = 2 if parsedWeek[2] else 1
                 startWeek = parsedWeek[0]
@@ -100,7 +102,8 @@ if __name__ == '__main__':
                     classroomName = course['classroomName']
                 except:
                     classroomName = ''
-                courseData[course['courseCode']] = {
+                timeSign = int(startWeek) * 1000000 + int(endWeek) * 10000 + timeSignWeekTime
+                courseData[hash_func(str(str(course['courseCode']) + str(course['weeks'])))] = {
                     'data': {
                         'courseName': course['courseName'],
                         'teacherName': course['teacherName'],
@@ -113,17 +116,24 @@ if __name__ == '__main__':
                     'timeSign': [timeSign],
                 }
             else:
-                courseData[course['courseCode']]['timeSign'].append(timeSign)
+                parsedWeek = re.match(reObject, course['weeks']).groups()
+                startWeek = parsedWeek[0]
+                endWeek = parsedWeek[1]
+                timeSign = int(startWeek) * 1000000 + int(endWeek) * 10000 + timeSignWeekTime
+                courseData[hash_func(str(str(course['courseCode']) + str(course['weeks'])))]['timeSign'].append(
+                    timeSign)
 
+    # print(json.dumps(courseData, ensure_ascii=False))
     for course in courseData.keys():
         data = courseData[course]
         data['timeSign'].sort()
+
         timeSignList = data['timeSign']
         timeSignDivision = []
         tmpList = []
         for i in range(0, len(timeSignList)):
             if i == len(timeSignList) - 1:
-                if (timeSignList[i] - timeSignList[i - 1] == 1):
+                if timeSignList[i] - timeSignList[i - 1] == 1:
                     tmpList.append(timeSignList[i])
                     timeSignDivision.append(tmpList)
                     tmpList = []
@@ -139,20 +149,20 @@ if __name__ == '__main__':
 
     for course in courseData.keys():
         for oneTime in courseData[course]['timeSign']:
-            day = int(int(oneTime[0]) / 100)
+            day = int(int(oneTime[0]) % 10000 / 100)
             startTimeID = int(oneTime[0] % 100)
             endTimeID = int(oneTime[-1] % 100)
             startTime = courseTimeDict[startTimeID]
             endTime = courseTimeDict[endTimeID] + COURSE_TIME
             parsedOneCourse = courseData[course]['data']
-            print(parsedOneCourse)
-            exit(0)
             parsedOneCourse['startTimeID'] = startTimeID
             parsedOneCourse['endTimeID'] = endTimeID
             parsedOneCourse['startTime'] = startTime
             parsedOneCourse['endTime'] = endTime
             parsedOneCourse['day'] = day
             parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+
+    print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
@@ -170,11 +180,16 @@ if __name__ == '__main__':
     calt.add_component(tz)
 
     for oneEvent in parsedCourseData:
-        count = (int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1
+        count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
+        print(count)
+        print((int(oneEvent['startWeek']) - 1))
+        print((int(oneEvent['day']) - 2))
         dtstart_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
-                    int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
+                int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
         dtend_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
-                    int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
+                int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
+        print(dtstart_datetime)
+        print(dtend_datetime)
         # dtstart_datetime.tzinfo = TIMEZONE
         # dtend_datetime.tzinfo = TIMEZONE
 
