@@ -1,15 +1,13 @@
 import base64
+import copy
 import hashlib
 import json
 import re
-import copy
+from datetime import datetime, timedelta
+from uuid import uuid1
 
 import icalendar
 import pytz
-
-from uuid import uuid1
-from datetime import datetime, timedelta
-
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
@@ -62,7 +60,7 @@ if __name__ == '__main__':
 
     req = mainSession.post(url=api.login, params=loginDict, data={})
 
-    print(req.json())
+    # print(req.json())
 
     userData = json.loads(req.cookies.get_dict()['user'])
 
@@ -71,8 +69,8 @@ if __name__ == '__main__':
 
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -102,7 +100,13 @@ if __name__ == '__main__':
                     classroomName = course['classroomName']
                 except:
                     classroomName = ''
+                # try:
+                #     className = course['className']
+                # except:
+                #     className = ''
                 timeSign = int(startWeek) * 1000000 + int(endWeek) * 10000 + timeSignWeekTime
+                # print(course)
+                print(course['teachingClassName'])
                 courseData[hash_func(str(str(course['courseCode']) + str(course['weeks'])))] = {
                     'data': {
                         'courseName': course['courseName'],
@@ -112,6 +116,7 @@ if __name__ == '__main__':
                         'interval': interval,
                         'startWeek': startWeek,
                         'endWeek': endWeek,
+                        'className': course['teachingClassName'],
                     },
                     'timeSign': [timeSign],
                 }
@@ -162,7 +167,7 @@ if __name__ == '__main__':
             parsedOneCourse['day'] = day
             parsedCourseData.append(copy.deepcopy(parsedOneCourse))
 
-    print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
+    # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
@@ -181,15 +186,15 @@ if __name__ == '__main__':
 
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
-        print(count)
-        print((int(oneEvent['startWeek']) - 1))
-        print((int(oneEvent['day']) - 2))
+        # print(count)
+        # print((int(oneEvent['startWeek']) - 1))
+        # print((int(oneEvent['day']) - 2))
         dtstart_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
                 int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
         dtend_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
                 int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
-        print(dtstart_datetime)
-        print(dtend_datetime)
+        # print(dtstart_datetime)
+        # print(dtend_datetime)
         # dtstart_datetime.tzinfo = TIMEZONE
         # dtend_datetime.tzinfo = TIMEZONE
 
@@ -199,10 +204,19 @@ if __name__ == '__main__':
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('description',
-                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n学生数： {}'.format(
-                      oneEvent['startTimeID'], oneEvent['endTimeID'], oneEvent['teacherName'],
-                      oneEvent['classroomName'], str(oneEvent['startTime']), str(oneEvent['endTime']),
-                      oneEvent['startWeek'], oneEvent['endWeek'], oneEvent['studentNumber']))
+                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}、了\r\n班级: {}\r\n学生数： {}'.format(
+                      oneEvent['startTimeID'],
+                      oneEvent['endTimeID'],
+                      oneEvent['teacherName'],
+                      oneEvent['classroomName'],
+                      str(oneEvent['startTime']),
+                      str(oneEvent['endTime']),
+                      oneEvent['startWeek'],
+                      oneEvent['endWeek'],
+                      oneEvent['className'],
+                      oneEvent['studentNumber']
+                  )
+                  )
         event.add('dtstart', dtstart_datetime)
         event.add('dtend', dtend_datetime)
         event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
