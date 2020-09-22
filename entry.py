@@ -15,7 +15,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 import api
 import info
-from func import hash_func, DateEncoder
+from func import hash_func
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -204,7 +204,7 @@ if __name__ == '__main__':
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('description',
-                  '第 {} - {} 节\r\n教师： {}\r\n教室: {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n班级: {}\r\n学生数： {}'.format(
+                  '第 {} - {} 节\r\n教师： {}\r\n教室： {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n班级： {}\r\n学生数： {}'.format(
                       oneEvent['startTimeID'],
                       oneEvent['endTimeID'],
                       oneEvent['teacherName'],
