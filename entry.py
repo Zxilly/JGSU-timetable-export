@@ -89,19 +89,28 @@ if __name__ == '__main__':
             allCourseData.append(timeSectionCourse)
 
     purgeAllCourseData = {}
+
+    for day in range(7):
+        for time in range(11):
+            timeSign = (day, time)
+            purgeAllCourseData[timeSign] = {}
+
     for courseData in allCourseData:
+        print(courseData)
+        exit(0)
         day = int(courseData['dayOfWeek'])
         time = int(courseData['time'])
-        timeSign = (day,time)
+        timeSign = (day, time)
         purgeCourseDict = {
             'courseName': courseData['courseName'],
             'weeks': courseData['weeks'],
             'teacher': courseData['teacherName'],
             'studentNum': courseData['numberOfStudent'],
+            'classroomName': courseData.get('classroomName', ''),
             'className': courseData.get('teachingClassName', '')
         }
-        purgeAllCourseData.setdefault(timeSign, [])
-        purgeAllCourseData[timeSign] = ({dictHash(purgeCourseDict): purgeCourseDict})
+        # purgeAllCourseData.setdefault(timeSign, [])
+        purgeAllCourseData[timeSign] = {dictHash(purgeCourseDict): purgeCourseDict}
 
     # print(purgeAllCourseData)
 
@@ -110,7 +119,7 @@ if __name__ == '__main__':
         time = timeSign[1]
         if purgeAllCourseData[timeSign]:
             currentOptCourse = purgeAllCourseData[timeSign].popitem()
-            print(currentOptCourse)
+
             courseHash = currentOptCourse[0]
             courseData = currentOptCourse[1]
 
@@ -118,11 +127,27 @@ if __name__ == '__main__':
             teacher = courseData['teacher']
             studentNum = courseData['studentNum']
             className = courseData['className']
+            classroomName = courseData['classroomName']
 
+            rawWeeks = courseData['weeks']
+            parsedWeeks = re.match(reObject, rawWeeks).groups()
+            interval = 2 if parsedWeeks[2] else 1
+            startWeek = parsedWeeks[0]
+            endWeek = parsedWeeks[1]
 
+            startTime = time
+            endTimePointer = time
+            while True:
+                if endTimePointer != 4 and endTimePointer != 11:
+                    if courseHash in purgeAllCourseData[(day, endTimePointer)].keys:
+                        endTimePointer += 1
+                    else:
+                        endTimePointer -= 1
+                        break
+                else:
+                    break
 
-
-
+            exit(0)
 
     # for courseOnedayList in tmpData:
     #     time = courseOnedayList['time']['timeCode']
