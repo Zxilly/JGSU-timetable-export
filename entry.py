@@ -14,6 +14,8 @@ import api
 import info
 from func import showData, dictHash
 
+import copy
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 header = {
@@ -114,6 +116,8 @@ if __name__ == '__main__':
 
     # print(purgeAllCourseData)
 
+    parsedCourseData = []
+
     for timeSign in purgeAllCourseData.keys():
         day = timeSign[0]
         time = timeSign[1]
@@ -140,80 +144,32 @@ if __name__ == '__main__':
             while True:
                 if endTimePointer != 4 and endTimePointer != 11:
                     if courseHash in purgeAllCourseData[(day, endTimePointer)].keys:
+                        purgeAllCourseData[(day,endTimePointer)].pop(courseHash)
                         endTimePointer += 1
                     else:
                         endTimePointer -= 1
                         break
                 else:
                     break
+            endTime = endTimePointer
 
-            exit(0)
+            parsedOneCourse = {}
+            parsedOneCourse['day'] = day
+            parsedOneCourse['courseName'] = courseName
+            parsedOneCourse['classroomName'] = classroomName
+            parsedOneCourse['startTimeID'] = startTime
+            parsedOneCourse['endTimeID'] = endTime
+            parsedOneCourse['teacherName'] = teacher
+            parsedOneCourse['startTime'] = courseTimeDict[startTime]
+            parsedOneCourse['endTime'] = courseTimeDict[endTime]+COURSE_TIME
+            parsedOneCourse['startWeek'] = startWeek
+            parsedOneCourse['endWeek'] = endWeek
+            parsedOneCourse['studentNumber'] = studentNum
 
-    # for courseOnedayList in tmpData:
-    #     time = courseOnedayList['time']['timeCode']
-    #     week = courseOnedayList['week']['weekCode']
-    #     timeSignWeekTime = int(week) * 100 + int(time) * 1
-    #     for course in courseOnedayList['courseList']:
-    #         if hash_func(str(str(course['courseCode']) + str(course['weeks']))) not in courseData.keys():
-    #             parsedWeek = re.match(reObject, course['weeks']).groups()
-    #             interval = 2 if parsedWeek[2] else 1
-    #             startWeek = parsedWeek[0]
-    #             endWeek = parsedWeek[1]
-    #             try:
-    #                 classroomName = course['classroomName']
-    #             except:
-    #                 classroomName = ''
-    #             # try:
-    #             #     className = course['className']
-    #             # except:
-    #             #     className = ''
-    #             timeSign = int(startWeek) * 1000000 + int(endWeek) * 10000 + timeSignWeekTime
-    #             # print(course)
-    #             print(course['teachingClassName'])
-    #             courseData[hash_func(str(str(course['courseCode']) + str(course['weeks'])))] = {
-    #                 'data': {
-    #                     'courseName': course['courseName'],
-    #                     'teacherName': course['teacherName'],
-    #                     'classroomName': classroomName,
-    #                     'studentNumber': course['numberOfStudent'],
-    #                     'interval': interval,
-    #                     'startWeek': startWeek,
-    #                     'endWeek': endWeek,
-    #                     'className': course['teachingClassName'],
-    #                 },
-    #                 'timeSign': [timeSign],
-    #             }
-    #         else:
-    #             parsedWeek = re.match(reObject, course['weeks']).groups()
-    #             startWeek = parsedWeek[0]
-    #             endWeek = parsedWeek[1]
-    #             timeSign = int(startWeek) * 1000000 + int(endWeek) * 10000 + timeSignWeekTime
-    #             courseData[hash_func(str(str(course['courseCode']) + str(course['weeks'])))]['timeSign'].append(
-    #                 timeSign)
-    #
-    # # print(json.dumps(courseData, ensure_ascii=False))
-    # for course in courseData.keys():
-    #     data = courseData[course]
-    #     data['timeSign'].sort()
-    #
-    #     timeSignList = data['timeSign']
-    #     timeSignDivision = []
-    #     tmpList = []
-    #     for i in range(0, len(timeSignList)):
-    #         if i == len(timeSignList) - 1:
-    #             if timeSignList[i] - timeSignList[i - 1] == 1:
-    #                 tmpList.append(timeSignList[i])
-    #                 timeSignDivision.append(tmpList)
-    #                 tmpList = []
-    #             else:
-    #                 timeSignDivision.append([timeSignList[i]])
-    #         elif timeSignList[i + 1] - timeSignList[i] == 1 and timeSignList[i] % 100 != 4:
-    #             tmpList.append(timeSignList[i])
-    #         else:
-    #             tmpList.append(timeSignList[i])
-    #             timeSignDivision.append(tmpList)
-    #             tmpList = []
-    #     courseData[course]['timeSign'] = timeSignDivision
+            parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+
+
+
     #
     # for course in courseData.keys():
     #     for oneTime in courseData[course]['timeSign']:
