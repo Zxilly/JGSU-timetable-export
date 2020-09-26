@@ -16,6 +16,13 @@ def showData(data):
     exit(0)
 
 
+def fixDay(day: int):
+    if day == 1:
+        return 7
+    else:
+        return day - 1
+
+
 class DateEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime.datetime):

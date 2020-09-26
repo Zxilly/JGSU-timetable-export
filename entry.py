@@ -12,7 +12,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
 import info
-from func import showData, dictHash
+from func import showData, dictHash, fixDay
 
 import copy
 
@@ -70,8 +70,8 @@ if __name__ == '__main__':
 
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY*2
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY*2
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     }).json()
 
     tmpData = req['data']
-    reObject = re.compile(r'(\d*)-(\d*) (单双)?')
+    reObject = re.compile(r'(\d*)-(\d*)( 单双)?')
     allCourseData = []
 
     for timeSection in tmpData:
@@ -92,15 +92,14 @@ if __name__ == '__main__':
 
     purgeAllCourseData = {}
 
-    for day in range(7):
-        for time in range(11):
+    for day in range(1, 8):
+        for time in range(1, 12):
             timeSign = (day, time)
             purgeAllCourseData[timeSign] = {}
 
     for courseData in allCourseData:
-        print(courseData)
-        exit(0)
-        day = int(courseData['dayOfWeek'])
+        # print(courseData)
+        day = fixDay(int(courseData['dayOfWeek']))
         time = int(courseData['time'])
         timeSign = (day, time)
         purgeCourseDict = {
@@ -117,7 +116,7 @@ if __name__ == '__main__':
     # print(purgeAllCourseData)
 
     parsedCourseData = []
-
+    print(purgeAllCourseData.keys())
     for timeSign in purgeAllCourseData.keys():
         day = timeSign[0]
         time = timeSign[1]
@@ -134,20 +133,20 @@ if __name__ == '__main__':
             classroomName = courseData['classroomName']
 
             rawWeeks = courseData['weeks']
+            print(rawWeeks)
             parsedWeeks = re.match(reObject, rawWeeks).groups()
             interval = 2 if parsedWeeks[2] else 1
             startWeek = parsedWeeks[0]
             endWeek = parsedWeeks[1]
 
-            startTime = time
-            endTimePointer = time
+            startTime = copy.copy(time)
+            endTimePointer = copy.copy(time)
             while True:
                 if endTimePointer != 4 and endTimePointer != 11:
-                    if courseHash in purgeAllCourseData[(day, endTimePointer)].keys:
-                        purgeAllCourseData[(day,endTimePointer)].pop(courseHash)
+                    if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
+                        purgeAllCourseData[(day, endTimePointer + 1)].pop(courseHash)
                         endTimePointer += 1
                     else:
-                        endTimePointer -= 1
                         break
                 else:
                     break
@@ -156,19 +155,19 @@ if __name__ == '__main__':
             parsedOneCourse = {}
             parsedOneCourse['day'] = day
             parsedOneCourse['courseName'] = courseName
+            parsedOneCourse['className'] = className
             parsedOneCourse['classroomName'] = classroomName
             parsedOneCourse['startTimeID'] = startTime
             parsedOneCourse['endTimeID'] = endTime
             parsedOneCourse['teacherName'] = teacher
             parsedOneCourse['startTime'] = courseTimeDict[startTime]
-            parsedOneCourse['endTime'] = courseTimeDict[endTime]+COURSE_TIME
+            parsedOneCourse['endTime'] = courseTimeDict[endTime] + COURSE_TIME
             parsedOneCourse['startWeek'] = startWeek
             parsedOneCourse['endWeek'] = endWeek
+            parsedOneCourse['interval'] = interval
             parsedOneCourse['studentNumber'] = studentNum
 
             parsedCourseData.append(copy.deepcopy(parsedOneCourse))
-
-
 
     #
     # for course in courseData.keys():
