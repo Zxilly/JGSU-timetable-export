@@ -1,8 +1,27 @@
+import datetime
 import hashlib
 import json
-import datetime
-def hash_func(hash_string:str):
+
+
+def strHash(hash_string: str):
     return hashlib.md5(hash_string.encode()).hexdigest()
+
+
+def dictHash(hash_dict: dict):
+    return hashlib.md5(str(hash_dict).encode()).hexdigest()
+
+
+def showData(data):
+    print(json.dumps(data, ensure_ascii=False))
+    exit(0)
+
+
+def fixDay(day: int):
+    if day == 1:
+        return 7
+    else:
+        return day - 1
+
 
 class DateEncoder(json.JSONEncoder):
     def default(self, obj):
