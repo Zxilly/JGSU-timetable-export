@@ -1,4 +1,5 @@
 import base64
+import copy
 import hashlib
 import json
 import re
@@ -12,9 +13,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
 import info
-from func import showData, dictHash, fixDay
-
-import copy
+from func import dictHash, fixDay
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -70,8 +69,8 @@ if __name__ == '__main__':
 
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY*2
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)+ONE_DAY*2
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -152,20 +151,21 @@ if __name__ == '__main__':
                     break
             endTime = endTimePointer
 
-            parsedOneCourse = {}
-            parsedOneCourse['day'] = day
-            parsedOneCourse['courseName'] = courseName
-            parsedOneCourse['className'] = className
-            parsedOneCourse['classroomName'] = classroomName
-            parsedOneCourse['startTimeID'] = startTime
-            parsedOneCourse['endTimeID'] = endTime
-            parsedOneCourse['teacherName'] = teacher
-            parsedOneCourse['startTime'] = courseTimeDict[startTime]
-            parsedOneCourse['endTime'] = courseTimeDict[endTime] + COURSE_TIME
-            parsedOneCourse['startWeek'] = startWeek
-            parsedOneCourse['endWeek'] = endWeek
-            parsedOneCourse['interval'] = interval
-            parsedOneCourse['studentNumber'] = studentNum
+            parsedOneCourse = {
+                'day': day,
+                'courseName': courseName,
+                'className': className,
+                'classroomName': classroomName,
+                'startTimeID': startTime,
+                'endTimeID': endTime,
+                'teacherName': teacher,
+                'startTime': courseTimeDict[startTime],
+                'endTime': courseTimeDict[endTime] + COURSE_TIME,
+                'startWeek': startWeek,
+                'endWeek': endWeek,
+                'interval': interval,
+                'studentNumber': studentNum
+            }
 
             parsedCourseData.append(copy.deepcopy(parsedOneCourse))
 
