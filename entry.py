@@ -13,10 +13,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
 import info
-from fix import fix_dict
-from func import dictHash, fixDay, DateEncoder
-
-from static import *
+from func import dictHash, fixDay
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -24,6 +21,26 @@ header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
 }
 
+COURSE_TIME = timedelta(minutes=45)
+WEEK_TIME = timedelta(days=7)
+ONE_DAY = timedelta(days=1)
+ONE_WEEK = timedelta(weeks=1)
+
+TIMEZONE = pytz.timezone("Asia/Shanghai")
+
+courseTimeDict = {
+    1: timedelta(hours=8, minutes=20),
+    2: timedelta(hours=9, minutes=10),
+    3: timedelta(hours=10, minutes=15),
+    4: timedelta(hours=11, minutes=5),
+    5: timedelta(hours=14, minutes=00),
+    6: timedelta(hours=14, minutes=50),
+    7: timedelta(hours=15, minutes=55),
+    8: timedelta(hours=16, minutes=45),
+    9: timedelta(hours=18, minutes=30),
+    10: timedelta(hours=19, minutes=20),
+    11: timedelta(hours=20, minutes=10)
+}
 
 if __name__ == '__main__':
     mainSession = requests.session()
@@ -65,7 +82,7 @@ if __name__ == '__main__':
     }).json()
 
     tmpData = req['data']
-    reObject = re.compile(r'(\d*)-(\d*)( [单双])?')
+    reObject = re.compile(r'(\d*)-(\d*)( 单双)?')
     allCourseData = []
 
     for timeSection in tmpData:
@@ -99,93 +116,81 @@ if __name__ == '__main__':
         purgeAllCourseData[timeSign][dictHash(purgeCourseDict)] = purgeCourseDict
 
     parsedCourseData = []
-    # print(purgeAllCourseData)
+    print(purgeAllCourseData)
 
     for timeSign in purgeAllCourseData.keys():
         day = timeSign[0]
         time = timeSign[1]
-        while True:
-            if purgeAllCourseData[timeSign]:
-                # print(f"time is {day} {time}")
-                currentOptCourse = purgeAllCourseData[timeSign].popitem()
+        if purgeAllCourseData[timeSign]:
+            currentOptCourse = purgeAllCourseData[timeSign].popitem()
 
-                # print(currentOptCourse)
-                courseHash = currentOptCourse[0]
-                courseData = currentOptCourse[1]
+            # print(currentOptCourse)
+            courseHash = currentOptCourse[0]
+            courseData = currentOptCourse[1]
 
-                courseName = courseData['courseName']
+            courseName = courseData['courseName']
+            teacher = courseData['teacher']
+            studentNum = courseData['studentNum']
+            className = courseData['className']
+            classroomName = courseData['classroomName']
 
-                # if courseName == "数字逻辑":
-                #     print("数字逻辑" + str(day) + " " + str(time))
+            rawWeeks = courseData['weeks']
+            print(rawWeeks)
+            parsedWeeks = re.match(reObject, rawWeeks).groups()
+            interval = 2 if parsedWeeks[2] else 1
+            startWeek = parsedWeeks[0]
+            endWeek = parsedWeeks[1]
 
-                teacher = courseData['teacher']
-                studentNum = courseData['studentNum']
-                className = courseData['className']
-                classroomName = courseData['classroomName']
-
-                rawWeeks = courseData['weeks']
-                # print(rawWeeks)
-                parsedWeeks = re.match(reObject, rawWeeks).groups()
-                # interval = 2 if parsedWeeks[2] else 1
-                # try:
-                #     if parsedWeeks[2]:
-                #         interval = 2
-                # except IndexError:
-                #     interval = 1
-                interval = 2 if parsedWeeks[2] else 1
-                startWeek = parsedWeeks[0]
-                endWeek = parsedWeeks[1]
-
-                startTime = copy.copy(time)
-                endTimePointer = copy.copy(time)
-
-                # print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
-                while True:
-                    if endTimePointer != 4 and endTimePointer != 11:
-                        if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
-                            purgeAllCourseData[(day, endTimePointer + 1)].pop(courseHash)
-                            endTimePointer += 1
-                        else:
-                            break
+            startTime = copy.copy(time)
+            endTimePointer = copy.copy(time)
+            while True:
+                if endTimePointer != 4 and endTimePointer != 11:
+                    if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
+                        purgeAllCourseData[(day, endTimePointer + 1)].pop(courseHash)
+                        endTimePointer += 1
                     else:
                         break
-                endTime = endTimePointer
+                else:
+                    break
+            endTime = endTimePointer
 
-                parsedOneCourse = {
-                    'day': day,
-                    'courseName': courseName,
-                    'className': className,
-                    'classroomName': classroomName,
-                    'startTimeID': startTime,
-                    'endTimeID': endTime,
-                    'teacherName': teacher,
-                    'startTime': courseTimeDict[startTime],
-                    'endTime': courseTimeDict[endTime] + COURSE_TIME,
-                    'startWeek': startWeek,
-                    'endWeek': endWeek,
-                    'interval': interval,
-                    'studentNumber': studentNum
-                }
+            parsedOneCourse = {
+                'day': day,
+                'courseName': courseName,
+                'className': className,
+                'classroomName': classroomName,
+                'startTimeID': startTime,
+                'endTimeID': endTime,
+                'teacherName': teacher,
+                # 'startTime': courseTimeDict[startTime],
+                # 'endTime': courseTimeDict[endTime] + COURSE_TIME,
+                'startWeek': startWeek,
+                'endWeek': endWeek,
+                'interval': interval,
+                'studentNumber': studentNum
+            }
 
-                parsedCourseData.append(copy.deepcopy(parsedOneCourse))
-                parsedOneCourse.clear()
-            else:
-                break
+            parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+            parsedOneCourse.clear()
 
-    for one in parsedCourseData:
-        one['hash'] = hashlib.md5(str(json.dumps(one,cls=DateEncoder)).encode()).hexdigest()
+    print(json.dumps(parsedCourseData,ensure_ascii=False))
+    exit(0)
 
-    # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
-
-    # print(fix_dict.keys())
-
-    for one in parsedCourseData:
-        print(one['courseName']+':'+str(one['hash']))
-        if one['hash'] in fix_dict.keys():
-            # print("OK")
-            oneData = fix_dict[one['hash']]
-            for oneKey in oneData.keys():
-                one[oneKey]=oneData[oneKey]
+    #
+    # for course in courseData.keys():
+    #     for oneTime in courseData[course]['timeSign']:
+    #         day = int(int(oneTime[0]) % 10000 / 100)
+    #         startTimeID = int(oneTime[0] % 100)
+    #         endTimeID = int(oneTime[-1] % 100)
+    #         startTime = courseTimeDict[startTimeID]
+    #         endTime = courseTimeDict[endTimeID] + COURSE_TIME
+    #         parsedOneCourse = courseData[course]['data']
+    #         parsedOneCourse['startTimeID'] = startTimeID
+    #         parsedOneCourse['endTimeID'] = endTimeID
+    #         parsedOneCourse['startTime'] = startTime
+    #         parsedOneCourse['endTime'] = endTime
+    #         parsedOneCourse['day'] = day
+    #         parsedCourseData.append(copy.deepcopy(parsedOneCourse))
 
     # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
