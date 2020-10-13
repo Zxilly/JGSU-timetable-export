@@ -89,6 +89,9 @@ if __name__ == '__main__':
         for timeSectionCourse in timeSection['courseList']:
             allCourseData.append(timeSectionCourse)
 
+    # print(json.dumps(allCourseData,ensure_ascii=False))
+    # exit(0)
+
     purgeAllCourseData = {}
 
     for day in range(1, 8):
@@ -109,19 +112,19 @@ if __name__ == '__main__':
             'classroomName': courseData.get('classroomName', ''),
             'className': courseData.get('teachingClassName', '')
         }
-        # purgeAllCourseData.setdefault(timeSign, [])
-        purgeAllCourseData[timeSign] = {dictHash(purgeCourseDict): purgeCourseDict}
-
-    # print(purgeAllCourseData)
+        purgeAllCourseData.setdefault(timeSign, [])
+        purgeAllCourseData[timeSign][dictHash(purgeCourseDict)] = purgeCourseDict
 
     parsedCourseData = []
-    print(purgeAllCourseData.keys())
+    print(purgeAllCourseData)
+
     for timeSign in purgeAllCourseData.keys():
         day = timeSign[0]
         time = timeSign[1]
         if purgeAllCourseData[timeSign]:
             currentOptCourse = purgeAllCourseData[timeSign].popitem()
 
+            # print(currentOptCourse)
             courseHash = currentOptCourse[0]
             courseData = currentOptCourse[1]
 
@@ -159,8 +162,8 @@ if __name__ == '__main__':
                 'startTimeID': startTime,
                 'endTimeID': endTime,
                 'teacherName': teacher,
-                'startTime': courseTimeDict[startTime],
-                'endTime': courseTimeDict[endTime] + COURSE_TIME,
+                # 'startTime': courseTimeDict[startTime],
+                # 'endTime': courseTimeDict[endTime] + COURSE_TIME,
                 'startWeek': startWeek,
                 'endWeek': endWeek,
                 'interval': interval,
@@ -168,6 +171,10 @@ if __name__ == '__main__':
             }
 
             parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+            parsedOneCourse.clear()
+
+    print(json.dumps(parsedCourseData,ensure_ascii=False))
+    exit(0)
 
     #
     # for course in courseData.keys():
