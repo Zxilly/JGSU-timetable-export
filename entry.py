@@ -82,7 +82,7 @@ if __name__ == '__main__':
     }).json()
 
     tmpData = req['data']
-    reObject = re.compile(r'(\d*)-(\d*)( 单双)?')
+    reObject = re.compile(r'(\d*)-(\d*)( [单双])?')
     allCourseData = []
 
     for timeSection in tmpData:
@@ -126,7 +126,7 @@ if __name__ == '__main__':
                 # print(f"time is {day} {time}")
                 currentOptCourse = purgeAllCourseData[timeSign].popitem()
 
-                print(currentOptCourse)
+                # print(currentOptCourse)
                 courseHash = currentOptCourse[0]
                 courseData = currentOptCourse[1]
 
@@ -143,12 +143,20 @@ if __name__ == '__main__':
                 rawWeeks = courseData['weeks']
                 # print(rawWeeks)
                 parsedWeeks = re.match(reObject, rawWeeks).groups()
+                # interval = 2 if parsedWeeks[2] else 1
+                # try:
+                #     if parsedWeeks[2]:
+                #         interval = 2
+                # except IndexError:
+                #     interval = 1
                 interval = 2 if parsedWeeks[2] else 1
                 startWeek = parsedWeeks[0]
                 endWeek = parsedWeeks[1]
 
                 startTime = copy.copy(time)
                 endTimePointer = copy.copy(time)
+
+                print(courseName+":"+str(parsedWeeks)+":"+rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
