@@ -13,7 +13,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
 import info
-from func import dictHash, fixDay
+from func import dictHash, fixDay, DateEncoder
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -188,6 +188,9 @@ if __name__ == '__main__':
                 parsedOneCourse.clear()
             else:
                 break
+
+
+    print(json.dumps(parsedCourseData,ensure_ascii=False,cls=DateEncoder))
 
     # print(json.dumps(parsedCourseData,ensure_ascii=False))
     # exit(0)
