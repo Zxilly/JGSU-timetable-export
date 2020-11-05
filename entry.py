@@ -13,6 +13,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
 import info
+from fix import fix_dict
 from func import dictHash, fixDay, DateEncoder
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -156,7 +157,7 @@ if __name__ == '__main__':
                 startTime = copy.copy(time)
                 endTimePointer = copy.copy(time)
 
-                print(courseName+":"+str(parsedWeeks)+":"+rawWeeks)
+                print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
@@ -189,29 +190,22 @@ if __name__ == '__main__':
             else:
                 break
 
-
-    print(json.dumps(parsedCourseData,ensure_ascii=False,cls=DateEncoder))
-
-    # print(json.dumps(parsedCourseData,ensure_ascii=False))
-    # exit(0)
-
-    #
-    # for course in courseData.keys():
-    #     for oneTime in courseData[course]['timeSign']:
-    #         day = int(int(oneTime[0]) % 10000 / 100)
-    #         startTimeID = int(oneTime[0] % 100)
-    #         endTimeID = int(oneTime[-1] % 100)
-    #         startTime = courseTimeDict[startTimeID]
-    #         endTime = courseTimeDict[endTimeID] + COURSE_TIME
-    #         parsedOneCourse = courseData[course]['data']
-    #         parsedOneCourse['startTimeID'] = startTimeID
-    #         parsedOneCourse['endTimeID'] = endTimeID
-    #         parsedOneCourse['startTime'] = startTime
-    #         parsedOneCourse['endTime'] = endTime
-    #         parsedOneCourse['day'] = day
-    #         parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+    for one in parsedCourseData:
+        one['hash'] = hashlib.md5(str(json.dumps(one,cls=DateEncoder)).encode()).hexdigest()
 
     # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
+
+    print(fix_dict.keys())
+
+    for one in parsedCourseData:
+        print(one['courseName']+':'+str(one['hash']))
+        if one['hash'] in fix_dict.keys():
+            print("OK")
+            oneData = fix_dict[one['hash']]
+            for oneKey in oneData.keys():
+                one[oneKey]=oneData[oneKey]
+
+    print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
     calt = icalendar.Calendar()
     calt['version'] = '2.0'

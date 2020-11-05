@@ -12,7 +12,8 @@
     "startWeek": "3",
     "endWeek": "17",
     "interval": 2,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "36283803b4b5d2984824b45d94ebb3a2"
   },
   {
     "day": 1,
@@ -27,7 +28,8 @@
     "startWeek": "1",
     "endWeek": "16",
     "interval": 1,
-    "studentNumber": "34"
+    "studentNumber": "34",
+    "hash": "3225544ae7011a22c273bcad0c646084"
   },
   {
     "day": 1,
@@ -42,7 +44,8 @@
     "startWeek": "1",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "57"
+    "studentNumber": "57",
+    "hash": "3823b98597c8639be9e49adf5ae2f15f"
   },
   {
     "day": 1,
@@ -57,7 +60,8 @@
     "startWeek": "13",
     "endWeek": "16",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "8cfd5d14ca37147fb134f29a66e7a4a2"
   },
   {
     "day": 1,
@@ -72,7 +76,8 @@
     "startWeek": "1",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "e74c1e3c2311e2a66042530032cf28fe"
   },
   {
     "day": 2,
@@ -87,7 +92,8 @@
     "startWeek": "1",
     "endWeek": "16",
     "interval": 1,
-    "studentNumber": "43"
+    "studentNumber": "43",
+    "hash": "05a04828f3c5117027d6a4cc2f03f1b4"
   },
   {
     "day": 2,
@@ -102,7 +108,8 @@
     "startWeek": "13",
     "endWeek": "16",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "1a5d1b95ef2011aa820755623c96da91"
   },
   {
     "day": 2,
@@ -117,7 +124,8 @@
     "startWeek": "1",
     "endWeek": "12",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "843b60150b5da4a2f692b5552382a567"
   },
   {
     "day": 3,
@@ -132,7 +140,8 @@
     "startWeek": "3",
     "endWeek": "17",
     "interval": 2,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "abebb7d1c619bc22cf6043263e8b3c40"
   },
   {
     "day": 3,
@@ -147,7 +156,8 @@
     "startWeek": "3",
     "endWeek": "17",
     "interval": 2,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "cbf0653df5d1333c7c479e3bcd630c92"
   },
   {
     "day": 3,
@@ -162,7 +172,8 @@
     "startWeek": "5",
     "endWeek": "17",
     "interval": 2,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "f4544d8c9d40122a3e137aa7be60c2b3"
   },
   {
     "day": 3,
@@ -177,7 +188,8 @@
     "startWeek": "1",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "956d1589e0a441a2da0225141d96e18f"
   },
   {
     "day": 3,
@@ -192,7 +204,8 @@
     "startWeek": "2",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "120"
+    "studentNumber": "120",
+    "hash": "5b50d30c0a357787311e4f25fe4b51c9"
   },
   {
     "day": 4,
@@ -207,7 +220,8 @@
     "startWeek": "1",
     "endWeek": "12",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "18da3d0c51e07e00b17de92a7a9c7748"
   },
   {
     "day": 4,
@@ -215,14 +229,15 @@
     "className": "19软件1",
     "classroomName": "",
     "startTimeID": 5,
-    "endTimeID": 6,
+    "endTimeID": 7,
     "teacherName": "胡强林",
     "startTime": "14:00:00",
-    "endTime": "15:35:00",
+    "endTime": "16:40:00",
     "startWeek": "8",
     "endWeek": "14",
     "interval": 1,
-    "studentNumber": "28"
+    "studentNumber": "28",
+    "hash": "d90aa58689d965aa16e4c7063c8f5382"
   },
   {
     "day": 4,
@@ -237,7 +252,8 @@
     "startWeek": "4",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "65"
+    "studentNumber": "65",
+    "hash": "143e1abeb16ba8c818b0b21d6ffe0875"
   },
   {
     "day": 4,
@@ -252,7 +268,8 @@
     "startWeek": "4",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "3f08c7c2c408da6a275b6a06cbcf8bb8"
   },
   {
     "day": 4,
@@ -267,7 +284,8 @@
     "startWeek": "2",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "46"
+    "studentNumber": "46",
+    "hash": "8a9318168611491da1cbfb5764cbcb4f"
   },
   {
     "day": 5,
@@ -282,7 +300,8 @@
     "startWeek": "1",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "60"
+    "studentNumber": "60",
+    "hash": "e6b0483ae5b68f7fbb80de8341cbfb53"
   },
   {
     "day": 5,
@@ -297,7 +316,8 @@
     "startWeek": "1",
     "endWeek": "17",
     "interval": 1,
-    "studentNumber": "59"
+    "studentNumber": "59",
+    "hash": "b4042400e7b2c4ba46307ae8e7651f94"
   },
   {
     "day": 5,
@@ -312,7 +332,8 @@
     "startWeek": "5",
     "endWeek": "17",
     "interval": 2,
-    "studentNumber": "65"
+    "studentNumber": "65",
+    "hash": "85096a6948c95ec7467c53dc6eb0b9f4"
   },
   {
     "day": 6,
@@ -327,6 +348,7 @@
     "startWeek": "6",
     "endWeek": "9",
     "interval": 1,
-    "studentNumber": "111"
+    "studentNumber": "111",
+    "hash": "12d2bb188525bc6d8527abdf0970292b"
   }
 ]
