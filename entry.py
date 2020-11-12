@@ -139,7 +139,7 @@ if __name__ == '__main__':
                 startTime = copy.copy(time)
                 endTimePointer = copy.copy(time)
 
-                print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
+                # print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
@@ -177,17 +177,17 @@ if __name__ == '__main__':
 
     # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
-    print(fix_dict.keys())
+    # print(fix_dict.keys())
 
     for one in parsedCourseData:
         print(one['courseName']+':'+str(one['hash']))
         if one['hash'] in fix_dict.keys():
-            print("OK")
+            # print("OK")
             oneData = fix_dict[one['hash']]
             for oneKey in oneData.keys():
                 one[oneKey]=oneData[oneKey]
 
-    print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
+    # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
