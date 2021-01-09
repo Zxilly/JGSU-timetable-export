@@ -44,7 +44,7 @@ if __name__ == '__main__':
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('dtstart', oneEvent['examStart'])
         event.add('dtend', oneEvent['examEnd'])
-        event.add('description', "学期： {}\r\n考生数： {}\r\n学院： {}\r\n轮次：{}\r\n时间： {}".format(
+        event.add('description', "学期： {}\r\n座位号： {}\r\n学院： {}\r\n轮次：{}\r\n时间： {}".format(
             oneEvent['semester'],
             oneEvent['studentSetNumber'],
             oneEvent['departmentName'],
