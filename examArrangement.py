@@ -38,22 +38,20 @@ if __name__ == '__main__':
 
     for oneEvent in data:
         event = icalendar.Event()
-        event.add('summary', "考试： "+oneEvent['courseName'])  # 标题
+        event.add('summary', "考试： " + oneEvent['courseName'])  # 标题
         event.add('uid', str(uuid1()) + '@JGSU')  # UUID
         event.add('dtstamp', datetime.now())  # 创建时间
         event.add('location', oneEvent['classroomName'])  # 地点
         event.add('dtstart', oneEvent['examStart'])
         event.add('dtend', oneEvent['examEnd'])
-        event.add('description',"学期： {}\r\n考生数： {}\r\n学院： {}\r\n轮次：{}\r\n时间： {}".format(
+        event.add('description', "学期： {}\r\n考生数： {}\r\n学院： {}\r\n轮次：{}\r\n时间： {}".format(
             oneEvent['semester'],
             oneEvent['studentSetNumber'],
             oneEvent['departmentName'],
             oneEvent['roundName'],
-            oneEvent['positiveExamPaperDate']+' '+oneEvent['positiveExamTime']
+            oneEvent['positiveExamPaperDate'] + ' ' + oneEvent['positiveExamTime']
         ))
         calt.add_component(event)
 
     with open('output.ics', 'wb') as f:
         f.write(calt.to_ical())
-
-

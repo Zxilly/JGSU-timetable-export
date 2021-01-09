@@ -1,38 +1,17 @@
 import copy
 import hashlib
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 from uuid import uuid1
 
 import icalendar
-import pytz
 
 import api
 from func import dictHash, fixDay, login, getIcal
+from static import *
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
-}
-
-COURSE_TIME = timedelta(minutes=45)
-WEEK_TIME = timedelta(days=7)
-ONE_DAY = timedelta(days=1)
-ONE_WEEK = timedelta(weeks=1)
-
-TIMEZONE = pytz.timezone("Asia/Shanghai")
-
-courseTimeDict = {
-    1: timedelta(hours=8, minutes=20),
-    2: timedelta(hours=9, minutes=10),
-    3: timedelta(hours=10, minutes=15),
-    4: timedelta(hours=11, minutes=5),
-    5: timedelta(hours=14, minutes=00),
-    6: timedelta(hours=14, minutes=50),
-    7: timedelta(hours=15, minutes=55),
-    8: timedelta(hours=16, minutes=45),
-    9: timedelta(hours=18, minutes=30),
-    10: timedelta(hours=19, minutes=20),
-    11: timedelta(hours=20, minutes=10)
 }
 
 if __name__ == '__main__':

@@ -80,7 +80,7 @@ def login():
     return mainSession, userID, semesterName, semesterStartTime, semesterEndTime
 
 
-def getIcal(name:str):
+def getIcal(name: str):
     calt = icalendar.Calendar()
     calt['version'] = '2.0'
     calt['prodid'] = '-//Zxilly//JGSUCalender//CN'
@@ -96,6 +96,7 @@ def getIcal(name:str):
     tz.add_component(tzStandard)
     calt.add_component(tz)
     return calt
+
 
 class DateEncoder(json.JSONEncoder):
     def default(self, obj):
