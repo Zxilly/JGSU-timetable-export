@@ -1,21 +1,14 @@
-import base64
 import copy
 import hashlib
-import json
 import re
 from datetime import datetime, timedelta
 from uuid import uuid1
 
 import icalendar
 import pytz
-import requests
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
-import info
-from func import dictHash, fixDay
-
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+from func import dictHash, fixDay, login, getIcal
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -43,34 +36,7 @@ courseTimeDict = {
 }
 
 if __name__ == '__main__':
-    mainSession = requests.session()
-    mainSession.params = {"_t": int(datetime.now().timestamp())}
-    mainSession.headers = header
-    mainSession.verify = False
-
-    loginDict = {
-        "userName": info.studentID,
-        "token": base64.b64encode(info.password.encode('UTF-8')).decode(),
-        "target": "",
-        "pattern": "manager-login",
-        "timestamp": int(datetime.now().timestamp() * 1000),
-        "username": info.studentID,
-        'password': hashlib.md5(("admin" + info.password).encode("UTF-8")).hexdigest(),
-    }
-
-    req = mainSession.post(url=api.login, params=loginDict, data={})
-
-    # print(req.json())
-
-    userData = json.loads(req.cookies.get_dict()['user'])
-
-    userID = userData['userName']
-    semesterName = userData['semester']
-
-    req = mainSession.get(url=api.semester).json()
-
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
+    mainSession, userID, semesterName, semesterStartTime, semesterEndTime = login()
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -156,7 +122,7 @@ if __name__ == '__main__':
                 startTime = copy.copy(time)
                 endTimePointer = copy.copy(time)
 
-                print(courseName+":"+str(parsedWeeks)+":"+rawWeeks)
+                print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
@@ -210,20 +176,7 @@ if __name__ == '__main__':
 
     # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
-    calt = icalendar.Calendar()
-    calt['version'] = '2.0'
-    calt['prodid'] = '-//Zxilly//JGSUCalender//CN'
-    calt['X-WR-TIMEZONE'] = 'Asia/Shanghai'
-    calt['X-WR-CALNAME'] = '课表'
-    tz = icalendar.Timezone()
-    tz['tzid'] = 'Asia/Shanghai'
-    tzStandard = icalendar.TimezoneStandard()
-    tzStandard.add('X-LIC-LOCATION', 'Asia/Shanghai')
-    tzStandard.add('TZOFFSETFROM', timedelta(hours=8))
-    tzStandard.add('TZOFFSETTO', timedelta(hours=8))
-    tzStandard.add('TZNAME', 'CST')
-    tz.add_component(tzStandard)
-    calt.add_component(tz)
+    calt = getIcal('课表')
 
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
