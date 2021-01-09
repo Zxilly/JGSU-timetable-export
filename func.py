@@ -1,10 +1,10 @@
 import base64
 import hashlib
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import icalendar
-import pytz
+from static import *
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
@@ -12,12 +12,6 @@ import api
 import info
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-WEEK_TIME = timedelta(days=7)
-ONE_DAY = timedelta(days=1)
-ONE_WEEK = timedelta(weeks=1)
-
-TIMEZONE = pytz.timezone("Asia/Shanghai")
 
 
 def strHash(hash_string: str):

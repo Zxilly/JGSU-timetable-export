@@ -2,7 +2,7 @@ from uuid import uuid1
 
 from func import *
 
-TIMEZONE = pytz.timezone("Asia/Shanghai")
+
 
 if __name__ == '__main__':
     mainSession, userID, semesterName, semesterStartTime, semesterEndTime = login()
