@@ -66,10 +66,15 @@ def login():
     userID = userData['userName']
     semesterName = userData['semester']
 
+    print(semesterName)
+
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 7
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 7
+
+    print(semesterStartTime)
+    print(semesterEndTime)
 
     return mainSession, userID, semesterName, semesterStartTime, semesterEndTime
 

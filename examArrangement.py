@@ -34,7 +34,7 @@ if __name__ == '__main__':
         one['examEnd'] = datetime.combine(day, endTime, TIMEZONE)
         print(one)
 
-    calt = getIcal('考试')
+    calt = getIcal(f'{semesterName} 考试')
 
     for oneEvent in data:
         event = icalendar.Event()

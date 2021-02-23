@@ -86,22 +86,28 @@ if __name__ == '__main__':
                 classroomName = courseData['classroomName']
 
                 rawWeeks = courseData['weeks']
-                # print(rawWeeks)
-                parsedWeeks = re.match(reObject, rawWeeks).groups()
-                # interval = 2 if parsedWeeks[2] else 1
-                # try:
-                #     if parsedWeeks[2]:
-                #         interval = 2
-                # except IndexError:
-                #     interval = 1
-                interval = 2 if parsedWeeks[2] else 1
-                startWeek = parsedWeeks[0]
-                endWeek = parsedWeeks[1]
+                # print(courseName, rawWeeks)
+                try:
+                    parsedWeeks = re.match(reObject, rawWeeks).groups()
+                    # interval = 2 if parsedWeeks[2] else 1
+                    # try:
+                    #     if parsedWeeks[2]:
+                    #         interval = 2
+                    # except IndexError:
+                    #     interval = 1
+                    interval = 2 if parsedWeeks[2] else 1
+                    startWeek = parsedWeeks[0]
+                    endWeek = parsedWeeks[1]
+                except AttributeError:
+                    parsedWeeks = int(rawWeeks)
+                    interval = 1
+                    startWeek = parsedWeeks
+                    endWeek = parsedWeeks
 
                 startTime = copy.copy(time)
                 endTimePointer = copy.copy(time)
 
-                print(courseName + ":" + str(parsedWeeks) + ":" + rawWeeks)
+                print(courseName, str(parsedWeeks), rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
@@ -155,7 +161,7 @@ if __name__ == '__main__':
 
     # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
 
-    calt = getIcal('课表')
+    calt = getIcal(f'{semesterName} 课表')
 
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
@@ -175,24 +181,33 @@ if __name__ == '__main__':
         event.add('summary', oneEvent['courseName'])  # 标题
         event.add('uid', str(uuid1()) + '@JGSU')  # UUID
         event.add('dtstamp', datetime.now())  # 创建时间
-        event.add('location', oneEvent['classroomName'])  # 地点
+        if oneEvent['classroomName']:
+            event.add('location', oneEvent['classroomName'])  # 地点
         event.add('description',
-                  '第 {} - {} 节\r\n教师： {}\r\n教室： {}\r\n时间： {} - {} \r\n周期： {} - {}\r\n班级： {}\r\n学生数： {}'.format(
-                      oneEvent['startTimeID'],
-                      oneEvent['endTimeID'],
+                  '{}教师： {}\r\n'
+                  '{}时间： {} - {} \r\n'
+                  '周期： {}\r\n'
+                  '班级： {}\r\n'
+                  '学生数： {}'.format(
+                      f"第 {oneEvent['startTimeID']} - {oneEvent['endTimeID']} 节\r\n"
+                      if oneEvent['startTimeID'] != oneEvent['endTimeID']
+                      else f"第 {oneEvent['startTimeID']} 节\r\n",
                       oneEvent['teacherName'],
-                      oneEvent['classroomName'],
+                      f'教室： {oneEvent["classroomName"]}\r\n'
+                      if oneEvent["classroomName"] else '',
                       str(oneEvent['startTime']),
                       str(oneEvent['endTime']),
-                      oneEvent['startWeek'],
-                      oneEvent['endWeek'],
+                      f'{oneEvent["startWeek"]} - {oneEvent["endWeek"]}'
+                      if oneEvent["startWeek"] != oneEvent["endWeek"]
+                      else f'{oneEvent["startWeek"]}',
                       oneEvent['className'],
                       oneEvent['studentNumber']
                   )
                   )
         event.add('dtstart', dtstart_datetime)
         event.add('dtend', dtend_datetime)
-        event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
+        if count != 1:
+            event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
     with open('output.ics', 'wb') as f:
