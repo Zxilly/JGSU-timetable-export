@@ -59,6 +59,10 @@ def login():
 
     req = mainSession.post(url=api.login, params=loginDict, data={})
 
+    if req.json()['code'] in [51000003, 50000012]:
+        print(req.json())
+        exit(1)
+
     userData = json.loads(req.cookies.get_dict()['user'])
 
     # print(userData)
@@ -70,8 +74,8 @@ def login():
 
     req = mainSession.get(url=api.semester).json()
 
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 7
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 7
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
+    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
     print(semesterStartTime)
     print(semesterEndTime)
