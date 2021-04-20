@@ -9,7 +9,7 @@
 
 执行 `pip[3] install -r requirements.txt` 来安装依赖
 
-重命名 `info.py` 为
+重命名 `info.py.example` 为 `info.py`
 
 随后可以执行
 
