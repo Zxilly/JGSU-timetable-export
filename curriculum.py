@@ -125,23 +125,10 @@ if __name__ == '__main__':
                         parsedOneCourse[key] = value
                     print("fixed:", parsedOneCourse, file=sys.stderr)
 
-                fixedParsedOneCourse = {
-                    'day': day,
-                    'courseName': courseName,
-                    'className': className,
-                    'classroomName': classroomName,
-                    'startTimeID': startTimePointer,
-                    'endTimeID': endTimePointer,
-                    'teacherName': teacher,
-                    'startTime': courseTimeDict[startTimePointer],
-                    'endTime': courseTimeDict[endTimePointer] + COURSE_TIME,
-                    'startWeek': startWeek,
-                    'endWeek': endWeek,
-                    'interval': interval,
-                    'studentNumber': studentNum
-                }
+                parsedOneCourse['startTime'] = courseTimeDict[parsedOneCourse['startTimeID']]
+                parsedOneCourse['endTime'] = courseTimeDict[parsedOneCourse['endTimeID']]
 
-                parsedCourseData.append(copy.deepcopy(fixedParsedOneCourse))
+                parsedCourseData.append(copy.deepcopy(parsedOneCourse))
                 parsedOneCourse.clear()
             else:
                 break
