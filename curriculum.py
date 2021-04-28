@@ -126,7 +126,7 @@ if __name__ == '__main__':
                     print("fixed:", parsedOneCourse, file=sys.stderr)
 
                 parsedOneCourse['startTime'] = courseTimeDict[parsedOneCourse['startTimeID']]
-                parsedOneCourse['endTime'] = courseTimeDict[parsedOneCourse['endTimeID']]
+                parsedOneCourse['endTime'] = courseTimeDict[parsedOneCourse['endTimeID']] + COURSE_TIME
 
                 parsedCourseData.append(copy.deepcopy(parsedOneCourse))
                 parsedOneCourse.clear()
