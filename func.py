@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import json
+import os
 from datetime import datetime
 
 import icalendar
@@ -9,7 +10,6 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
-import info
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -42,19 +42,28 @@ header = {
 
 
 def login():
+
+    if os.getenv('CI'):
+        studentID = os.getenv('studentID')
+        password = os.getenv('password')
+    else:
+        import info
+        studentID = info.studentID
+        password = info.password
+
     mainSession = requests.session()
     mainSession.params = {"_t": int(datetime.now().timestamp())}
     mainSession.headers = header
     mainSession.verify = False
 
     loginDict = {
-        "userName": info.studentID,
-        "token": base64.b64encode(info.password.encode('UTF-8')).decode(),
+        "userName": studentID,
+        "token": base64.b64encode(password.encode('UTF-8')).decode(),
         "target": "",
         "pattern": "manager-login",
         "timestamp": int(datetime.now().timestamp() * 1000),
-        "username": info.studentID,
-        'password': hashlib.md5(("admin" + info.password).encode("UTF-8")).hexdigest(),
+        "username": studentID,
+        'password': hashlib.md5(("admin" + password).encode("UTF-8")).hexdigest(),
     }
 
     req = mainSession.post(url=api.login, params=loginDict, data={})
