@@ -34,9 +34,6 @@ if __name__ == '__main__':
         for timeSectionCourse in timeSection['courseList']:
             allCourseData.append(timeSectionCourse)
 
-    # print(json.dumps(allCourseData,ensure_ascii=False))
-    # exit(0)
-
     purgeAllCourseData = {}
 
     for day in range(1, 8):
@@ -61,24 +58,18 @@ if __name__ == '__main__':
         purgeAllCourseData[timeSign][dictHash(purgeCourseDict)] = purgeCourseDict
 
     parsedCourseData = []
-    # print(purgeAllCourseData)
 
     for timeSign in purgeAllCourseData.keys():
         day = timeSign[0]
         time = timeSign[1]
         while True:
             if purgeAllCourseData[timeSign]:
-                # print(f"time is {day} {time}")
                 currentOptCourse = purgeAllCourseData[timeSign].popitem()
 
-                # print(currentOptCourse)
                 courseHash = currentOptCourse[0]
                 courseData = currentOptCourse[1]
 
                 courseName = courseData['courseName']
-
-                # if courseName == "数字逻辑":
-                #     print("数字逻辑" + str(day) + " " + str(time))
 
                 teacher = courseData['teacher']
                 studentNum = courseData['studentNum']
@@ -86,15 +77,8 @@ if __name__ == '__main__':
                 classroomName = courseData['classroomName']
 
                 rawWeeks = courseData['weeks']
-                # print(courseName, rawWeeks)
                 try:
                     parsedWeeks = re.match(reObject, rawWeeks).groups()
-                    # interval = 2 if parsedWeeks[2] else 1
-                    # try:
-                    #     if parsedWeeks[2]:
-                    #         interval = 2
-                    # except IndexError:
-                    #     interval = 1
                     interval = 2 if parsedWeeks[2] else 1
                     startWeek = parsedWeeks[0]
                     endWeek = parsedWeeks[1]
@@ -140,42 +124,14 @@ if __name__ == '__main__':
             else:
                 break
 
-    # print(json.dumps(parsedCourseData,ensure_ascii=False))
-    # exit(0)
-
-    #
-    # for course in courseData.keys():
-    #     for oneTime in courseData[course]['timeSign']:
-    #         day = int(int(oneTime[0]) % 10000 / 100)
-    #         startTimeID = int(oneTime[0] % 100)
-    #         endTimeID = int(oneTime[-1] % 100)
-    #         startTime = courseTimeDict[startTimeID]
-    #         endTime = courseTimeDict[endTimeID] + COURSE_TIME
-    #         parsedOneCourse = courseData[course]['data']
-    #         parsedOneCourse['startTimeID'] = startTimeID
-    #         parsedOneCourse['endTimeID'] = endTimeID
-    #         parsedOneCourse['startTime'] = startTime
-    #         parsedOneCourse['endTime'] = endTime
-    #         parsedOneCourse['day'] = day
-    #         parsedCourseData.append(copy.deepcopy(parsedOneCourse))
-
-    # print(json.dumps(parsedCourseData, ensure_ascii=False, cls=DateEncoder))
-
     calt = getIcal(f'{semesterName} 课表')
 
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
-        # print(count)
-        # print((int(oneEvent['startWeek']) - 1))
-        # print((int(oneEvent['day']) - 2))
         dtstart_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
                 int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
         dtend_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
                 int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
-        # print(dtstart_datetime)
-        # print(dtend_datetime)
-        # dtstart_datetime.tzinfo = TIMEZONE
-        # dtend_datetime.tzinfo = TIMEZONE
 
         event = icalendar.Event()
         event.add('summary', oneEvent['courseName'])  # 标题
@@ -210,5 +166,5 @@ if __name__ == '__main__':
             event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
-    with open('output.ics', 'wb') as f:
+    with open('curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())

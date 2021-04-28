@@ -11,7 +11,7 @@ if __name__ == '__main__':
         "pageNo": 1,
         "pageSize": 20,
         "total": 0,
-        "param": {"semesterId": ""}
+        "param": {"semesterId": semesterName}
     }
 
     reqHeader = {
@@ -53,5 +53,5 @@ if __name__ == '__main__':
         ))
         calt.add_component(event)
 
-    with open('output.ics', 'wb') as f:
+    with open('exam.ics', 'wb') as f:
         f.write(calt.to_ical())
