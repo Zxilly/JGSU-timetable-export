@@ -134,3 +134,5 @@ dmypy.json
 info.py
 .idea/
 output.ics
+curriculum.ics
+exam.ics

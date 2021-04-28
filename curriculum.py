@@ -1,6 +1,7 @@
 import copy
 import hashlib
 import re
+import sys
 from datetime import datetime
 from uuid import uuid1
 
@@ -9,6 +10,7 @@ import icalendar
 import api
 from func import dictHash, fixDay, login, getIcal
 from static import *
+from fix import fix_dict
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -42,7 +44,6 @@ if __name__ == '__main__':
             purgeAllCourseData[timeSign] = {}
 
     for courseData in allCourseData:
-        # print(courseData)
         day = fixDay(int(courseData['dayOfWeek']))
         time = int(courseData['time'])
         timeSign = (day, time)
@@ -54,7 +55,7 @@ if __name__ == '__main__':
             'classroomName': courseData.get('classroomName', ''),
             'className': courseData.get('teachingClassName', '')
         }
-        purgeAllCourseData.setdefault(timeSign, [])
+        purgeAllCourseData.setdefault(timeSign, {})
         purgeAllCourseData[timeSign][dictHash(purgeCourseDict)] = purgeCourseDict
 
     parsedCourseData = []
@@ -88,10 +89,10 @@ if __name__ == '__main__':
                     startWeek = parsedWeeks
                     endWeek = parsedWeeks
 
-                startTime = copy.copy(time)
+                startTimePointer = copy.copy(time)
                 endTimePointer = copy.copy(time)
 
-                print(courseName, str(parsedWeeks), rawWeeks)
+                # print(courseName, str(parsedWeeks), rawWeeks)
                 while True:
                     if endTimePointer != 4 and endTimePointer != 11:
                         if courseHash in purgeAllCourseData[(day, endTimePointer + 1)].keys():
@@ -101,25 +102,46 @@ if __name__ == '__main__':
                             break
                     else:
                         break
-                endTime = endTimePointer
 
                 parsedOneCourse = {
                     'day': day,
                     'courseName': courseName,
                     'className': className,
                     'classroomName': classroomName,
-                    'startTimeID': startTime,
-                    'endTimeID': endTime,
+                    'startTimeID': startTimePointer,
+                    'endTimeID': endTimePointer,
                     'teacherName': teacher,
-                    'startTime': courseTimeDict[startTime],
-                    'endTime': courseTimeDict[endTime] + COURSE_TIME,
                     'startWeek': startWeek,
                     'endWeek': endWeek,
                     'interval': interval,
                     'studentNumber': studentNum
                 }
 
-                parsedCourseData.append(copy.deepcopy(parsedOneCourse))
+                oneCourseHash = dictHash(parsedOneCourse)
+                print(oneCourseHash, parsedOneCourse)
+                if oneCourseHash in fix_dict.keys():
+                    fix_object = fix_dict[oneCourseHash]
+                    for key, value in fix_object.items():
+                        parsedOneCourse[key] = value
+                    print("fixed:", parsedOneCourse, file=sys.stderr)
+
+                fixedParsedOneCourse = {
+                    'day': day,
+                    'courseName': courseName,
+                    'className': className,
+                    'classroomName': classroomName,
+                    'startTimeID': startTimePointer,
+                    'endTimeID': endTimePointer,
+                    'teacherName': teacher,
+                    'startTime': courseTimeDict[startTimePointer],
+                    'endTime': courseTimeDict[endTimePointer] + COURSE_TIME,
+                    'startWeek': startWeek,
+                    'endWeek': endWeek,
+                    'interval': interval,
+                    'studentNumber': studentNum
+                }
+
+                parsedCourseData.append(copy.deepcopy(fixedParsedOneCourse))
                 parsedOneCourse.clear()
             else:
                 break
