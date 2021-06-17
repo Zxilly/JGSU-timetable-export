@@ -43,36 +43,42 @@ header = {
 
 def login():
 
+    dict_cookies = {}
+
     if os.getenv('CI'):
-        studentID = os.getenv('studentID')
-        password = os.getenv('password')
+        cookies = os.getenv('cookies')
     else:
         import info
-        studentID = info.studentID
-        password = info.password
+        cookies = info.cookies
+
+    for line in cookies.split(';'):
+        name, value = line.strip().split('=', 1)
+        dict_cookies[name] = value
 
     mainSession = requests.session()
     mainSession.params = {"_t": int(datetime.now().timestamp())}
     mainSession.headers = header
     mainSession.verify = False
 
-    loginDict = {
-        "userName": studentID,
-        "token": base64.b64encode(password.encode('UTF-8')).decode(),
-        "target": "",
-        "pattern": "manager-login",
-        "timestamp": int(datetime.now().timestamp() * 1000),
-        "username": studentID,
-        'password': hashlib.md5(("admin" + password).encode("UTF-8")).hexdigest(),
-    }
+    mainSession.cookies.update(dict_cookies)
 
-    req = mainSession.post(url=api.login, params=loginDict, data={})
+    # loginDict = {
+    #     "userName": studentID,
+    #     "token": base64.b64encode(password.encode('UTF-8')).decode(),
+    #     "target": "",
+    #     "pattern": "teacher-login",
+    #     "timestamp": int(datetime.now().timestamp() * 1000),
+    #     "username": studentID,
+    #     'password': hashlib.md5(("admin" + password).encode("UTF-8")).hexdigest(),
+    # }
 
-    if req.json()['code'] in [51000003, 50000012]:
-        print(req.json())
-        exit(1)
+    # req = mainSession.post(url=api.login, params=loginDict, data={})
 
-    userData = json.loads(req.cookies.get_dict()['user'])
+    # if req.json()['code'] in [51000003, 50000012]:
+    #     print(req.json())
+    #     exit(1)
+
+    userData = json.loads(dict_cookies['user'])
 
     # print(userData)
 
@@ -82,6 +88,8 @@ def login():
     print(semesterName)
 
     req = mainSession.get(url=api.semester).json()
+
+    print(req)
 
     semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
     semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
