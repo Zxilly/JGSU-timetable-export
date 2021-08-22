@@ -52,6 +52,8 @@ def login():
         cookies = info.cookies
 
     for line in cookies.split(';'):
+        if line.isspace():
+            continue
         name, value = line.strip().split('=', 1)
         dict_cookies[name] = value
 
