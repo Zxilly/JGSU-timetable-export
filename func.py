@@ -87,7 +87,10 @@ def login():
     userID = userData['userName']
 
     try:
-        from info import semester
+        if os.getenv('CI'):
+            from info import semester
+        else:
+            from info.example import semester
         semesterName = semester['name']
         semesterStartTime = semester['start']
     except ImportError:
