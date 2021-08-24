@@ -87,7 +87,13 @@ def login():
 
     try:
         if os.getenv('CI'):
-            from info.example import semester
+            import importlib.util
+            import sys
+            spec = importlib.util.spec_from_file_location('infoexample', 'info.example.py')
+            info_example = importlib.util.module_from_spec(spec)
+            sys.modules['infoexample'] = info_example
+            spec.loader.exec_module(info_example)
+            from infoexample import semester
         else:
             from info import semester
         semesterName = semester['name']
