@@ -87,12 +87,14 @@ def login():
 
     try:
         if os.getenv('CI'):
-            from info import semester
-        else:
             from info.example import semester
+        else:
+            from info import semester
         semesterName = semester['name']
         semesterStartTime = semester['start']
     except ImportError:
+        if os.getenv('CI'):
+            raise Exception("Failed CI")
         semesterName = userData['semester']
         req = mainSession.get(url=api.semester).json()
         print(req)
