@@ -11,7 +11,7 @@
 
 重命名 `info.py.example` 为 `info.py` 并填入 cookies
 
-> 可以访问 `https://vpn2.jgsu.edu.cn/enlink/#/client/app` 进入教务系统，随后访问 document.cookie 获取 cookie 字符串
+> 可以访问 `https://vpn2.jgsu.edu.cn/enlink/sso/login/` 进入教务系统，随后访问 document.cookie 获取 cookie 字符串
 
 随后可以执行
 

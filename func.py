@@ -85,21 +85,27 @@ def login():
     # print(userData)
 
     userID = userData['userName']
-    semesterName = userData['semester']
+
+    try:
+        from info import semester
+        semesterName = semester['name']
+        semesterStartTime = semester['start']
+    except ImportError:
+        semesterName = userData['semester']
+        req = mainSession.get(url=api.semester).json()
+        print(req)
+        semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
+
+
+
+    # semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
     print(semesterName)
-
-    req = mainSession.get(url=api.semester).json()
-
-    print(req)
-
-    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
-    semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
-
     print(semesterStartTime)
-    print(semesterEndTime)
 
-    return mainSession, userID, semesterName, semesterStartTime, semesterEndTime
+    assert semesterStartTime.weekday() == 0
+
+    return mainSession, userID, semesterName, semesterStartTime
 
 
 def getIcal(name: str):

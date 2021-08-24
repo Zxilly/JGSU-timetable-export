@@ -5,7 +5,7 @@ from func import *
 
 
 if __name__ == '__main__':
-    mainSession, userID, semesterName, semesterStartTime, semesterEndTime = login()
+    mainSession, userID, semesterName, semesterStartTime = login()
 
     reqData = {
         "pageNo": 1,

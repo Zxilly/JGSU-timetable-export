@@ -17,7 +17,7 @@ header = {
 }
 
 if __name__ == '__main__':
-    mainSession, userID, semesterName, semesterStartTime, semesterEndTime = login()
+    mainSession, userID, semesterName, semesterStartTime = login()
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -28,6 +28,7 @@ if __name__ == '__main__':
         "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     }).json()
 
+    print(req)
     tmpData = req['data']
     reObject = re.compile(r'(\d*)-(\d*)( [单双])?')
     allCourseData = []
@@ -138,9 +139,9 @@ if __name__ == '__main__':
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
         dtstart_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
-                int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['startTime']
+                int(oneEvent['day']) - 1) * ONE_DAY + oneEvent['startTime']
         dtend_datetime = semesterStartTime + (int(oneEvent['startWeek']) - 1) * ONE_WEEK + (
-                int(oneEvent['day']) - 2) * ONE_DAY + oneEvent['endTime']
+                int(oneEvent['day']) - 1) * ONE_DAY + oneEvent['endTime']
 
         event = icalendar.Event()
         event.add('summary', oneEvent['courseName'])  # 标题
