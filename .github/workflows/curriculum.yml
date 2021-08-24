@@ -31,8 +31,7 @@ jobs:
     - name: Generate ICS
       run: python curriculum.py
       env:
-        studentID: "${{ secrets.ID }}"
-        password: "${{ secrets.PASS }}"
+        cookies: "${{ github.event.inputs }}"
 
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
