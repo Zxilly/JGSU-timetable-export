@@ -5,6 +5,10 @@ name: Get Exam ICS
 
 on:
   workflow_dispatch:
+    inputs:
+      cookies:
+        description: 'What you got from document.cookies, without quota'
+        required: true
 
 jobs:
   build:
