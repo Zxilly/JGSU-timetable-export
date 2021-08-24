@@ -42,11 +42,10 @@ header = {
 
 
 def login():
-
     dict_cookies = {}
 
     if os.getenv('CI'):
-        cookies = os.getenv('cookies')
+        cookies = os.getenv('cookies').replace('\\', '')
     else:
         import info
         cookies = info.cookies
@@ -98,8 +97,6 @@ def login():
         req = mainSession.get(url=api.semester).json()
         print(req)
         semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
-
-
 
     # semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
