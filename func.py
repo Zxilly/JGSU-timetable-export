@@ -41,17 +41,18 @@ header = {
 }
 
 
-def login():
+def login(cookies):
     dict_cookies = {}
 
-    if os.getenv('CI'):
-        cookies = os.getenv('cookies').replace('\\', '')
-    else:
-        import info
-        cookies = info.cookies
+    if not cookies:
+        if os.getenv('CI'):
+            cookies = os.getenv('cookies').replace('\\', '')
+        else:
+            import info
+            cookies = info.cookies
 
     for line in cookies.split(';'):
-        if line.isspace():
+        if line.isspace() or len(line) == 0:
             continue
         name, value = line.strip().split('=', 1)
         dict_cookies[name] = value

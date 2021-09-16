@@ -33,7 +33,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Generate ICS
-      run: python examArrangement.py
+      run: python exam.py
       env:
         cookies: "${{ github.event.inputs.cookies }}"
 

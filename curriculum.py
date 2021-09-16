@@ -16,8 +16,10 @@ header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
 }
 
-if __name__ == '__main__':
-    mainSession, userID, semesterName, semesterStartTime = login()
+
+def curriculum(cookies: str = None):
+    print(cookies)
+    mainSession, userID, semesterName, semesterStartTime = login(cookies)
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -28,6 +30,7 @@ if __name__ == '__main__':
         "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     }).json()
 
+    print(mainSession.cookies.items())
     print(req)
     tmpData = req['data']
     reObject = re.compile(r'(\d*)-(\d*)( [单双])?')
@@ -176,5 +179,11 @@ if __name__ == '__main__':
             event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
-    with open('curriculum.ics', 'wb') as f:
+    with open(f'data/{userID}.curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())
+
+    return f'https://ical.learningman.top/{userID}/curriculum.ics'
+
+
+if __name__ == '__main__':
+    curriculum()

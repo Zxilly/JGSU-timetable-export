@@ -3,9 +3,8 @@ from uuid import uuid1
 from func import *
 
 
-
-if __name__ == '__main__':
-    mainSession, userID, semesterName, semesterStartTime = login()
+def exam(cookies: str = None):
+    mainSession, userID, semesterName, semesterStartTime = login(cookies)
 
     reqData = {
         "pageNo": 1,
@@ -53,5 +52,7 @@ if __name__ == '__main__':
         ))
         calt.add_component(event)
 
-    with open('exam.ics', 'wb') as f:
+    with open(f'data/{userID}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
+
+    return f'https://ical.learningman.top/{userID}/exam.ics'
