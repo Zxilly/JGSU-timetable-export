@@ -43,4 +43,4 @@ jobs:
         automatic_release_tag: "${{ steps.current-time.outputs.formattedTime }}"
         title: "Curriculum ICS"
         prerelease: true
-        files: "curriculum.ics"
+        files: "data/*.ics"
