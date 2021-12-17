@@ -49,4 +49,5 @@ async def refresh(method: refreshMethod = refreshMethod.CURRICULUM, cookies=Body
 
 
 if __name__ == '__main__':
+    os.environ['SERVER'] = 'true'
     uvicorn.run('server:app', host='0.0.0.0', port=24654)

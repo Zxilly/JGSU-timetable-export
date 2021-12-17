@@ -87,7 +87,7 @@ def login(cookies):
     userID = userData['userName']
 
     try:
-        if os.getenv('CI'):
+        if os.getenv('CI') or os.getenv('SERVER'):
             import importlib.util
             import sys
             spec = importlib.util.spec_from_file_location('infoexample', 'info.example.py')
