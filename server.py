@@ -33,7 +33,7 @@ async def getExam(studentID: str):
 
 @app.get('/{studentID}/curriculum.ics', response_class=PlainTextResponse)
 async def getCurriculum(studentID: str):
-    if os.path.exists(f'{studentID}.exam.ics'):
+    if os.path.exists(f'{studentID}.curriculum.ics'):
         with open(f'{studentID}.curriculum.ics') as f:
             return str(f.read())
     raise HTTPException(404)
