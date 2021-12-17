@@ -56,3 +56,7 @@ def exam(cookies: str = None):
         f.write(calt.to_ical())
 
     return f'https://ical.learningman.top/{userID}/exam.ics'
+
+
+if __name__ == '__main__':
+    exam()
