@@ -23,8 +23,6 @@ def exam(cookies: str = None):
 
     data = resp['data']['rows']
 
-    info = []
-
     for one in data:
         day = datetime.strptime(one['positiveExamPaperDate'], '%Y-%m-%d').date()
         startTime = datetime.strptime(one['positiveExamTime'].split('~')[0], '%H:%M').time()
@@ -52,10 +50,10 @@ def exam(cookies: str = None):
         ))
         calt.add_component(event)
 
-    with open(f'data/{userID}.exam.ics', 'wb') as f:
+    with open(f'data/{userID}.{semesterName}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{userID}/exam.ics'
+    return f'https://ical.learningman.top/{userID}/{semesterName}/exam.ics'
 
 
 if __name__ == '__main__':

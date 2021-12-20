@@ -19,33 +19,33 @@ app.add_middleware(
 
 
 class refreshMethod(Enum):
-    CURRICULUM = 0,
-    EXAM = 1
+    CURRICULUM = 'cur'
+    EXAM = 'exam'
 
 
-@app.get('/{studentID}/exam.ics', response_class=PlainTextResponse)
-async def getExam(studentID: str):
-    if os.path.exists(f'{studentID}.exam.ics'):
-        with open(f'{studentID}.exam.ics') as f:
+@app.get('/{studentID}/{semesterName}/exam.ics', response_class=PlainTextResponse)
+async def getExam(studentID: str, semesterName: str):
+    if os.path.exists(f'{studentID}.{semesterName}.exam.ics'):
+        with open(f'{studentID}.{semesterName}.exam.ics') as f:
             return str(f.read())
-    raise HTTPException(404)
+    raise HTTPException(404, "Please cache before get file.")
 
 
-@app.get('/{studentID}/curriculum.ics', response_class=PlainTextResponse)
-async def getCurriculum(studentID: str):
-    if os.path.exists(f'{studentID}.curriculum.ics'):
-        with open(f'{studentID}.curriculum.ics') as f:
+@app.get('/{studentID}/{semesterName}/curriculum.ics', response_class=PlainTextResponse)
+async def getCurriculum(studentID: str, semesterName: str):
+    if os.path.exists(f'{studentID}.{semesterName}.curriculum.ics'):
+        with open(f'{studentID}.{semesterName}.curriculum.ics') as f:
             return str(f.read())
-    raise HTTPException(404)
+    raise HTTPException(404, "Please cache before get file.")
 
 
 @app.post('/refresh')
-async def refresh(method: refreshMethod = refreshMethod.CURRICULUM, cookies=Body(..., embed=False)):
-
+async def refresh(cookies: str, method: refreshMethod):
     if method == refreshMethod.CURRICULUM:
         return curriculum(cookies)
     elif method == refreshMethod.EXAM:
         return exam(cookies)
+    raise HTTPException(500, "Method not found")
 
 
 if __name__ == '__main__':

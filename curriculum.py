@@ -54,7 +54,7 @@ def curriculum(cookies: str = None):
         purgeCourseDict = {
             'courseName': courseData['courseName'],
             'weeks': courseData['weeks'],
-            'teacher': courseData['teacherName'],
+            'teacher': courseData.get('teacherName', ''),
             'studentNum': courseData['numberOfStudent'],
             'classroomName': courseData.get('classroomName', ''),
             'className': courseData.get('teachingClassName', '')
@@ -179,10 +179,10 @@ def curriculum(cookies: str = None):
             event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
-    with open(f'data/{userID}.curriculum.ics', 'wb') as f:
+    with open(f'data/{userID}.{semesterName}.curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{userID}/curriculum.ics'
+    return f'https://ical.learningman.top/{userID}/{semesterName}/curriculum.ics'
 
 
 if __name__ == '__main__':

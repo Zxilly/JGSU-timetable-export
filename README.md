@@ -3,6 +3,12 @@
 
 > 参考了 `AC Better` 的[cqut-lesson-timetable-to-calendar](https://github.com/acbetter/cqut-lesson-timetable-to-calendar)
 
+## 在线生成
+
+访问 `https://ical.learningman.top/docs`
+
+使用 `refresh` 方法刷新考试或课程的缓存，返回生成的 `ical` 文件的 `url`
+
 ## 使用方法
 
 需要 `Python ^3.8` 版本

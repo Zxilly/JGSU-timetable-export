@@ -86,26 +86,30 @@ def login(cookies):
 
     userID = userData['userName']
 
-    try:
-        if os.getenv('CI') or os.getenv('SERVER'):
-            import importlib.util
-            import sys
-            spec = importlib.util.spec_from_file_location('infoexample', 'info.example.py')
-            info_example = importlib.util.module_from_spec(spec)
-            sys.modules['infoexample'] = info_example
-            spec.loader.exec_module(info_example)
-            from infoexample import semester
-        else:
-            from info import semester
-        semesterName = semester['name']
-        semesterStartTime = semester['start']
-    except ImportError:
-        if os.getenv('CI'):
-            raise Exception("Failed CI")
-        semesterName = userData['semester']
-        req = mainSession.get(url=api.semester).json()
-        print(req)
-        semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
+    # try:
+    #     if os.getenv('CI') or os.getenv('SERVER'):
+    #         import importlib.util
+    #         import sys
+    #         spec = importlib.util.spec_from_file_location('infoexample', 'info.example.py')
+    #         info_example = importlib.util.module_from_spec(spec)
+    #         sys.modules['infoexample'] = info_example
+    #         spec.loader.exec_module(info_example)
+    #         from infoexample import semester
+    #     else:
+    #         from info import semester
+    #     semesterName = semester['name']
+    #     semesterStartTime = semester['start']
+    # except ImportError:
+    #     if os.getenv('CI'):
+    #         raise Exception("Failed CI")
+    #     semesterName = userData['semester']
+    #     req = mainSession.get(url=api.semester).json()
+    #     print(req)
+    #     semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
+    semesterName = userData['semester']
+    req = mainSession.get(url=api.semester).json()
+    print(req)
+    semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
 
     # semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
