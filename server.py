@@ -19,22 +19,14 @@ app.add_middleware(
 
 
 class refreshMethod(Enum):
-    CURRICULUM = 'cur'
+    CURRICULUM = 'curriculum'
     EXAM = 'exam'
 
 
-@app.get('/{studentID}/{semesterName}/exam.ics', response_class=PlainTextResponse)
-async def getExam(studentID: str, semesterName: str):
-    if os.path.exists(f'{studentID}.{semesterName}.exam.ics'):
-        with open(f'{studentID}.{semesterName}.exam.ics') as f:
-            return str(f.read())
-    raise HTTPException(404, "Please cache before get file.")
-
-
-@app.get('/{studentID}/{semesterName}/curriculum.ics', response_class=PlainTextResponse)
-async def getCurriculum(studentID: str, semesterName: str):
-    if os.path.exists(f'{studentID}.{semesterName}.curriculum.ics'):
-        with open(f'{studentID}.{semesterName}.curriculum.ics') as f:
+@app.get('/{studentID}/{semesterName}/{type}.ics', response_class=PlainTextResponse)
+async def getIcal(studentID: str, semesterName: str, type: str):
+    if os.path.exists(f'data/{studentID}.{semesterName}.{type}.ics'):
+        with open(f'data/{studentID}.{semesterName}.{type}.ics') as f:
             return str(f.read())
     raise HTTPException(404, "Please cache before get file.")
 
