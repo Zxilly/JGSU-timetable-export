@@ -1,15 +1,14 @@
-import base64
 import hashlib
 import json
 import os
 from datetime import datetime
 
 import icalendar
-from static import *
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 import api
+from static import *
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -64,61 +63,26 @@ def login(cookies):
 
     mainSession.cookies.update(dict_cookies)
 
-    # loginDict = {
-    #     "userName": studentID,
-    #     "token": base64.b64encode(password.encode('UTF-8')).decode(),
-    #     "target": "",
-    #     "pattern": "teacher-login",
-    #     "timestamp": int(datetime.now().timestamp() * 1000),
-    #     "username": studentID,
-    #     'password': hashlib.md5(("admin" + password).encode("UTF-8")).hexdigest(),
-    # }
-
-    # req = mainSession.post(url=api.login, params=loginDict, data={})
-
-    # if req.json()['code'] in [51000003, 50000012]:
-    #     print(req.json())
-    #     exit(1)
-
     userData = json.loads(dict_cookies['user'])
 
     # print(userData)
 
     userID = userData['userName']
 
-    # try:
-    #     if os.getenv('CI') or os.getenv('SERVER'):
-    #         import importlib.util
-    #         import sys
-    #         spec = importlib.util.spec_from_file_location('infoexample', 'info.example.py')
-    #         info_example = importlib.util.module_from_spec(spec)
-    #         sys.modules['infoexample'] = info_example
-    #         spec.loader.exec_module(info_example)
-    #         from infoexample import semester
-    #     else:
-    #         from info import semester
-    #     semesterName = semester['name']
-    #     semesterStartTime = semester['start']
-    # except ImportError:
-    #     if os.getenv('CI'):
-    #         raise Exception("Failed CI")
-    #     semesterName = userData['semester']
-    #     req = mainSession.get(url=api.semester).json()
-    #     print(req)
-    #     semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE)
+    req = mainSession.get(api.student_number.format(userID)).json()
+    student_num = req['data']['xh']
+
     semesterName = userData['semester']
     req = mainSession.get(url=api.semester).json()
     print(req)
     semesterStartTime = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
-
-    # semesterEndTime = datetime.strptime(req['data']['jsrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 2
 
     print(semesterName)
     print(semesterStartTime)
 
     assert semesterStartTime.weekday() == 0
 
-    return mainSession, userID, semesterName, semesterStartTime
+    return mainSession, userID, student_num, semesterName, semesterStartTime
 
 
 def getIcal(name: str):
