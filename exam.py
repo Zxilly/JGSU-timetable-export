@@ -4,7 +4,7 @@ from func import *
 
 
 def exam(cookies: str = None):
-    mainSession, userID, semesterName, semesterStartTime = login(cookies)
+    mainSession, userID, student_num, semesterName, semesterStartTime = login(cookies)
 
     reqData = {
         "pageNo": 1,
@@ -50,10 +50,10 @@ def exam(cookies: str = None):
         ))
         calt.add_component(event)
 
-    with open(f'data/{userID}.{semesterName}.exam.ics', 'wb') as f:
+    with open(f'data/{student_num}.{semesterName}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{userID}/{semesterName}/exam.ics'
+    return f'https://ical.learningman.top/{student_num}/{semesterName}/exam.ics'
 
 
 if __name__ == '__main__':

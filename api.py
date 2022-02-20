@@ -8,3 +8,5 @@ course = 'https://jw.jgsu.edu.cn:19995/api/arrange/CourseScheduleAllQuery/studen
 semester = 'https://jw.jgsu.edu.cn:19995/api/baseInfo/semester/selectCurrentXnXq'
 
 exam = 'https://jw.jgsu.edu.cn:19995/api/exam/studentExamSchedule/queryPositiveExamSchedule'
+
+student_number = 'https://jw.jgsu.edu.cn:19995/api/student/studentInfo/selectXsSyByid/{}'

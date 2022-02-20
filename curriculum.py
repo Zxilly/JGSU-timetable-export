@@ -8,9 +8,9 @@ from uuid import uuid1
 import icalendar
 
 import api
+from fix import fix_dict
 from func import dictHash, fixDay, login, getIcal
 from static import *
-from fix import fix_dict
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -19,7 +19,7 @@ header = {
 
 def curriculum(cookies: str = None):
     print(cookies)
-    mainSession, userID, semesterName, semesterStartTime = login(cookies)
+    mainSession, userID, student_num, semesterName, semesterStartTime = login(cookies)
 
     req = mainSession.post(url=api.course, json={
         "oddOrDouble": 0,
@@ -179,10 +179,10 @@ def curriculum(cookies: str = None):
             event.add('rrule', {'freq': 'weekly', 'interval': oneEvent['interval'], 'count': count})
         calt.add_component(event)
 
-    with open(f'data/{userID}.{semesterName}.curriculum.ics', 'wb') as f:
+    with open(f'data/{student_num}.{semesterName}.curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{userID}/{semesterName}/curriculum.ics'
+    return f'https://ical.learningman.top/{student_num}/{semesterName}/curriculum.ics'
 
 
 if __name__ == '__main__':
