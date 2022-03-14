@@ -32,7 +32,7 @@ async def getIcal(studentID: str, semesterName: str, type: str):
 
 
 @app.post('/refresh')
-async def refresh(cookies: str, method: refreshMethod):
+async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM):
     if method == refreshMethod.CURRICULUM:
         return curriculum(cookies)
     elif method == refreshMethod.EXAM:

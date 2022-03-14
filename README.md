@@ -11,6 +11,24 @@
 
 使用 `refresh` 方法刷新考试或课程的缓存，返回生成的 `ical` 文件的 `url`
 
+## 自动脚本
+
+```js
+fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
+    method: 'POST',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    mode: 'cors',
+    redirect: 'follow',
+    referrer: 'no-referrer',
+}).then((resp) => {
+    return resp.text()
+}).then(uri => {
+    console.log(uri)
+})
+```
+在控制台执行，仅限 `vpn2` 使用，正常环境下无法获取 `http-only` cookie
+
 ## 使用方法
 
 需要 `Python ^3.8` 版本

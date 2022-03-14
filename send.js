@@ -1,13 +1,7 @@
-fetch('http://localhost:24654/refresh', {
+fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
     method: 'POST',
-    body: JSON.stringify(
-        document.cookie
-    ),
     cache: 'no-cache',
     credentials: 'same-origin',
-    headers: {
-        'content-type': 'application/json'
-    },
     mode: 'cors',
     redirect: 'follow',
     referrer: 'no-referrer',
