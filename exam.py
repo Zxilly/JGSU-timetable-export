@@ -1,25 +1,26 @@
 from uuid import uuid1
 
-from func import *
+import static
+from utils import *
 
 
 def exam(cookies: str = None):
-    mainSession, userID, student_num, semesterName, semesterStartTime = login(cookies)
+    main_session, user_id, student_num, semester_name, semester_start_time = login_url(cookies)
 
     reqData = {
         "pageNo": 1,
         "pageSize": 20,
         "total": 0,
-        "param": {"semesterId": semesterName}
+        "param": {"semesterId": semester_name}
     }
 
     reqHeader = {
         'permission': 'studentServer:examArrange'
     }
 
-    mainSession.get('https://jw.jgsu.edu.cn:19995/')
+    main_session.get('https://jw.jgsu.edu.cn:19995/')
 
-    resp = mainSession.post(api.exam, json=reqData, headers=reqHeader).json()
+    resp = main_session.post(static.exam_url, json=reqData, headers=reqHeader).json()
 
     data = resp['data']['rows']
 
@@ -31,7 +32,7 @@ def exam(cookies: str = None):
         one['examEnd'] = datetime.combine(day, endTime, TIMEZONE)
         print(one)
 
-    calt = get_ical(f'{semesterName} 考试')
+    calt = get_ical(f'{semester_name} 考试')
 
     for oneEvent in data:
         event = icalendar.Event()
@@ -50,10 +51,10 @@ def exam(cookies: str = None):
         ))
         calt.add_component(event)
 
-    with open(f'data/{student_num}.{semesterName}.exam.ics', 'wb') as f:
+    with open(f'data/{student_num}.{semester_name}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{student_num}/{semesterName}/exam.ics'
+    return f'https://ical.learningman.top/{student_num}/{semester_name}/exam.ics'
 
 
 if __name__ == '__main__':

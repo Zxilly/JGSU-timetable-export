@@ -1,12 +1,13 @@
 import hashlib
 import json
 import os
+import re
 from datetime import datetime
 
 import icalendar
 import requests
 
-import api
+import static
 from static import *
 
 
@@ -66,11 +67,11 @@ def login(cookies):
 
     user_id = user_data['userName']
 
-    req = main_session.get(api.student_number.format(user_id)).json()
+    req = main_session.get(static.student_number_url.format(user_id)).json()
     student_num = req['data']['xh']
 
     semester_name = user_data['semester']
-    req = main_session.get(url=api.semester).json()
+    req = main_session.get(url=static.semester_url).json()
     print(req)
     semester_start_time = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
 
@@ -98,6 +99,36 @@ def get_ical(name: str):
     tz.add_component(tz_standard)
     cal.add_component(tz)
     return cal
+
+
+def raw_week_parse(rawWeek: str):
+    ret = []
+    weeks = rawWeek.split(';')
+    for week in weeks:
+        week = week.strip()
+        th_spec = re.compile(r'[单双]')
+        tw_spec = re.compile(r'\d-\d')
+        on_spec = re.compile(r'\d')
+        if th_spec.match(week):
+            pattern = week[-1]
+            week = week[:-2]
+            nums = week.split('-')
+            for num in range(int(nums[0]), int(nums[1]) + 1):
+                if pattern == '单':
+                    if num % 2 == 1:
+                        ret.append(num)
+                elif pattern == '双':
+                    if num % 2 == 0:
+                        ret.append(num)
+        elif tw_spec.match(week):
+            nums = week.split('-')
+            for num in range(int(nums[0]), int(nums[1]) + 1):
+                ret.append(num)
+        elif on_spec.match(week):
+            ret.append(int(week))
+        else:
+            raise ValueError('无法识别的周数')
+    return ret
 
 
 class DateEncoder(json.JSONEncoder):

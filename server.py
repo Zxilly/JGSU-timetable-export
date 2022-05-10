@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response, RedirectResponse
 
 from curriculum import curriculum
-from exam import exam
+from exam import exam_url
 
 app = FastAPI()
 app.add_middleware(
@@ -73,7 +73,7 @@ async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM
         if method == refreshMethod.CURRICULUM:
             return curriculum(cookies)
         elif method == refreshMethod.EXAM:
-            return exam(cookies)
+            return exam_url(cookies)
     except Exception:
         err = traceback.format_exc()
         raise HTTPException(500, err)

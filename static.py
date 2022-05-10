@@ -22,3 +22,10 @@ courseTimeDict = {
     10: timedelta(hours=19, minutes=20),
     11: timedelta(hours=20, minutes=10)
 }
+
+session_url = 'https://jw.jgsu.edu.cn:19995/api/api/verificationCode'
+login_url = 'https://jw.jgsu.edu.cn:19995/api/api/login'
+course_url = 'https://jw.jgsu.edu.cn:19995/api/arrange/CourseScheduleAllQuery/studentCourseSchedule'
+semester_url = 'https://jw.jgsu.edu.cn:19995/api/baseInfo/semester/selectCurrentXnXq'
+exam_url = 'https://jw.jgsu.edu.cn:19995/api/exam/studentExamSchedule/queryPositiveExamSchedule'
+student_number_url = 'https://jw.jgsu.edu.cn:19995/api/student/studentInfo/selectXsSyByid/{}'
