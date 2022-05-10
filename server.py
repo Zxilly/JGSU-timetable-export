@@ -1,3 +1,5 @@
+import traceback
+
 import uvicorn
 from fastapi import FastAPI, Body, HTTPException
 import os
@@ -67,10 +69,14 @@ on [`https://vpn2.jgsu.edu.cn/enlink/sso/login/`](https://vpn2.jgsu.edu.cn/enlin
 
 @app.post('/refresh', description=refreshDescription)
 async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM):
-    if method == refreshMethod.CURRICULUM:
-        return curriculum(cookies)
-    elif method == refreshMethod.EXAM:
-        return exam(cookies)
+    try:
+        if method == refreshMethod.CURRICULUM:
+            return curriculum(cookies)
+        elif method == refreshMethod.EXAM:
+            return exam(cookies)
+    except Exception:
+        err = traceback.format_exc()
+        raise HTTPException(500, err)
     raise HTTPException(500, "Method not found")
 
 
