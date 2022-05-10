@@ -1,9 +1,9 @@
 # No longer under maintain.
 
 # CalenderGenerator
-一个用于生成井冈山大学的`ical格式`课表的`python程序`
+一个用于生成井冈山大学的 `ical格式` 课表的 `python程序`
 
-> 参考了 `AC Better` 的[cqut-lesson-timetable-to-calendar](https://github.com/acbetter/cqut-lesson-timetable-to-calendar)
+> 参考了 `AC Better` 的 [cqut-lesson-timetable-to-calendar](https://github.com/acbetter/cqut-lesson-timetable-to-calendar)
 
 ## 在线生成
 
@@ -37,7 +37,7 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
 
 重命名 `info.example.py` 为 `info.py` 并填入 cookies
 
-> 可以访问 `https://vpn2.jgsu.edu.cn/enlink/sso/login/` 进入教务系统，随后访问 document.cookie 获取 cookie 字符串
+> 可以访问 `https://vpn2.jgsu.edu.cn/enlink/sso/login/` 进入教务系统，随后访问 `document.cookie` 获取 cookie 字符串
 
 随后可以执行
 

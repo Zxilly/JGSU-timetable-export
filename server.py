@@ -1,9 +1,9 @@
 import uvicorn
 from fastapi import FastAPI, Body, HTTPException
-from fastapi.responses import PlainTextResponse
 import os
 from enum import Enum
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.responses import Response, RedirectResponse
 
 from curriculum import curriculum
 from exam import exam
@@ -23,15 +23,49 @@ class refreshMethod(Enum):
     EXAM = 'exam'
 
 
-@app.get('/{studentID}/{semesterName}/{type}.ics', response_class=PlainTextResponse)
-async def getIcal(studentID: str, semesterName: str, type: str):
-    if os.path.exists(f'data/{studentID}.{semesterName}.{type}.ics'):
-        with open(f'data/{studentID}.{semesterName}.{type}.ics') as f:
+class IcalResponse(Response):
+    media_type = "text/calendar"
+
+
+@app.get('/')
+async def redirect():
+    return RedirectResponse(url='https://github.com/Zxilly/JGSU-timetable-export')
+
+
+@app.get('/{studentID}/{semesterName}/{ics_type}.ics',
+         response_class=IcalResponse,
+         description="Endpoint for getting ical file, should not be called manually.")
+async def get_ical(studentID: str, semesterName: str, ics_type: str):
+    if os.path.exists(f'data/{studentID}.{semesterName}.{ics_type}.ics'):
+        with open(f'data/{studentID}.{semesterName}.{ics_type}.ics') as f:
             return str(f.read())
-    raise HTTPException(404, "Please cache before get file.")
+    raise HTTPException(404, "Please make cache before get file.")
 
 
-@app.post('/refresh')
+refreshDescription = """
+Refresh data from server.
+Can use script
+
+```js
+fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
+    method: 'POST',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    mode: 'cors',
+    redirect: 'follow',
+    referrer: 'no-referrer',
+}).then((resp) => {
+    return resp.text()
+}).then(uri => {
+    console.log(uri)
+})
+```
+
+on [`https://vpn2.jgsu.edu.cn/enlink/sso/login/`](https://vpn2.jgsu.edu.cn/enlink/sso/login/)
+"""
+
+
+@app.post('/refresh', description=refreshDescription)
 async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM):
     if method == refreshMethod.CURRICULUM:
         return curriculum(cookies)

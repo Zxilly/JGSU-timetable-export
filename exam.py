@@ -31,7 +31,7 @@ def exam(cookies: str = None):
         one['examEnd'] = datetime.combine(day, endTime, TIMEZONE)
         print(one)
 
-    calt = getIcal(f'{semesterName} 考试')
+    calt = get_ical(f'{semesterName} 考试')
 
     for oneEvent in data:
         event = icalendar.Event()

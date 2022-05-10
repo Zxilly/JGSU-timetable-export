@@ -9,7 +9,7 @@ import icalendar
 
 import api
 from fix import fix_dict
-from func import dictHash, fixDay, login, getIcal
+from func import dict_hash, fix_day, login, get_ical
 from static import *
 
 header = {
@@ -48,7 +48,7 @@ def curriculum(cookies: str = None):
             purgeAllCourseData[timeSign] = {}
 
     for courseData in allCourseData:
-        day = fixDay(int(courseData['dayOfWeek']))
+        day = fix_day(int(courseData['dayOfWeek']))
         time = int(courseData['time'])
         timeSign = (day, time)
         purgeCourseDict = {
@@ -60,7 +60,7 @@ def curriculum(cookies: str = None):
             'className': courseData.get('teachingClassName', '')
         }
         purgeAllCourseData.setdefault(timeSign, {})
-        purgeAllCourseData[timeSign][dictHash(purgeCourseDict)] = purgeCourseDict
+        purgeAllCourseData[timeSign][dict_hash(purgeCourseDict)] = purgeCourseDict
 
     parsedCourseData = []
 
@@ -121,7 +121,7 @@ def curriculum(cookies: str = None):
                     'studentNumber': studentNum
                 }
 
-                oneCourseHash = dictHash(parsedOneCourse)
+                oneCourseHash = dict_hash(parsedOneCourse)
                 print(oneCourseHash, parsedOneCourse)
                 if oneCourseHash in fix_dict.keys():
                     fix_object = fix_dict[oneCourseHash]
@@ -137,7 +137,7 @@ def curriculum(cookies: str = None):
             else:
                 break
 
-    calt = getIcal(f'{semesterName} 课表')
+    calt = get_ical(f'{semesterName} 课表')
 
     for oneEvent in parsedCourseData:
         count = int((int(oneEvent['endWeek']) - int(oneEvent['startWeek'])) / int(oneEvent['interval']) + 1)
