@@ -1,6 +1,5 @@
 from uuid import uuid1
 
-import static
 from utils import *
 
 
