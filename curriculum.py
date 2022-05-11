@@ -10,7 +10,7 @@ import pangu
 import static
 from entity.event import CourseEvent
 from static import *
-from utils import dict_hash, fix_day, get_ical, raw_week_parse, login, raw_week_prettify
+from utils import dict_hash, fix_day, get_ical, raw_week_parse, login
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
