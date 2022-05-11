@@ -122,7 +122,6 @@ class CourseEvent:
         else:
             return {
                 "freq": "WEEKLY",
-                "interval": 1,
                 "byday": day_map[self.day],
                 "byweekno": list(map(lambda x: x + week_base, self.weeks)),
                 "count": len(self.weeks)
