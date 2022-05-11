@@ -3,3 +3,4 @@ pytz
 requests
 fastapi
 uvicorn
+pangu

@@ -6,6 +6,7 @@ from datetime import datetime
 from uuid import uuid1
 
 import icalendar
+import pangu
 
 import static
 from utils import dict_hash, fix_day, login_url, get_ical, raw_week_parse, login
@@ -73,6 +74,8 @@ def curriculum(cookies: str = None):
                 course_data = current_opt_course[1]
 
                 course_name = course_data['courseName']
+                course_name = course_name.replace(' ', '')
+                course_name = pangu.spacing_text(course_name)
 
                 teacher = course_data['teacher']
                 student_count = course_data['studentNum']
@@ -151,7 +154,7 @@ def curriculum(cookies: str = None):
                       if oneEvent["classroomName"] else '',
                       str(oneEvent['startTime']),
                       str(oneEvent['endTime']),
-                      oneEvent['rawWeeks'],
+                      pangu.spacing_text(oneEvent['rawWeeks']),
                       oneEvent['className'],
                       oneEvent['studentNumber']
                   )
