@@ -29,3 +29,26 @@ course_url = 'https://jw.jgsu.edu.cn:19995/api/arrange/CourseScheduleAllQuery/st
 semester_url = 'https://jw.jgsu.edu.cn:19995/api/baseInfo/semester/selectCurrentXnXq'
 exam_url = 'https://jw.jgsu.edu.cn:19995/api/exam/studentExamSchedule/queryPositiveExamSchedule'
 student_number_url = 'https://jw.jgsu.edu.cn:19995/api/student/studentInfo/selectXsSyByid/{}'
+
+
+refreshDescription = """
+Refresh data from server.
+Can use script
+
+```js
+fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
+    method: 'POST',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    mode: 'cors',
+    redirect: 'follow',
+    referrer: 'no-referrer',
+}).then((resp) => {
+    return resp.text()
+}).then(uri => {
+    console.log(uri)
+})
+```
+
+on [`https://vpn2.jgsu.edu.cn/enlink/sso/login/`](https://vpn2.jgsu.edu.cn/enlink/sso/login/)
+"""

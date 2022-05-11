@@ -1,6 +1,7 @@
-icalendar
-pytz
-requests
-fastapi
-uvicorn
-pangu
+icalendar~=4.0.9
+pytz~=2021.3
+requests~=2.27.1
+fastapi~=0.75.0
+uvicorn~=0.17.6
+pangu~=4.0.6.1
+starlette~=0.17.1

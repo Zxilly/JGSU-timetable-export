@@ -1,14 +1,15 @@
+import os
 import traceback
+from enum import Enum
 
 import uvicorn
-from fastapi import FastAPI, Body, HTTPException
-import os
-from enum import Enum
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response, RedirectResponse
 
 from curriculum import curriculum
-from exam import exam_url
+from exam import exam
+from static import refreshDescription
 
 app = FastAPI()
 app.add_middleware(
@@ -44,40 +45,18 @@ async def get_ical(studentID: str, semesterName: str, ics_type: str):
     raise HTTPException(404, "Please make cache before get file.")
 
 
-refreshDescription = """
-Refresh data from server.
-Can use script
-
-```js
-fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
-    method: 'POST',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    mode: 'cors',
-    redirect: 'follow',
-    referrer: 'no-referrer',
-}).then((resp) => {
-    return resp.text()
-}).then(uri => {
-    console.log(uri)
-})
-```
-
-on [`https://vpn2.jgsu.edu.cn/enlink/sso/login/`](https://vpn2.jgsu.edu.cn/enlink/sso/login/)
-"""
-
-
 @app.post('/refresh', description=refreshDescription)
 async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM):
     try:
         if method == refreshMethod.CURRICULUM:
             return curriculum(cookies)
         elif method == refreshMethod.EXAM:
-            return exam_url(cookies)
+            return exam(cookies)
+        else:
+            raise Exception("Unknown refresh method.")
     except Exception:
         err = traceback.format_exc()
         raise HTTPException(500, err)
-    raise HTTPException(500, "Method not found")
 
 
 if __name__ == '__main__':

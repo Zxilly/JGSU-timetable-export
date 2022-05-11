@@ -7,29 +7,29 @@ from utils import *
 def exam(cookies: str = None):
     main_session, user_id, student_num, semester_name, semester_start_time = login_url(cookies)
 
-    reqData = {
+    req_data = {
         "pageNo": 1,
         "pageSize": 20,
         "total": 0,
         "param": {"semesterId": semester_name}
     }
 
-    reqHeader = {
+    req_header = {
         'permission': 'studentServer:examArrange'
     }
 
     main_session.get('https://jw.jgsu.edu.cn:19995/')
 
-    resp = main_session.post(static.exam_url, json=reqData, headers=reqHeader).json()
+    resp = main_session.post(static.exam_url, json=req_data, headers=req_header).json()
 
     data = resp['data']['rows']
 
     for one in data:
         day = datetime.strptime(one['positiveExamPaperDate'], '%Y-%m-%d').date()
-        startTime = datetime.strptime(one['positiveExamTime'].split('~')[0], '%H:%M').time()
-        endTime = datetime.strptime(one['positiveExamTime'].split('~')[1], '%H:%M').time()
-        one['examStart'] = datetime.combine(day, startTime, TIMEZONE)
-        one['examEnd'] = datetime.combine(day, endTime, TIMEZONE)
+        start_time = datetime.strptime(one['positiveExamTime'].split('~')[0], '%H:%M').time()
+        end_time = datetime.strptime(one['positiveExamTime'].split('~')[1], '%H:%M').time()
+        one['examStart'] = datetime.combine(day, start_time, TIMEZONE)
+        one['examEnd'] = datetime.combine(day, end_time, TIMEZONE)
         # print(one)
 
     calt = get_ical(f'{semester_name} 考试')

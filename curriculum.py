@@ -83,16 +83,6 @@ def curriculum(cookies: str = None):
                 classroom_name = course_data['classroomName']
 
                 raw_weeks = course_data['weeks']
-                # try:
-                #     parsed_weeks = re.match(re_object, raw_weeks).groups()
-                #     interval = 2 if parsed_weeks[2] else 1
-                #     start_week = parsed_weeks[0]
-                #     end_week = parsed_weeks[1]
-                # except AttributeError:
-                #     parsed_weeks = int(raw_weeks)
-                #     interval = 1
-                #     start_week = parsed_weeks
-                #     end_week = parsed_weeks
 
                 start_time_pointer = copy.copy(time)
                 end_time_pointer = copy.copy(time)
