@@ -10,6 +10,10 @@ import requests
 import static
 from static import *
 
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 def str_hash(hash_string: str):
     return hashlib.md5(hash_string.encode()).hexdigest()

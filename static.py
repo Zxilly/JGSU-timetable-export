@@ -50,5 +50,5 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
 })
 ```
 
-on [`https://vpn2.jgsu.edu.cn/enlink/sso/login/`](https://vpn2.jgsu.edu.cn/enlink/sso/login/)
+on [`vpn2`](https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112)
 """

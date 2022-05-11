@@ -37,7 +37,7 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
 
 重命名 `info.example.py` 为 `info.py` 并填入 cookies
 
-> 可以访问 `https://vpn2.jgsu.edu.cn/enlink/sso/login/` 进入教务系统，随后访问 `document.cookie` 获取 cookie 字符串
+> 可以访问 `https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112` 进入教务系统，随后访问 `document.cookie` 获取 cookie 字符串
 
 随后可以执行
 

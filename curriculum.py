@@ -171,7 +171,9 @@ def curriculum(cookies: str = None):
         event.add('dtstart', dt_start_datetime)
         event.add('dtend', dt_end_datetime)
 
-        event.add('rrule', {'freq': 'weekly', 'interval': 1, 'count': 1})
+        rrule = oneEvent.rrule(semester_start_time)
+        if rrule:
+            event.add('rrule', rrule)
 
         calt.add_component(event)
 
