@@ -140,7 +140,6 @@ def raw_week_parse(rawWeek: str, day: int, semester_start_time: datetime):
     week_nos = list(week_nos)
     rrule = {
         'freq': 'WEEKLY',
-        'byday': day_map[day],
         'byweekno': week_nos,
         'count': len(pos)
     }

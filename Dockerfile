@@ -6,4 +6,6 @@ EXPOSE 24654/tcp
 
 RUN pip install -r requirements.txt
 
+VOLUME ["/server/data"]
+
 CMD python server.py
