@@ -9,8 +9,8 @@ class CourseEvent:
     courseName: str
     className: str
     classroomName: str
-    startTimeID: str
-    endTimeID: str
+    startTimeID: int
+    endTimeID: int
     startTime: timedelta
     endTime: timedelta
     teacherName: str
@@ -23,8 +23,8 @@ class CourseEvent:
         s += self.courseName
         s += self.className
         s += self.classroomName
-        s += self.startTimeID
-        s += self.endTimeID
+        s += str(self.startTimeID)
+        s += str(self.endTimeID)
         s += self.teacherName
         s += str(self.studentCount)
         return md5(s.encode("utf-8")).hexdigest()
