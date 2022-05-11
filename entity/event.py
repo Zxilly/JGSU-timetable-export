@@ -2,6 +2,10 @@ from dataclasses import dataclass
 from datetime import timedelta, datetime
 from hashlib import md5
 
+import icalendar
+
+from static import ONE_WEEK, ONE_DAY
+
 
 @dataclass
 class CourseEvent:
@@ -16,6 +20,13 @@ class CourseEvent:
     teacherName: str
     studentCount: int
     weeks: list[int]
+    semester_start_time: datetime
+
+    __rrule = None
+
+    @property
+    def start_date(self):
+        return self.semester_start_time + (self.weeks[0] - 1) * ONE_WEEK + (self.day - 1) * ONE_DAY
 
     def identify(self) -> str:
         s = ""
@@ -88,8 +99,10 @@ class CourseEvent:
 
             if not has_tuple(result):
                 if all_odd(result):
+                    self.__rrule = icalendar.vRecur(freq="weekly", interval=2, count=len(self.weeks))
                     return f"{result[0]} - {result[-1]} 单"
                 elif all_even(result):
+                    self.__rrule = icalendar.vRecur(freq="weekly", interval=2, count=len(self.weeks))
                     return f"{result[0]} - {result[-1]} 双"
                 else:
                     s = ""
@@ -105,8 +118,11 @@ class CourseEvent:
                         s += f"{v}; "
                 return s[:-2]
 
-    def rrule(self, semester_start_time: datetime):
-        week_base = semester_start_time.isocalendar().week - 1
+    @property
+    def rrule(self):
+        if self.__rrule is not None:
+            return self.__rrule
+        base_pos = self.semester_start_time.isocalendar().week - 1
         day_map = {
             1: "MO",
             2: "TU",
@@ -116,13 +132,14 @@ class CourseEvent:
             6: "SA",
             7: "SU"
         }
-
+        print(self.day)
+        print(self.courseName)
         if len(self.weeks) == 1:
             return None
         else:
-            return {
-                "freq": "WEEKLY",
-                "byday": day_map[self.day],
-                "byweekno": list(map(lambda x: x + week_base, self.weeks)),
-                "count": len(self.weeks)
-            }
+            return icalendar.vRecur(
+                freq="YEARLY",
+                byday=day_map[self.day],
+                byweekno=list(map(lambda x: x + base_pos, self.weeks)),
+                count=len(self.weeks)
+            )

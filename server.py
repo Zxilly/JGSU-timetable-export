@@ -1,4 +1,3 @@
-import hashlib
 import os
 import traceback
 from enum import Enum
@@ -8,8 +7,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response, RedirectResponse
 
-from curriculum import curriculum
-from exam import exam
+from provider.curriculum import curriculum
+from provider.exam import exam
 from static import refreshDescription
 
 app = FastAPI()
@@ -34,21 +33,6 @@ class IcalResponse(Response):
 @app.get('/')
 async def redirect():
     return RedirectResponse(url='https://github.com/Zxilly/JGSU-timetable-export')
-
-
-@app.get('/{md5}',
-         response_class=IcalResponse)
-async def get_ical_with_hash(md5: str):
-    # return file in data with md5
-    files = os.listdir('data')
-    for file in files:
-        with open('data/' + file, 'r') as f:
-            fc = f.read()
-            h = hashlib.md5(fc.encode('utf-8')).hexdigest()
-            print(h, file)
-            if md5 == h:
-                return fc
-    raise HTTPException(status_code=404, detail='File not found')
 
 
 @app.get('/{studentID}/{semesterName}/{ics_type}.ics',

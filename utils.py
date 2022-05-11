@@ -6,11 +6,10 @@ from datetime import datetime
 
 import icalendar
 import requests
+import urllib3
 
 import static
 from static import *
-
-import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 

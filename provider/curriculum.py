@@ -133,7 +133,8 @@ def curriculum(cookies: str = None):
             endTime=course['endTime'],
             teacherName=course['teacherName'],
             weeks=raw_week_parse(course['rawWeeks']),
-            studentCount=course['studentNumber']
+            studentCount=course['studentNumber'],
+            semester_start_time=semester_start_time
         )
         if ev.identify() in courses:
             courses[ev.identify()].merge(ev)
@@ -141,8 +142,8 @@ def curriculum(cookies: str = None):
             courses[ev.identify()] = ev
 
     for oneEvent in courses.values():
-        dt_start_datetime = semester_start_time + oneEvent.day * ONE_DAY + oneEvent.startTime
-        dt_end_datetime = semester_start_time + oneEvent.day * ONE_DAY + oneEvent.endTime
+        dt_start_datetime = oneEvent.start_date + oneEvent.startTime
+        dt_end_datetime = oneEvent.start_date + oneEvent.endTime
 
         event = icalendar.Event()
         event.add('summary', oneEvent.courseName)  # 标题
@@ -171,7 +172,7 @@ def curriculum(cookies: str = None):
         event.add('dtstart', dt_start_datetime)
         event.add('dtend', dt_end_datetime)
 
-        rrule = oneEvent.rrule(semester_start_time)
+        rrule = oneEvent.rrule
         if rrule:
             event.add('rrule', rrule)
 
