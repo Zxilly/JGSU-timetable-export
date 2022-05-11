@@ -63,8 +63,6 @@ def login(cookies):
 
     user_data = json.loads(dict_cookies['user'])
 
-    # print(userData)
-
     user_id = user_data['userName']
 
     req = main_session.get(static.student_number_url.format(user_id)).json()
@@ -101,34 +99,50 @@ def get_ical(name: str):
     return cal
 
 
-def raw_week_parse(rawWeek: str):
-    ret = []
+def raw_week_parse(rawWeek: str, day: int):
+    day_map = {
+        1: "MO",
+        2: "TU",
+        3: "WE",
+        4: "TH",
+        5: "FR",
+        6: "SA",
+        7: "SU"
+    }
+
+    pos = []
+    print(rawWeek)
     weeks = rawWeek.split(';')
     for week in weeks:
         week = week.strip()
         th_spec = re.compile(r'[单双]')
-        tw_spec = re.compile(r'\d-\d')
+        tw_spec = re.compile(r'\d{1,2}-\d{1,2}')
         on_spec = re.compile(r'\d')
-        if th_spec.match(week):
+        if th_spec.search(week):
             pattern = week[-1]
             week = week[:-2]
             nums = week.split('-')
             for num in range(int(nums[0]), int(nums[1]) + 1):
                 if pattern == '单':
                     if num % 2 == 1:
-                        ret.append(num)
+                        pos.append(num)
                 elif pattern == '双':
                     if num % 2 == 0:
-                        ret.append(num)
+                        pos.append(num)
         elif tw_spec.match(week):
             nums = week.split('-')
             for num in range(int(nums[0]), int(nums[1]) + 1):
-                ret.append(num)
+                pos.append(num)
         elif on_spec.match(week):
-            ret.append(int(week))
+            pos.append(int(week))
         else:
             raise ValueError('无法识别的周数')
-    return ret
+    rrule = {
+        'count': len(pos),
+        'byweekday': day_map[day],
+        'bysetpos': pos
+    }
+    return rrule
 
 
 class DateEncoder(json.JSONEncoder):

@@ -8,7 +8,7 @@ from uuid import uuid1
 import icalendar
 
 import static
-from utils import dict_hash, fix_day, login_url, get_ical
+from utils import dict_hash, fix_day, login_url, get_ical, raw_week_parse, login
 from static import *
 
 header = {
@@ -18,7 +18,7 @@ header = {
 
 def curriculum(cookies: str = None):
     print(cookies)
-    main_session, user_id, student_num, semester_name, semester_start_time = login_url(cookies)
+    main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
 
     req = main_session.post(url=static.course_url, json={
         "oddOrDouble": 0,
@@ -75,7 +75,7 @@ def curriculum(cookies: str = None):
                 course_name = course_data['courseName']
 
                 teacher = course_data['teacher']
-                student_num = course_data['studentNum']
+                student_count = course_data['studentNum']
                 class_name = course_data['className']
                 classroom_name = course_data['classroomName']
 
@@ -114,16 +114,11 @@ def curriculum(cookies: str = None):
                     'endTimeID': end_time_pointer,
                     'teacherName': teacher,
                     'rawWeeks': raw_weeks,
-                    'studentNumber': student_num
+                    'studentNumber': student_count
                 }
 
                 one_course_hash = dict_hash(parsed_one_course)
                 print(one_course_hash, parsed_one_course)
-                # if one_course_hash in fix_dict.keys():
-                #     fix_object = fix_dict[one_course_hash]
-                #     for key, value in fix_object.items():
-                #         parsed_one_course[key] = value
-                #     print("fixed:", parsed_one_course, file=sys.stderr)
 
                 parsed_one_course['startTime'] = courseTimeDict[parsed_one_course['startTimeID']]
                 parsed_one_course['endTime'] = courseTimeDict[parsed_one_course['endTimeID']] + COURSE_TIME
@@ -159,9 +154,7 @@ def curriculum(cookies: str = None):
                       if oneEvent["classroomName"] else '',
                       str(oneEvent['startTime']),
                       str(oneEvent['endTime']),
-                      f'{oneEvent["startWeek"]} - {oneEvent["endWeek"]}'
-                      if oneEvent["startWeek"] != oneEvent["endWeek"]
-                      else f'{oneEvent["startWeek"]}',
+                      oneEvent['rawWeeks'],
                       oneEvent['className'],
                       oneEvent['studentNumber']
                   )
@@ -169,7 +162,7 @@ def curriculum(cookies: str = None):
         event.add('dtstart', dt_start_datetime)
         event.add('dtend', dt_end_datetime)
 
-        event.add('rrule', {'freq': 'weekly', 'interval': 1, 'byday': oneEvent['rawWeeks']})
+        event.add('rrule', raw_week_parse(oneEvent['rawWeeks'], oneEvent['day']))
 
         calt.add_component(event)
 
