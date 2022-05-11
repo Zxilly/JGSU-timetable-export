@@ -70,11 +70,11 @@ def login(cookies):
 
     semester_name = user_data['semester']
     req = main_session.get(url=static.semester_url).json()
-    print(req)
+    # print(req)
     semester_start_time = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
 
-    print(semester_name)
-    print(semester_start_time)
+    # print(semester_name)
+    # print(semester_start_time)
 
     assert semester_start_time.weekday() == 0
 
@@ -111,7 +111,7 @@ def raw_week_parse(rawWeek: str, day: int):
     }
 
     pos = []
-    print(rawWeek)
+    # print(rawWeek)
     weeks = rawWeek.split(';')
     for week in weeks:
         week = week.strip()

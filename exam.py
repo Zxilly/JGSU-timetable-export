@@ -30,7 +30,7 @@ def exam(cookies: str = None):
         endTime = datetime.strptime(one['positiveExamTime'].split('~')[1], '%H:%M').time()
         one['examStart'] = datetime.combine(day, startTime, TIMEZONE)
         one['examEnd'] = datetime.combine(day, endTime, TIMEZONE)
-        print(one)
+        # print(one)
 
     calt = get_ical(f'{semester_name} 考试')
 

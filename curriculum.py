@@ -17,7 +17,7 @@ header = {
 
 
 def curriculum(cookies: str = None):
-    print(cookies)
+    # print(cookies)
     main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
 
     req = main_session.post(url=static.course_url, json={
@@ -29,8 +29,8 @@ def curriculum(cookies: str = None):
         "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     }).json()
 
-    print(main_session.cookies.items())
-    print(req)
+    # print(main_session.cookies.items())
+    # print(req)
     tmp_data = req['data']
     all_course_data = []
 
@@ -118,7 +118,7 @@ def curriculum(cookies: str = None):
                 }
 
                 one_course_hash = dict_hash(parsed_one_course)
-                print(one_course_hash, parsed_one_course)
+                # print(one_course_hash, parsed_one_course)
 
                 parsed_one_course['startTime'] = courseTimeDict[parsed_one_course['startTimeID']]
                 parsed_one_course['endTime'] = courseTimeDict[parsed_one_course['endTimeID']] + COURSE_TIME
