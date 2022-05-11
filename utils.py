@@ -19,11 +19,6 @@ def dict_hash(hash_dict: dict):
     return hashlib.md5(str(hash_dict).encode()).hexdigest()
 
 
-def show_data(data):
-    print(json.dumps(data, ensure_ascii=False))
-    exit(0)
-
-
 def fix_day(day: int):
     if day == 1:
         return 7
@@ -70,7 +65,6 @@ def login(cookies):
 
     semester_name = user_data['semester']
     req = main_session.get(url=static.semester_url).json()
-    # print(req)
     semester_start_time = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
 
     assert semester_start_time.weekday() == 0
@@ -96,19 +90,7 @@ def get_ical(name: str):
     return cal
 
 
-def raw_week_parse(rawWeek: str, day: int, semester_start_time: datetime):
-    day_map = {
-        1: "MO",
-        2: "TU",
-        3: "WE",
-        4: "TH",
-        5: "FR",
-        6: "SA",
-        7: "SU"
-    }
-
-    week_base = semester_start_time.isocalendar().week - 1
-
+def raw_week_parse(rawWeek: str):
     pos = []
     # print(rawWeek)
     weeks = rawWeek.split(';')
@@ -136,14 +118,8 @@ def raw_week_parse(rawWeek: str, day: int, semester_start_time: datetime):
             pos.append(int(week))
         else:
             raise ValueError('无法识别的周数')
-    week_nos = map(lambda x: x + week_base, pos)
-    week_nos = list(week_nos)
-    rrule = {
-        'freq': 'WEEKLY',
-        'byweekno': week_nos,
-        'count': len(pos)
-    }
-    return rrule
+        pos.sort()
+    return pos
 
 
 class DateEncoder(json.JSONEncoder):

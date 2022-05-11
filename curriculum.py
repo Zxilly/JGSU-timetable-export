@@ -1,16 +1,16 @@
 import copy
 import hashlib
-import re
-import sys
 from datetime import datetime
+from typing import Dict
 from uuid import uuid1
 
 import icalendar
 import pangu
 
 import static
-from utils import dict_hash, fix_day, login_url, get_ical, raw_week_parse, login
+from entity.event import CourseEvent
 from static import *
+from utils import dict_hash, fix_day, get_ical, raw_week_parse, login, raw_week_prettify
 
 header = {
     'csrfToken': hashlib.md5((str(int(datetime.now().timestamp())) + "lyedu").encode('UTF-8')).hexdigest()
@@ -120,39 +120,58 @@ def curriculum(cookies: str = None):
 
     calt = get_ical(f'{semester_name} 课表')
 
-    for oneEvent in parsed_course_data:
-        dt_start_datetime = semester_start_time + (int(oneEvent['day']) - 1) * ONE_DAY + oneEvent['startTime']
-        dt_end_datetime = semester_start_time + (int(oneEvent['day']) - 1) * ONE_DAY + oneEvent['endTime']
+    courses: Dict[str, CourseEvent] = {}
+    for course in parsed_course_data:
+        ev = CourseEvent(
+            day=int(course['day']),
+            courseName=course['courseName'],
+            className=course['className'],
+            classroomName=course['classroomName'],
+            startTimeID=course['startTimeID'],
+            endTimeID=course['endTimeID'],
+            startTime=course['startTime'],
+            endTime=course['endTime'],
+            teacherName=course['teacherName'],
+            weeks=raw_week_parse(course['rawWeeks']),
+            studentCount=course['studentNumber']
+        )
+        if ev.identify() in courses:
+            courses[ev.identify()].merge(ev)
+        else:
+            courses[ev.identify()] = ev
+
+    for oneEvent in courses.values():
+        dt_start_datetime = semester_start_time + oneEvent.day * ONE_DAY + oneEvent.startTime
+        dt_end_datetime = semester_start_time + oneEvent.day * ONE_DAY + oneEvent.endTime
 
         event = icalendar.Event()
-        event.add('summary', oneEvent['courseName'])  # 标题
+        event.add('summary', oneEvent.courseName)  # 标题
         event.add('uid', str(uuid1()) + '@JGSU')  # UUID
         event.add('dtstamp', datetime.now())  # 创建时间
-        if oneEvent['classroomName']:
-            event.add('location', oneEvent['classroomName'])  # 地点
+        if oneEvent.classroomName:
+            event.add('location', oneEvent.classroomName)  # 地点
         event.add('description',
-                  '{}教师： {}\r\n'
-                  '{}时间： {} - {} \r\n'
+                  '{}'
+                  '教师： {}\r\n'
+                  '{}'
+                  '时间： {} - {} \r\n'
                   '周期： {}\r\n'
                   '班级： {}\r\n'
                   '学生数： {}'.format(
-                      f"第 {oneEvent['startTimeID']} - {oneEvent['endTimeID']} 节\r\n"
-                      if oneEvent['startTimeID'] != oneEvent['endTimeID']
-                      else f"第 {oneEvent['startTimeID']} 节\r\n",
-                      oneEvent['teacherName'],
-                      f'教室： {oneEvent["classroomName"]}\r\n'
-                      if oneEvent["classroomName"] else '',
-                      str(oneEvent['startTime']),
-                      str(oneEvent['endTime']),
-                      pangu.spacing_text(oneEvent['rawWeeks']),
-                      oneEvent['className'],
-                      oneEvent['studentNumber']
+                      oneEvent.period_str,
+                      oneEvent.teacherName,
+                      oneEvent.classroom_str,
+                      str(oneEvent.startTime),
+                      str(oneEvent.endTime),
+                      oneEvent.cycle_str,
+                      oneEvent.className,
+                      oneEvent.studentCount
                   )
                   )
         event.add('dtstart', dt_start_datetime)
         event.add('dtend', dt_end_datetime)
 
-        event.add('rrule', raw_week_parse(oneEvent['rawWeeks'], oneEvent['day'], semester_start_time))
+        event.add('rrule', {'freq': 'weekly', 'interval': 1, 'count': 1})
 
         calt.add_component(event)
 
