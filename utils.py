@@ -73,9 +73,6 @@ def login(cookies):
     # print(req)
     semester_start_time = datetime.strptime(req['data']['ksrq'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
 
-    # print(semester_name)
-    # print(semester_start_time)
-
     assert semester_start_time.weekday() == 0
 
     return main_session, user_id, student_num, semester_name, semester_start_time
@@ -99,7 +96,7 @@ def get_ical(name: str):
     return cal
 
 
-def raw_week_parse(rawWeek: str, day: int):
+def raw_week_parse(rawWeek: str, day: int, semester_start_time: datetime):
     day_map = {
         1: "MO",
         2: "TU",
@@ -109,6 +106,8 @@ def raw_week_parse(rawWeek: str, day: int):
         6: "SA",
         7: "SU"
     }
+
+    week_base = semester_start_time.isocalendar().week - 1
 
     pos = []
     # print(rawWeek)
@@ -137,10 +136,13 @@ def raw_week_parse(rawWeek: str, day: int):
             pos.append(int(week))
         else:
             raise ValueError('无法识别的周数')
+    week_nos = map(lambda x: x + week_base, pos)
+    week_nos = list(week_nos)
     rrule = {
-        'count': len(pos),
-        'byweekday': day_map[day],
-        'bysetpos': pos
+        'freq': 'WEEKLY',
+        'byday': day_map[day],
+        'byweekno': week_nos,
+        'count': len(pos)
     }
     return rrule
 

@@ -117,9 +117,6 @@ def curriculum(cookies: str = None):
                     'studentNumber': student_count
                 }
 
-                one_course_hash = dict_hash(parsed_one_course)
-                # print(one_course_hash, parsed_one_course)
-
                 parsed_one_course['startTime'] = courseTimeDict[parsed_one_course['startTimeID']]
                 parsed_one_course['endTime'] = courseTimeDict[parsed_one_course['endTimeID']] + COURSE_TIME
 
@@ -162,7 +159,7 @@ def curriculum(cookies: str = None):
         event.add('dtstart', dt_start_datetime)
         event.add('dtend', dt_end_datetime)
 
-        event.add('rrule', raw_week_parse(oneEvent['rawWeeks'], oneEvent['day']))
+        event.add('rrule', raw_week_parse(oneEvent['rawWeeks'], oneEvent['day'], semester_start_time))
 
         calt.add_component(event)
 
