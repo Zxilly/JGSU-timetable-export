@@ -42,8 +42,8 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
 随后可以执行
 
 ```
-python[3] provider/curriculum.py
-python[3] provider/examArrangement.py
+python[3] curriculum.py
+python[3] examArrangement.py
 ```
 
 来生成课表和考试安排的 `ics文件` 

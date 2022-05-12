@@ -7,8 +7,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response, RedirectResponse
 
-from provider.curriculum import curriculum
-from provider.exam import exam
+from curriculum import curriculum
+from exam import exam
 from static import refreshDescription
 
 app = FastAPI()
