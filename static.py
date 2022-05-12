@@ -32,12 +32,23 @@ exam_url = 'https://jw.jgsu.edu.cn:19995/api/exam/studentExamSchedule/queryPosit
 student_number_url = 'https://jw.jgsu.edu.cn:19995/api/student/studentInfo/selectXsSyByid/{}'
 
 
-refreshDescription = f"""
+refreshDescription = """
 Refresh data from server.
 Can use script
 
 ```js
-{open(f'{os.path.dirname(os.path.realpath("__file__/.."))}/send.js', 'r').read()}
+fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
+    method: 'POST',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    mode: 'cors',
+    redirect: 'follow',
+    referrer: 'no-referrer',
+}).then((resp) => {
+    return resp.text()
+}).then(uri => {
+    console.log(uri)
+})
 ```
 
 on [`vpn2`](https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112)
