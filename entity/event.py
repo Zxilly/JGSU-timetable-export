@@ -132,7 +132,7 @@ class CourseEvent:
             return self.__rrule
         if self.__rrule is None:
             return None
-        base_pos = self.semester_start_time.isocalendar().week - 1
+
         day_map = {
             1: "MO",
             2: "TU",
@@ -145,9 +145,13 @@ class CourseEvent:
         if len(self.weeks) == 1:
             return None
         else:
+            by_week_no_pos = []
+            for week in self.weeks:
+                d = self.semester_start_time + (week - 1) * ONE_WEEK + (self.day - 1) * ONE_DAY
+                by_week_no_pos.append(d.isocalendar()[1])
             return icalendar.vRecur(
                 freq="YEARLY",
                 byday=day_map[self.day],
-                byweekno=list(map(lambda x: x + base_pos, self.weeks)),
+                byweekno=by_week_no_pos,
                 count=len(self.weeks)
             )
