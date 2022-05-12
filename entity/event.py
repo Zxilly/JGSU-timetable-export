@@ -22,12 +22,13 @@ class CourseEvent:
     weeks: list[int]
     semester_start_time: datetime
 
-    __rrule = None
+    __rrule = False
 
     @property
     def start_date(self):
         return self.semester_start_time + (self.weeks[0] - 1) * ONE_WEEK + (self.day - 1) * ONE_DAY
 
+    @property
     def identify(self) -> str:
         s = ""
         s += str(self.day)
@@ -41,7 +42,7 @@ class CourseEvent:
         return md5(s.encode("utf-8")).hexdigest()
 
     def merge(self, other: "CourseEvent"):
-        if self.identify() != other.identify():
+        if self.identify != other.identify:
             raise Exception("Cannot merge different events")
         self.weeks.extend(other.weeks)
         self.weeks.sort()
@@ -97,6 +98,13 @@ class CourseEvent:
                         return False
                 return True
 
+            if len(result) == 1:
+                if isinstance(result[0], tuple):
+                    self.__rrule = icalendar.vRecur(freq="weekly", interval=1, count=len(self.weeks))
+                    return f"{result[0][0]} - {result[0][1]}"
+                else:
+                    return str(result[0])
+
             if not has_tuple(result):
                 if all_odd(result):
                     self.__rrule = icalendar.vRecur(freq="weekly", interval=2, count=len(self.weeks))
@@ -120,8 +128,10 @@ class CourseEvent:
 
     @property
     def rrule(self):
-        if self.__rrule is not None:
+        if self.__rrule:
             return self.__rrule
+        if self.__rrule is None:
+            return None
         base_pos = self.semester_start_time.isocalendar().week - 1
         day_map = {
             1: "MO",
@@ -132,8 +142,6 @@ class CourseEvent:
             6: "SA",
             7: "SU"
         }
-        print(self.day)
-        print(self.courseName)
         if len(self.weeks) == 1:
             return None
         else:

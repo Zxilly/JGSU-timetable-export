@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 
 import pytz
@@ -36,7 +37,7 @@ Refresh data from server.
 Can use script
 
 ```js
-{open('send.js', 'r').read()}
+{open(f'{os.path.dirname(os.path.realpath("__file__/.."))}/send.js', 'r').read()}
 ```
 
 on [`vpn2`](https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112)

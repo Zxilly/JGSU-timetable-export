@@ -18,7 +18,6 @@ header = {
 
 
 def curriculum(cookies: str = None):
-    # print(cookies)
     main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
 
     req = main_session.post(url=static.course_url, json={
@@ -30,8 +29,6 @@ def curriculum(cookies: str = None):
         "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
     }).json()
 
-    # print(main_session.cookies.items())
-    # print(req)
     tmp_data = req['data']
     all_course_data = []
 
@@ -87,7 +84,6 @@ def curriculum(cookies: str = None):
                 start_time_pointer = copy.copy(time)
                 end_time_pointer = copy.copy(time)
 
-                # print(courseName, str(parsedWeeks), rawWeeks)
                 while True:
                     if end_time_pointer != 4 and end_time_pointer != 11:
                         if course_hash in purge_all_course_data[(day, end_time_pointer + 1)].keys():
@@ -136,10 +132,10 @@ def curriculum(cookies: str = None):
             studentCount=course['studentNumber'],
             semester_start_time=semester_start_time
         )
-        if ev.identify() in courses:
-            courses[ev.identify()].merge(ev)
+        if ev.identify in courses:
+            courses[ev.identify].merge(ev)
         else:
-            courses[ev.identify()] = ev
+            courses[ev.identify] = ev
 
     for oneEvent in courses.values():
         dt_start_datetime = oneEvent.start_date + oneEvent.startTime
@@ -178,7 +174,7 @@ def curriculum(cookies: str = None):
 
         calt.add_component(event)
 
-    with open(f'data/{student_num}.{semester_name}.curriculum.ics', 'wb') as f:
+    with open(f'../data/{student_num}.{semester_name}.curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())
 
     return f'https://ical.learningman.top/{student_num}/{semester_name}/curriculum.ics'

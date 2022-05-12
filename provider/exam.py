@@ -49,7 +49,7 @@ def exam(cookies: str = None):
         ))
         calt.add_component(event)
 
-    with open(f'data/{student_num}.{semester_name}.exam.ics', 'wb') as f:
+    with open(f'../data/{student_num}.{semester_name}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
 
     return f'https://ical.learningman.top/{student_num}/{semester_name}/exam.ics'

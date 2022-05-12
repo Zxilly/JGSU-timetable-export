@@ -95,7 +95,6 @@ def get_ical(name: str):
 
 def raw_week_parse(rawWeek: str):
     pos = []
-    # print(rawWeek)
     weeks = rawWeek.split(';')
     for week in weeks:
         week = week.strip()
