@@ -6,6 +6,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import Response, RedirectResponse
+from uvicorn.config import LOGGING_CONFIG
 
 from curriculum import curriculum
 from exam import exam
@@ -61,4 +62,5 @@ async def refresh(cookies: str, method: refreshMethod = refreshMethod.CURRICULUM
 
 if __name__ == '__main__':
     os.environ['SERVER'] = 'true'
+    LOGGING_CONFIG["formatters"]["default"]["fmt"] = "%(asctime)s [%(name)s] %(levelprefix)s %(message)s"
     uvicorn.run('server:app', host='0.0.0.0', port=24654)
