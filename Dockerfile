@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 VOLUME ["/server/data"]
 
-CMD pypy server.py
+CMD pypy3 server.py
