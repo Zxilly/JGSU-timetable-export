@@ -75,12 +75,14 @@ def login(cookies):
     return main_session, user_id, student_num, semester_name, semester_start_time
 
 
-def get_ical(name: str):
+def get_ical(name: str, url: str):
     cal = icalendar.Calendar()
     cal['version'] = '2.0'
     cal['prodid'] = '-//Zxilly//JGSUCalender//CN'
     cal['X-WR-TIMEZONE'] = 'Asia/Shanghai'
     cal['X-WR-CALNAME'] = name
+    cal['URL'] = url
+    cal['REFRESH-INTERVAL'] = icalendar.vDuration(timedelta(hours=4))
     tz = icalendar.Timezone()
     tz['tzid'] = 'Asia/Shanghai'
     tz_standard = icalendar.TimezoneStandard()

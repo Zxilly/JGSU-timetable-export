@@ -113,8 +113,8 @@ def curriculum(cookies: str = None):
                 parsed_one_course.clear()
             else:
                 break
-
-    calt = get_ical(f'{semester_name} 课表')
+    url = f'https://ical.learningman.top/{student_num}/{semester_name}/curriculum.ics'
+    calt = get_ical(f'{semester_name} 课表', url)
 
     courses: Dict[str, CourseEvent] = {}
     for course in parsed_course_data:
@@ -177,7 +177,7 @@ def curriculum(cookies: str = None):
     with open(f'data/{student_num}.{semester_name}.curriculum.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{student_num}/{semester_name}/curriculum.ics'
+    return url
 
 
 if __name__ == '__main__':

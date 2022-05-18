@@ -30,7 +30,8 @@ def exam(cookies: str = None):
         one['examStart'] = datetime.combine(day, start_time, TIMEZONE)
         one['examEnd'] = datetime.combine(day, end_time, TIMEZONE)
 
-    calt = get_ical(f'{semester_name} 考试')
+    url = f'https://ical.learningman.top/{student_num}/{semester_name}/exam.ics'
+    calt = get_ical(f'{semester_name} 考试', url)
 
     for oneEvent in data:
         event = icalendar.Event()
@@ -52,7 +53,7 @@ def exam(cookies: str = None):
     with open(f'data/{student_num}.{semester_name}.exam.ics', 'wb') as f:
         f.write(calt.to_ical())
 
-    return f'https://ical.learningman.top/{student_num}/{semester_name}/exam.ics'
+    return url
 
 
 if __name__ == '__main__':
