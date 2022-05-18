@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM pypy:slim
 
 COPY . /server
 WORKDIR /server
@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 VOLUME ["/server/data"]
 
-CMD python server.py
+CMD pypy server.py
