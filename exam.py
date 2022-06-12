@@ -4,7 +4,7 @@ from utils import *
 
 
 def exam(cookies: str = None):
-    main_session, user_id, student_num, semester_name, semester_start_time = login_url(cookies)
+    main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
 
     req_data = {
         "pageNo": 1,
