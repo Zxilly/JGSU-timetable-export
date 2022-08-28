@@ -53,3 +53,14 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
 
 on [`vpn2`](https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112)
 """
+
+refreshPayloadDescription = """
+eval this in the console of the page [`vpn2`](https://vpn2.jgsu.edu.cn/https/webvpn7e2d802bc41e68a2b4333e8d86b0571de686e6090cc6d401c850aa69cc970112)
+```js
+fetch("https://ical.learningman.top/script")
+.then(res => res.json())
+.then(text => eval(text))
+```
+
+Then paste the result to the body.
+"""

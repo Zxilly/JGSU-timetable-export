@@ -11,7 +11,7 @@ from uvicorn.config import LOGGING_CONFIG
 
 from curriculum import curriculum
 from exam import exam
-from static import refreshDescription
+from static import refreshDescription,refreshPayloadDescription
 
 app = FastAPI()
 app.add_middleware(
@@ -61,7 +61,7 @@ async def refreshWithCookie(cookies: str, method: refreshMethod = refreshMethod.
         raise HTTPException(500, err)
 
 
-@app.post('/refreshWithPayload')
+@app.post('/refreshWithPayload', description=refreshPayloadDescription)
 async def refreshWithPayload(request: Request, payload=Body(...), method: refreshMethod = refreshMethod.CURRICULUM):
     try:
         pd = await request.json()
