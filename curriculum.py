@@ -17,19 +17,25 @@ header = {
 }
 
 
-def curriculum(cookies: str = None):
-    main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
+def curriculum(cookies: str = None, payload: Dict = None):
+    if payload is None:
+        main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
+        req = main_session.post(url=static.course_url, json={
+            "oddOrDouble": 0,
+            "semester": semester_name,
+            "startWeek": "1",
+            "stopWeek": "22",
+            "studentId": user_id,
+            "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+        }, timeout=5).json()
+        tmp_data = req['data']
+    else:
+        tmp_data = payload['data']
+        student_num = payload['student_num']
+        semester_name = payload['semester_name']
+        semester_start_time = datetime.strptime(payload['semester_start_time'], "%Y-%m-%d").replace(tzinfo=TIMEZONE) + ONE_DAY * 1
+        assert semester_start_time.weekday() == 0
 
-    req = main_session.post(url=static.course_url, json={
-        "oddOrDouble": 0,
-        "semester": semester_name,
-        "startWeek": "1",
-        "stopWeek": "22",
-        "studentId": user_id,
-        "weeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
-    }).json()
-
-    tmp_data = req['data']
     all_course_data = []
 
     for timeSection in tmp_data:

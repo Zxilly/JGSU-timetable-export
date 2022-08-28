@@ -1,25 +1,29 @@
+from typing import Dict
 from uuid import uuid1
 
 from utils import *
 
 
-def exam(cookies: str = None):
-    main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
+def exam(cookies: str = None, payload: Dict = None):
+    if payload is None:
+        main_session, user_id, student_num, semester_name, semester_start_time = login(cookies)
 
-    req_data = {
-        "pageNo": 1,
-        "pageSize": 20,
-        "total": 0,
-        "param": {"semesterId": semester_name}
-    }
+        req_data = {
+            "pageNo": 1,
+            "pageSize": 20,
+            "total": 0,
+            "param": {"semesterId": semester_name}
+        }
 
-    req_header = {
-        'permission': 'studentServer:examArrange'
-    }
+        req_header = {
+            'permission': 'studentServer:examArrange'
+        }
 
-    main_session.get('https://jw.jgsu.edu.cn:19995/')
+        main_session.get('https://jw.jgsu.edu.cn:19995/')
 
-    resp = main_session.post(static.exam_url, json=req_data, headers=req_header).json()
+        resp = main_session.post(static.exam_url, json=req_data, headers=req_header).json()
+    else:
+        resp = payload
 
     data = resp['data']['rows']
 
