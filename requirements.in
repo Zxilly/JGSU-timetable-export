@@ -1,0 +1,7 @@
+icalendar
+pytz
+requests
+fastapi
+uvicorn
+pangu
+starlette
