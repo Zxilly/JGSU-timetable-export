@@ -12,14 +12,18 @@
 
 ## 在线生成
 
-访问 `https://ical.learningman.top/docs`
+> **Warning**
+>
+> 在线 demo 已不可用，可以使用 Docker 架设你自己的实例。
+
+访问 `https://{host:post}/docs`
 
 使用 `refresh` 方法刷新考试或课程的缓存，返回生成的 `ical` 文件的 `url`
 
 ## 自动脚本
 
 ```js
-fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
+fetch(`https://{host:post}/refresh?cookies=${encodeURIComponent(document.cookie)}&method=curriculum`, {
     method: 'POST',
     cache: 'no-cache',
     credentials: 'same-origin',
