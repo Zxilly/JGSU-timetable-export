@@ -1,4 +1,11 @@
 # CalenderGenerator
+
+> **Warning**
+>
+> 此程序需要进一步的工作以适配 `aTrust` 系统下的 cookie 获取。当前作者已经不再维护。
+> 
+> 如果你有意继续维护，请提交一个 issue，我会在这里放置一个指向可用分支的链接。
+
 一个用于生成井冈山大学的 `ical格式` 课表的 `python程序`
 
 > 参考了 `AC Better` 的 [cqut-lesson-timetable-to-calendar](https://github.com/acbetter/cqut-lesson-timetable-to-calendar)
@@ -25,6 +32,7 @@ fetch(`https://ical.learningman.top/refresh?cookies=${encodeURIComponent(documen
     console.log(uri)
 })
 ```
+
 在控制台执行，仅限 `vpn2` 使用，正常环境下无法获取 `http-only` cookie
 
 ## 使用方法
